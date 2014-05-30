@@ -8,8 +8,11 @@
   Unity.NumberOfTests++; \
   if (TEST_PROTECT()) \
   { \
+    CEXCEPTION_T e; \
+    Try { \
       setUp(); \
       TestFunc(); \
+    } Catch(e) { TEST_ASSERT_EQUAL_HEX32_MESSAGE(CEXCEPTION_NONE, e, "Unhandled Exception!"); } \
   } \
   if (TEST_PROTECT() && !TEST_IS_IGNORED) \
   { \
@@ -22,6 +25,7 @@
 #include "unity.h"
 #include <setjmp.h>
 #include <stdio.h>
+#include "CException.h"
 
 int GlobalExpectCount;
 int GlobalVerifyOrder;
@@ -30,7 +34,26 @@ char* GlobalOrderError;
 //=======External Functions This Runner Calls=====
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_module_generator_needs_to_be_implemented(void);
+extern void test_StringDump_explore(void);
+extern void test_textDump_explore(void);
+extern void test_textNew(void);
+extern void test_textAssign(void);
+extern void test_textDelete_should_delete_only_1(void);
+extern void test_textDelete_should_delete_all_text(void);
+extern void test_stringNew_should_return_string(void);
+extern void test_stringAssign_should_return_reference(void);
+extern void test_stringDelete_should_delete_only_one(void);
+extern void test__text_explore(void);
+extern void test_stringSkip_given_Hello_and_skip_2_should_become_lo(void);
+extern void test_stringSkip_given_beyond_ra_and_skip_2_should_make_start_equals_2_length_equals_0(void);
+extern void test_stringTrimLeft_given_hello_prefixed_with_2_space_should_remove_the_spaces(void);
+extern void test_stringTrimLeft_given_hello_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab(void);
+extern void test_stringTrimRight_given_hello_prefixed_with_2_space_should_remove_the_spaces(void);
+extern void test_stringTrimRight_given_hello_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab(void);
+extern void test_stringTrim_given_hello_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab(void);
+extern void test_textNew_should_create_a_text_with_reference_of_1(void);
+extern void test_textNew_should_create_a_text_with_reference_of(void);
+extern void test_textAssign_dynamic_text_should_increate_reference_to_2(void);
 
 
 //=======Test Reset Option=====
@@ -46,7 +69,26 @@ int main(void)
 {
   Unity.TestFile = "test_StringObject.c";
   UnityBegin();
-  RUN_TEST(test_module_generator_needs_to_be_implemented, 12);
+  RUN_TEST(test_StringDump_explore, 18);
+  RUN_TEST(test_textDump_explore, 39);
+  RUN_TEST(test_textNew, 50);
+  RUN_TEST(test_textAssign, 60);
+  RUN_TEST(test_textDelete_should_delete_only_1, 80);
+  RUN_TEST(test_textDelete_should_delete_all_text, 98);
+  RUN_TEST(test_stringNew_should_return_string, 117);
+  RUN_TEST(test_stringAssign_should_return_reference, 128);
+  RUN_TEST(test_stringDelete_should_delete_only_one, 143);
+  RUN_TEST(test__text_explore, 184);
+  RUN_TEST(test_stringSkip_given_Hello_and_skip_2_should_become_lo, 231);
+  RUN_TEST(test_stringSkip_given_beyond_ra_and_skip_2_should_make_start_equals_2_length_equals_0, 240);
+  RUN_TEST(test_stringTrimLeft_given_hello_prefixed_with_2_space_should_remove_the_spaces, 249);
+  RUN_TEST(test_stringTrimLeft_given_hello_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab, 258);
+  RUN_TEST(test_stringTrimRight_given_hello_prefixed_with_2_space_should_remove_the_spaces, 267);
+  RUN_TEST(test_stringTrimRight_given_hello_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab, 276);
+  RUN_TEST(test_stringTrim_given_hello_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab, 285);
+  RUN_TEST(test_textNew_should_create_a_text_with_reference_of_1, 292);
+  RUN_TEST(test_textNew_should_create_a_text_with_reference_of, 298);
+  RUN_TEST(test_textAssign_dynamic_text_should_increate_reference_to_2, 303);
 
   return (UnityEnd());
 }

@@ -1,0 +1,125 @@
+---
+:source:
+  :path: test
+  :file: test_StringObject.c
+:successes:
+- :test: test_StringDump_explore
+  :line: 18
+  :message: ''
+- :test: test_textDump_explore
+  :line: 39
+  :message: ''
+- :test: test_textNew
+  :line: 50
+  :message: ''
+- :test: test_textAssign
+  :line: 60
+  :message: ''
+- :test: test_textDelete_should_delete_only_1
+  :line: 80
+  :message: ''
+- :test: test_textDelete_should_delete_all_text
+  :line: 98
+  :message: ''
+- :test: test_stringNew_should_return_string
+  :line: 117
+  :message: ''
+- :test: test_stringAssign_should_return_reference
+  :line: 128
+  :message: ''
+- :test: test_stringDelete_should_delete_only_one
+  :line: 143
+  :message: ''
+- :test: test__text_explore
+  :line: 184
+  :message: ''
+- :test: test_stringSkip_given_Hello_and_skip_2_should_become_lo
+  :line: 231
+  :message: ''
+- :test: test_stringSkip_given_beyond_ra_and_skip_2_should_make_start_equals_2_length_equals_0
+  :line: 240
+  :message: ''
+- :test: test_stringTrimLeft_given_hello_prefixed_with_2_space_should_remove_the_spaces
+  :line: 249
+  :message: ''
+- :test: test_stringTrimLeft_given_hello_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab
+  :line: 258
+  :message: ''
+- :test: test_stringTrimRight_given_hello_prefixed_with_2_space_should_remove_the_spaces
+  :line: 267
+  :message: ''
+- :test: test_stringTrimRight_given_hello_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab
+  :line: 276
+  :message: ''
+- :test: test_stringTrim_given_hello_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab
+  :line: 285
+  :message: ''
+- :test: test_textNew_should_create_a_text_with_reference_of_1
+  :line: 292
+  :message: ''
+- :test: test_textNew_should_create_a_text_with_reference_of
+  :line: 298
+  :message: ''
+- :test: test_textAssign_dynamic_text_should_increate_reference_to_2
+  :line: 303
+  :message: ''
+:failures: []
+:ignores: []
+:counts:
+  :total: 20
+  :passed: 20
+  :failed: 0
+  :ignored: 0
+:stdout:
+- '[0x14] f_str:[a]:hello world!, start:11, len:100, str:!'
+- text[3]:dummy
+- text[1]:testing
+- '-----name1-----'
+- text[80000000]:jason
+- '-----name2------'
+- text[1]:Chuah
+- '-----name3-----'
+- text[2]:Chuah
+- text[1]:jason
+- '-----name1-----'
+- '-----name2------'
+- text[1]:jason
+- text[3]:Chuah
+- '-----name3-----'
+- (NULL)
+- text[1]:jas
+- text[2]:jas
+- text[2]:jas
+- (NULL)(NULL)
+- text[1]:Jason
+- '[0x1] f_str:[2]:Jason, start:0, len:5, str:Jason'
+- text[1]:jason
+- '[0x2] f_str:[2]:jason, start:0, len:5, str:jason'
+- '[0x2] f_str:[2]:jason, start:0, len:5, str:jason'
+- text[1]:jason
+- '[0x1] f_str:[2]:jason, start:0, len:5, str:jason'
+- '[0x2] f_str:[2]:jason, start:0, len:5, str:jason'
+- '[0x2] f_str:[2]:jason, start:0, len:5, str:jason'
+- text[80000000]:James ho
+- text[1]:jason
+- '---------'
+- text[2]:jason
+- text[2]:jason
+- (NULL)text[0]:jason
+- text[0]:jason
+- '---------'
+- 'name3: 003E5398'
+- text[80000000]:James ho
+- xxxxxxxxx
+- xxxxxxxxx
+- text[1]:hello
+- xxxxxxxxx
+- '[0x1] f_str:[2]:hello, start:0, len:5, str:hello'
+- xxxxxxxxx
+- '[0x2] f_str:[2]:hello, start:0, len:5, str:hello'
+- '[0x2] f_str:[2]:hello, start:0, len:5, str:hello'
+- '---------'
+- '[0x2] f_str:[2]:hello, start:0, len:5, str:hello'
+- text[2]:hello
+- '---------'
+- (NULL)
