@@ -3,6 +3,7 @@
 #include <malloc.h>
 #include "StringObject.h"
 
+
 void textDump(Text *text){
 	if(text ==NULL){
 		printf("(NULL)");
@@ -106,7 +107,6 @@ String *stringDel(String *string){
 	string->reference--;
 	
 	if(string->reference ==0 ){
-		printf("free\n");
 		free(string);
 		return NULL;
 	}
@@ -130,7 +130,7 @@ void stringSkip(String *string,int numOfChar2Skip){
 
 void stringTrimLeft(String *string){
 	int i=0;
-	char ch;
+	int ch;
 	ch=string->text->string[0];
 	while(isSpace(ch))
 	{
@@ -143,27 +143,19 @@ void stringTrimLeft(String *string){
 
 void stringTrimRight(String *string){
 	int i=0;
-	char ch;
+	int ch;
 	ch=string->text->string[0];
 	while(!isSpace(ch))
 	{
-		i++;
-		ch=string->text->string[i];
+		i--;
+		ch=string->start+string->text->string[i];
 		string->length--;
 	}
 }
 
 void stringTrim(String *string){
-	int i=0;
-	char ch;
-	ch=string->text->string[0];
-	while(!isSpace(ch))
-	{
-		i++;
-		ch=string->text->string[i];
-		string->length++;
-		string->length--;
-	}
+	stringTrimLeft(string);
+	stringTrimRight(string);
 }
 
 

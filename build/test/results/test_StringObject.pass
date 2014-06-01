@@ -4,145 +4,217 @@
   :file: test_StringObject.c
 :successes:
 - :test: test_StringDump_explore
-  :line: 18
+  :line: 15
   :message: ''
 - :test: test_textDump_explore
-  :line: 39
+  :line: 36
   :message: ''
-- :test: test_textNew
-  :line: 50
+- :test: test_textNew_should_create_a_static_text
+  :line: 47
   :message: ''
-- :test: test_stringNew_should_return_string
-  :line: 64
+- :test: test_textNew_should_create_a_dynamic_text
+  :line: 62
   :message: ''
-- :test: test_textAssign
-  :line: 78
+- :test: test_stringNew_should_create_string_with_static_text
+  :line: 77
   :message: ''
-- :test: test_stringAssign_should_return_reference
-  :line: 101
+- :test: test_stringNew_should_create_string_with_dynamic_text
+  :line: 93
   :message: ''
-- :test: test_textDelete_should_delete_and_left_only_1
-  :line: 119
+- :test: test_textAssign_should_increase_text_reference
+  :line: 109
   :message: ''
-- :test: test_stringDelete_should_delete_and_only_left_one
-  :line: 144
+- :test: test_textAssign_should__not_increase_text_reference
+  :line: 141
   :message: ''
-- :test: test_textDelete_should_delete_all_text_reference_and_return_null
-  :line: 166
+- :test: test_stringAssign_should_increase_reference
+  :line: 164
   :message: ''
-- :test: test_stringDelete_should_delete_all_string_reference_and_return_null
-  :line: 192
+- :test: test_stringAssign_should_not_increase_reference
+  :line: 191
+  :message: ''
+- :test: test_textDelete_should_delete_reference_for_dynamic_text
+  :line: 211
+  :message: ''
+- :test: test_textDelete_should_not_delete_reference_for_static_text
+  :line: 250
+  :message: ''
+- :test: test_stringDelete_should_delete_reference
+  :line: 268
+  :message: ''
+- :test: test_stringDelete_should__not_delete_reference_for_text
+  :line: 301
+  :message: ''
+- :test: test_textDelete_should_delete_all_reference_and_return_null
+  :line: 334
+  :message: ''
+- :test: test_stringDelete_should_delete_all_reference_and_return_null
+  :line: 376
   :message: ''
 - :test: test_text_explore
-  :line: 219
+  :line: 419
   :message: ''
-- :test: test_stringSkip_given_Hello_and_skip_2_should_become_lo
-  :line: 269
+- :test: test_stringSkip_given_Hello_and_skip_2_should_become_llo
+  :line: 469
+  :message: ''
+- :test: test_stringSkip_given_gundam_and_skip_4_should_become_am
+  :line: 483
+  :message: ''
+- :test: test_stringSkip_given_gundam_and_skip_6_should_return_null
+  :line: 497
   :message: ''
 - :test: test_stringSkip_given_beyond_ra_and_skip_2_should_make_start_equals_2_length_equals_0
-  :line: 278
+  :line: 511
   :message: ''
-- :test: test_stringTrimLeft_given_hello_prefixed_with_2_space_should_remove_the_spaces
-  :line: 287
+- :test: test_stringTrimLeft_given_Amazing_prefixed_with_2_space_should_remove_the_spaces
+  :line: 525
   :message: ''
-- :test: test_stringTrimLeft_given_hello_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab
-  :line: 296
+- :test: test_stringTrimLeft_given_Saviour_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab
+  :line: 539
   :message: ''
-- :test: test_stringTrimRight_given_hello_prefixed_with_2_space_should_remove_the_spaces
-  :line: 305
+- :test: test_stringTrimRight_given_Comet_postfixed_with_3_space_should_remove_the_spaces
+  :line: 553
   :message: ''
 - :test: test_stringTrimRight_given_hello_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab
-  :line: 314
+  :line: 567
   :message: ''
 - :test: test_stringTrim_given_hello_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab
-  :line: 323
+  :line: 582
+  :message: ''
+- :test: test_stringTrim_given_Kamaguchi_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab
+  :line: 595
+  :message: ''
+- :test: test_stringTrim_given_Ferraro_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab
+  :line: 608
   :message: ''
 - :test: test_textNew_should_create_a_text_with_reference_of_1
-  :line: 330
-  :message: ''
-- :test: test_textNew_should_create_a_text_with_reference_of
-  :line: 336
+  :line: 621
   :message: ''
 - :test: test_textAssign_dynamic_text_should_increase_reference_to_2
-  :line: 341
+  :line: 628
   :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 21
-  :passed: 21
+  :total: 30
+  :passed: 30
   :failed: 0
   :ignored: 0
 :stdout:
 - '[0x14] f_str:[a]:hello world!, start:11, len:100, str:!'
 - text[3]:dummy
-- '-----------------------------'
-- '-----Test for textNew-----'
-- text[1]:testing
-- '-----------------------------'
-- '-----Test for stringNew-----'
-- text[1]:Jason
-- '[0x1] f_str:[2]:Jason, start:0, len:5, str:Jason'
-- '-----------------------------'
-- '-----Test for textAssign-----'
+- '-----Test for textNew to make a static text-----'
+- text[80000000]:Freedom
+- '-                                               -'
+- '-                                               -'
+- '-----Test for textNew to make a dynamic text-----'
+- text[1]:Justice
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringNew to create string from static text-----'
+- text[80000000]:Exia
+- '[0x1] f_str:[80000000]:Exia, start:0, len:4, str:Exia'
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringNew to create string from dynamic text-----'
+- text[1]:00Raiser
+- '[0x1] f_str:[2]:00Raiser, start:0, len:8, str:00Raiser'
+- '-                                               -'
+- '-                                               -'
+- '-----Test for textAssign to increase text reference-----'
+- text[1]:Arios
+- text[2]:Arios
+- text[3]:Arios
+- text[4]:Arios
+- text[5]:Arios
+- '-                                               -'
+- '-                                               -'
+- '-----Test for textAssign to not to increase text reference-----'
 - '-----name1-----'
-- text[80000000]:jason
-- '-----name2------'
-- text[1]:Chuah
-- '-----name3-----'
-- text[2]:Chuah
-- '-----------------------------'
-- '-----Test for stringAssign-----'
-- text[1]:jason
-- '[0x2] f_str:[2]:jason, start:0, len:5, str:jason'
-- '[0x2] f_str:[2]:jason, start:0, len:5, str:jason'
-- '-----------------------------'
-- '-----Test for textDelete-----'
-- '-----name1-----'
-- text[80000000]:Jason
-- '-----name2------'
-- text[1]:Kwong
-- '-----name3-----'
-- text[2]:Kwong
-- '-----name4-----'
-- text[1]:Kwong
-- '-----name5-----'
-- text[1]:Kwong
-- '-------------------------------'
-- '-----Test for stringDelete-----'
-- text[1]:jason
-- '-----name1-----'
-- '[0x1] f_str:[2]:jason, start:0, len:5, str:jason'
+- text[80000000]:Dynames
 - '-----name2-----'
-- '[0x2] f_str:[2]:jason, start:0, len:5, str:jason'
-- '-----name3-----'
-- '[0x1] f_str:[2]:jason, start:0, len:5, str:jason'
-- '-------------------------------'
-- '---------------------------------------------------------'
-- '-----Test for textDelete and return NULL at the end -----'
-- '-----name1-----'
-- text[80000000]:Jason
-- '-----name2------'
-- text[1]:Kwong
-- '-----name3-----'
-- text[2]:Kwong
-- '-----name4-----'
-- text[1]:Kwong
-- '-----name5-----'
-- (NULL)
-- '---------------------------------------------------------'
-- '-----Test for stringDelete and return NULL at the end -----'
-- '-----name1-----'
-- text[1]:Jason
-- '-----name2------'
-- '[0x1] f_str:[2]:Jason, start:0, len:5, str:Jason'
-- '-----name3-----'
-- '[0x2] f_str:[2]:Jason, start:0, len:5, str:Jason'
-- '-----name4-----'
-- '[0x1] f_str:[2]:Jason, start:0, len:5, str:Jason'
-- free
-- '-----name5-----'
+- text[80000000]:Dynames
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringAssign to increase reference-----'
+- text[1]:Unicorn
+- '[0x2] f_str:[2]:Unicorn, start:0, len:7, str:Unicorn'
+- '[0x3] f_str:[2]:Unicorn, start:0, len:7, str:Unicorn'
+- '[0x4] f_str:[2]:Unicorn, start:0, len:7, str:Unicorn'
+- '[0x5] f_str:[2]:Unicorn, start:0, len:7, str:Unicorn'
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringAssign to not to increase reference-----'
+- text[80000000]:Banshee
+- '[0x1] f_str:[80000000]:Banshee, start:0, len:7, str:Banshee'
+- '[0x1] f_str:[80000000]:Banshee, start:0, len:7, str:Banshee'
+- '-                                               -'
+- '-                                               -'
+- '-----Test for textDelete should delete reference on dynamic text -----'
+- text[1]:Destiny
+- text[2]:Destiny
+- text[3]:Destiny
+- text[4]:Destiny
+- text[5]:Destiny
+- text[4]:Destiny
+- text[3]:Destiny
+- '-                                               -'
+- '-                                               -'
+- '-----Test for textDelete should not delete reference on static text -----'
+- text[80000000]:Legend
+- text[80000000]:Legend
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringDelete should delete reference-----'
+- text[1]:Strike
+- '[0x1] f_str:[2]:Strike, start:0, len:6, str:Strike'
+- '[0x2] f_str:[2]:Strike, start:0, len:6, str:Strike'
+- '[0x3] f_str:[2]:Strike, start:0, len:6, str:Strike'
+- '[0x4] f_str:[2]:Strike, start:0, len:6, str:Strike'
+- '[0x5] f_str:[2]:Strike, start:0, len:6, str:Strike'
+- '[0x4] f_str:[2]:Strike, start:0, len:6, str:Strike'
+- '[0x3] f_str:[2]:Strike, start:0, len:6, str:Strike'
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringDelete should not delete reference for text-----'
+- text[80000000]:QanTa
+- '[0x1] f_str:[80000000]:QanTa, start:0, len:5, str:QanTa'
+- '[0x2] f_str:[80000000]:QanTa, start:0, len:5, str:QanTa'
+- '[0x3] f_str:[80000000]:QanTa, start:0, len:5, str:QanTa'
+- '[0x4] f_str:[80000000]:QanTa, start:0, len:5, str:QanTa'
+- '[0x5] f_str:[80000000]:QanTa, start:0, len:5, str:QanTa'
+- '[0x4] f_str:[80000000]:QanTa, start:0, len:5, str:QanTa'
+- '[0x3] f_str:[80000000]:QanTa, start:0, len:5, str:QanTa'
+- '-                                               -'
+- '-                                               -'
+- '-----Test for textDelete should delete all reference and return NULL -----'
+- text[1]:Impulse
+- text[2]:Impulse
+- text[3]:Impulse
+- text[4]:Impulse
+- text[5]:Impulse
+- text[4]:Impulse
+- text[3]:Impulse
+- text[2]:Impulse
+- text[1]:Impulse
+- '(NULL) '
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringDelete should delete all reference-----'
+- text[1]:Infinite
+- '[0x1] f_str:[2]:Infinite, start:0, len:8, str:Infinite'
+- '[0x2] f_str:[2]:Infinite, start:0, len:8, str:Infinite'
+- '[0x3] f_str:[2]:Infinite, start:0, len:8, str:Infinite'
+- '[0x4] f_str:[2]:Infinite, start:0, len:8, str:Infinite'
+- '[0x5] f_str:[2]:Infinite, start:0, len:8, str:Infinite'
+- '[0x4] f_str:[2]:Infinite, start:0, len:8, str:Infinite'
+- '[0x3] f_str:[2]:Infinite, start:0, len:8, str:Infinite'
+- '[0x2] f_str:[2]:Infinite, start:0, len:8, str:Infinite'
+- '[0x1] f_str:[2]:Infinite, start:0, len:8, str:Infinite'
 - 'NULL'
+- ''
+- '-                                               -'
+- '-                                               -'
 - '-----------------------------'
 - '-----Test for textExplore-----'
 - text[80000000]:James ho
@@ -169,3 +241,49 @@
 - '---------'
 - text[1]:hello
 - '-----------------------------'
+- '-----Test for stringSkip on hello and become llo-----'
+- '[0x1] f_str:[80000000]:Hello, start:2, len:4, str:llo'
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringSkip on gundam and become am-----'
+- '[0x1] f_str:[80000000]:gundam, start:4, len:5, str:am'
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringSkip on gundam and return null-----'
+- '[0x1] f_str:[80000000]:gundam, start:6, len:0, str:'
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringSkip beyond ra for start = 2 and length = 0---'
+- '[0x1] f_str:[80000000]:ra, start:2, len:0, str:'
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringTrimLeft Amazing to remove the space -----'
+- '[0x1] f_str:[2]:  Amazing, start:2, len:9, str:Amazing'
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringTrimLeft Saviour to remove the space and tab -----'
+- "[0x1] f_str:[80000000]:\t\tSaviour\t, start:2, len:10, str:Saviour\t"
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringTrimRight Comet to remove the spaces -----'
+- "[0x1] f_str:[80000000]:  Comet \t   , start:1, len:11, str: Comet \t   "
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringTrimRight Hello to remove the spaces and tab -----'
+- "[0x1] f_str:[80000000]:\thello\t\t, start:1, len:7, str:hello\t\t"
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringTrim both sides Hello to remove the spaces and tab -----'
+- "[0x1] f_str:[80000000]:\t \t \t hello \t \t , start:6, len:16, str:hello \t \t "
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringTrim both sides Hello to remove the spaces and tab -----'
+- "[0x1] f_str:[80000000]:\t \t Kamguchi \t \t\t, start:4, len:17, str:Kamguchi \t
+  \t\t"
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringTrim both sides Hello to remove the spaces and tab -----'
+- "[0x1] f_str:[80000000]:\t \t \t Ferrari \t \t\t, start:6, len:18, str:Ferrari \t
+  \t\t"
+- '-                                               -'
+- '-                                               -'
