@@ -37,13 +37,14 @@ extern void tearDown(void);
 extern void test_StringDump_explore(void);
 extern void test_textDump_explore(void);
 extern void test_textNew(void);
-extern void test_textAssign(void);
-extern void test_textDelete_should_delete_only_1(void);
-extern void test_textDelete_should_delete_all_text(void);
 extern void test_stringNew_should_return_string(void);
+extern void test_textAssign(void);
 extern void test_stringAssign_should_return_reference(void);
-extern void test_stringDelete_should_delete_only_one(void);
-extern void test__text_explore(void);
+extern void test_textDelete_should_delete_and_left_only_1(void);
+extern void test_stringDelete_should_delete_and_only_left_one(void);
+extern void test_textDelete_should_delete_all_text_reference_and_return_null(void);
+extern void test_stringDelete_should_delete_all_string_reference_and_return_null(void);
+extern void test_text_explore(void);
 extern void test_stringSkip_given_Hello_and_skip_2_should_become_lo(void);
 extern void test_stringSkip_given_beyond_ra_and_skip_2_should_make_start_equals_2_length_equals_0(void);
 extern void test_stringTrimLeft_given_hello_prefixed_with_2_space_should_remove_the_spaces(void);
@@ -53,7 +54,7 @@ extern void test_stringTrimRight_given_hello_prefixed_with_space_and_tab_should_
 extern void test_stringTrim_given_hello_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab(void);
 extern void test_textNew_should_create_a_text_with_reference_of_1(void);
 extern void test_textNew_should_create_a_text_with_reference_of(void);
-extern void test_textAssign_dynamic_text_should_increate_reference_to_2(void);
+extern void test_textAssign_dynamic_text_should_increase_reference_to_2(void);
 
 
 //=======Test Reset Option=====
@@ -72,23 +73,24 @@ int main(void)
   RUN_TEST(test_StringDump_explore, 18);
   RUN_TEST(test_textDump_explore, 39);
   RUN_TEST(test_textNew, 50);
-  RUN_TEST(test_textAssign, 60);
-  RUN_TEST(test_textDelete_should_delete_only_1, 80);
-  RUN_TEST(test_textDelete_should_delete_all_text, 98);
-  RUN_TEST(test_stringNew_should_return_string, 117);
-  RUN_TEST(test_stringAssign_should_return_reference, 128);
-  RUN_TEST(test_stringDelete_should_delete_only_one, 143);
-  RUN_TEST(test__text_explore, 184);
-  RUN_TEST(test_stringSkip_given_Hello_and_skip_2_should_become_lo, 231);
-  RUN_TEST(test_stringSkip_given_beyond_ra_and_skip_2_should_make_start_equals_2_length_equals_0, 240);
-  RUN_TEST(test_stringTrimLeft_given_hello_prefixed_with_2_space_should_remove_the_spaces, 249);
-  RUN_TEST(test_stringTrimLeft_given_hello_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab, 258);
-  RUN_TEST(test_stringTrimRight_given_hello_prefixed_with_2_space_should_remove_the_spaces, 267);
-  RUN_TEST(test_stringTrimRight_given_hello_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab, 276);
-  RUN_TEST(test_stringTrim_given_hello_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab, 285);
-  RUN_TEST(test_textNew_should_create_a_text_with_reference_of_1, 292);
-  RUN_TEST(test_textNew_should_create_a_text_with_reference_of, 298);
-  RUN_TEST(test_textAssign_dynamic_text_should_increate_reference_to_2, 303);
+  RUN_TEST(test_stringNew_should_return_string, 64);
+  RUN_TEST(test_textAssign, 78);
+  RUN_TEST(test_stringAssign_should_return_reference, 101);
+  RUN_TEST(test_textDelete_should_delete_and_left_only_1, 119);
+  RUN_TEST(test_stringDelete_should_delete_and_only_left_one, 144);
+  RUN_TEST(test_textDelete_should_delete_all_text_reference_and_return_null, 166);
+  RUN_TEST(test_stringDelete_should_delete_all_string_reference_and_return_null, 192);
+  RUN_TEST(test_text_explore, 219);
+  RUN_TEST(test_stringSkip_given_Hello_and_skip_2_should_become_lo, 269);
+  RUN_TEST(test_stringSkip_given_beyond_ra_and_skip_2_should_make_start_equals_2_length_equals_0, 278);
+  RUN_TEST(test_stringTrimLeft_given_hello_prefixed_with_2_space_should_remove_the_spaces, 287);
+  RUN_TEST(test_stringTrimLeft_given_hello_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab, 296);
+  RUN_TEST(test_stringTrimRight_given_hello_prefixed_with_2_space_should_remove_the_spaces, 305);
+  RUN_TEST(test_stringTrimRight_given_hello_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab, 314);
+  RUN_TEST(test_stringTrim_given_hello_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab, 323);
+  RUN_TEST(test_textNew_should_create_a_text_with_reference_of_1, 330);
+  RUN_TEST(test_textNew_should_create_a_text_with_reference_of, 336);
+  RUN_TEST(test_textAssign_dynamic_text_should_increase_reference_to_2, 341);
 
   return (UnityEnd());
 }

@@ -48,6 +48,10 @@ void test_textDump_explore(void){
 }
 
 void test_textNew(void){
+	
+	printf("-----------------------------\n");
+	printf("-----Test for textNew-----\n");
+	
 	Text *name;
 	
 	name=textNew("testing");
@@ -57,8 +61,25 @@ void test_textNew(void){
 	
 }
 
-void test_textAssign(void){
+void test_stringNew_should_return_string(void){
+	
+	printf("-----------------------------\n");
+	printf("-----Test for stringNew-----\n");
+	
+	Text *new=textNew("Jason");
+	textDump(new);
+	String *string = stringNew(new);
+	stringDump(string);
+	
+	TEST_ASSERT_EQUAL(0x01,string->reference);
+	TEST_ASSERT_EQUAL(0x02,new->reference);
+}
 
+void test_textAssign(void){
+	
+	printf("-----------------------------\n");
+	printf("-----Test for textAssign-----\n");
+	
 	Text *name1 = t"jason";
 	Text *name2;
 	Text *name3;
@@ -77,56 +98,11 @@ void test_textAssign(void){
 	TEST_ASSERT_EQUAL(name2->reference,name3->reference);
 }
 
-void test_textDelete_should_delete_only_1(void){
-	
-	Text *name1;
-	Text *name2;
-	name1=textNew("jason");
-	textDump(name1);
-	printf("-----name1-----\n");
-	name2= textAssign(name2);
-	printf("-----name2------\n");
-	textDump(name1);
-	textDump(name2);
-	printf("-----name3-----\n");
-	name2=textDel(name2);
-	textDump(name2);
-	
-	TEST_ASSERT_EQUAL(0x01,name1->reference);
-}
-
-void test_textDelete_should_delete_all_text(void){
-
-	Text *name1;
-	Text *name2;
-	
-	name1= textNew("jas");
-	textDump(name1);
-	name2= textAssign(name1);
-	textDump(name1);
-	textDump(name2);
-	name2=textDel(name2);
-	textDump(name2);
-	name1=textDel(name1);
-	textDump(name1);
-	
-	TEST_ASSERT_NULL(name1);
-	
-}
-
-void test_stringNew_should_return_string(void){
-	
-	Text *new=textNew("Jason");
-	textDump(new);
-	String *string = stringNew(new);
-	stringDump(string);
-	
-	TEST_ASSERT_EQUAL(0x01,string->reference);
-	TEST_ASSERT_EQUAL(0x02,new->reference);
-}
-
 void test_stringAssign_should_return_reference(void){
-
+	
+	printf("-----------------------------\n");
+	printf("-----Test for stringAssign-----\n");
+	
 	Text *name1 = textNew("jason");
 	textDump(name1);
 	String *string1 = stringNew(name1);
@@ -140,48 +116,110 @@ void test_stringAssign_should_return_reference(void){
 	
 }
 
-void test_stringDelete_should_delete_only_one(void)
-{
-	Text *name1=textNew("jason");
+void test_textDelete_should_delete_and_left_only_1(void){
+	
+	printf("-----------------------------\n");
+	printf("-----Test for textDelete-----\n");
+	Text *name1;
+	Text *name2;
+	Text *name3;
+	name1=t"Jason";
+	printf("-----name1-----\n");
 	textDump(name1);
+	name2= textNew("Kwong");
+	printf("-----name2------\n");
+	textDump(name2);
+	name3= textAssign(name2);
+	printf("-----name3-----\n");
+	textDump(name3);
+	name2=textDel(name2);
+	printf("-----name4-----\n");
+	textDump(name2);
+	printf("-----name5-----\n");
+	textDump(name3);
 	
-	String *string1 = stringNew(name1);
-	stringDump(string1);
-	
-	String *string2 = stringAssign(string1);
-	stringDump(string2);
-	
-	string1 = stringDel(string1);
-	stringDump(string1);
-	
-	
-	TEST_ASSERT_EQUAL(0x02,string1->reference);
-
+	TEST_ASSERT_EQUAL(0x01,name3->reference);
 }
 
-void xtest_stringDelete_should_delete_all_return_null(void)
-{
-	Text *name1=textNew("jason");
+void test_stringDelete_should_delete_and_only_left_one(void)
+{	
+	printf("-------------------------------\n");
+	printf("-----Test for stringDelete-----\n");
+	Text *name1;
+	name1=textNew("jason");
 	textDump(name1);
-	
-	String *string1 = stringNew(name1);
+	printf("-----name1-----\n");
+	String *string1;
+	string1=stringNew(name1);
 	stringDump(string1);
-	
-	String *string2 = stringAssign(string1);
+	String *string2;
+	string2= stringAssign(string1);
+	printf("-----name2-----\n");
 	stringDump(string2);
-	
-	string1 = stringDel(string1);
+	printf("-----name3-----\n");
+	string1=stringDel(string1);
 	stringDump(string1);
-	
-	string2 = stringDel(string2);
-	stringDump(string2);
-	
-	TEST_ASSERT_NULL(string2);
+	printf("-------------------------------\n");
+	TEST_ASSERT_EQUAL(0x01,string1->reference);
+}
 
+void test_textDelete_should_delete_all_text_reference_and_return_null(void){
+
+	printf("---------------------------------------------------------\n");
+	printf("-----Test for textDelete and return NULL at the end -----\n");
+	Text *name1;
+	Text *name2;
+	Text *name3;
+	name1=t"Jason";
+	printf("-----name1-----\n");
+	textDump(name1);
+	name2= textNew("Kwong");
+	printf("-----name2------\n");
+	textDump(name2);
+	name3= textAssign(name2);
+	printf("-----name3-----\n");
+	textDump(name3);
+	name2=textDel(name2);
+	printf("-----name4-----\n");
+	textDump(name2);
+	name2=textDel(name2);
+	printf("-----name5-----\n");
+	textDump(name2);
+	
+	TEST_ASSERT_EQUAL(NULL,name2);
+}
+
+void test_stringDelete_should_delete_all_string_reference_and_return_null(void)
+{
+	printf("---------------------------------------------------------\n");
+	printf("-----Test for stringDelete and return NULL at the end -----\n");
+	Text *name1;
+	name1=textNew("Jason");
+	printf("-----name1-----\n");
+	textDump(name1);
+	String *string1;
+	string1 = stringNew(name1);
+	printf("-----name2------\n");
+	stringDump(string1);
+	String *string2;
+	string2= stringAssign(string1);
+	printf("-----name3-----\n");
+	stringDump(string2);
+	string1=stringDel(string1);
+	printf("-----name4-----\n");
+	stringDump(string1);
+	string2=stringDel(string2);
+	printf("-----name5-----\n");
+	stringDump(string2);
+	
+	TEST_ASSERT_EQUAL(NULL,string2);
 }
 
 
-void test__text_explore(void){
+void test_text_explore(void){
+	
+	printf("-----------------------------\n");
+	printf("-----Test for textExplore-----\n");
 	
 	Text *name1 = t"James ho";
 	Text *name2;
@@ -224,7 +262,7 @@ void test__text_explore(void){
 	printf("---------\n");
 	msg=textDel(msg);
 	textDump(msg);
-	
+	printf("-----------------------------\n");
 }
 
 
@@ -268,8 +306,8 @@ void test_stringTrimRight_given_hello_prefixed_with_2_space_should_remove_the_sp
 	String *str = stringNew(t"	hello	");
 	str->start ++;
 	str->length--;
-	stringTrimLeft(str);
-	TEST_ASSERT_EQUAL(2,str->start);
+	stringTrimRight(str);
+	TEST_ASSERT_EQUAL(1,str->start);
 	TEST_ASSERT_EQUAL(6,str->length);
 }
 
@@ -277,15 +315,15 @@ void test_stringTrimRight_given_hello_prefixed_with_space_and_tab_should_remove_
 	String *str = stringNew(t"	hello\t	");
 	str->start ++;
 	str->length--;
-	stringTrimLeft(str);
-	TEST_ASSERT_EQUAL(2,str->start);
+	stringTrimRight(str);
+	TEST_ASSERT_EQUAL(1,str->start);
 	TEST_ASSERT_EQUAL(7,str->length);
 }
 
 void test_stringTrim_given_hello_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab(){
 	String *str = stringNew(t"\t \t hello \t \t\t");
-	stringTrimLeft(str);
-	TEST_ASSERT_EQUAL(4,str->start);
+	stringTrim(str);
+	TEST_ASSERT_EQUAL(0,str->start);
 	TEST_ASSERT_EQUAL(14,str->length);
 }
 
@@ -300,7 +338,7 @@ void test_textNew_should_create_a_text_with_reference_of(void){
 	TEST_ASSERT_EQUAL(0x80000000,name->reference);
 }
 
-void test_textAssign_dynamic_text_should_increate_reference_to_2(void){
+void test_textAssign_dynamic_text_should_increase_reference_to_2(void){
 
 	Text *name1 = textNew("Jackson");
 	Text *name2 = textAssign(name1);

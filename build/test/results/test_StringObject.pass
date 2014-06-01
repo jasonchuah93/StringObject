@@ -12,103 +12,148 @@
 - :test: test_textNew
   :line: 50
   :message: ''
-- :test: test_textAssign
-  :line: 60
-  :message: ''
-- :test: test_textDelete_should_delete_only_1
-  :line: 80
-  :message: ''
-- :test: test_textDelete_should_delete_all_text
-  :line: 98
-  :message: ''
 - :test: test_stringNew_should_return_string
-  :line: 117
+  :line: 64
+  :message: ''
+- :test: test_textAssign
+  :line: 78
   :message: ''
 - :test: test_stringAssign_should_return_reference
-  :line: 128
+  :line: 101
   :message: ''
-- :test: test_stringDelete_should_delete_only_one
-  :line: 143
+- :test: test_textDelete_should_delete_and_left_only_1
+  :line: 119
   :message: ''
-- :test: test__text_explore
-  :line: 184
+- :test: test_stringDelete_should_delete_and_only_left_one
+  :line: 144
+  :message: ''
+- :test: test_textDelete_should_delete_all_text_reference_and_return_null
+  :line: 166
+  :message: ''
+- :test: test_stringDelete_should_delete_all_string_reference_and_return_null
+  :line: 192
+  :message: ''
+- :test: test_text_explore
+  :line: 219
   :message: ''
 - :test: test_stringSkip_given_Hello_and_skip_2_should_become_lo
-  :line: 231
+  :line: 269
   :message: ''
 - :test: test_stringSkip_given_beyond_ra_and_skip_2_should_make_start_equals_2_length_equals_0
-  :line: 240
+  :line: 278
   :message: ''
 - :test: test_stringTrimLeft_given_hello_prefixed_with_2_space_should_remove_the_spaces
-  :line: 249
+  :line: 287
   :message: ''
 - :test: test_stringTrimLeft_given_hello_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab
-  :line: 258
+  :line: 296
   :message: ''
 - :test: test_stringTrimRight_given_hello_prefixed_with_2_space_should_remove_the_spaces
-  :line: 267
+  :line: 305
   :message: ''
 - :test: test_stringTrimRight_given_hello_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab
-  :line: 276
+  :line: 314
   :message: ''
 - :test: test_stringTrim_given_hello_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab
-  :line: 285
+  :line: 323
   :message: ''
 - :test: test_textNew_should_create_a_text_with_reference_of_1
-  :line: 292
+  :line: 330
   :message: ''
 - :test: test_textNew_should_create_a_text_with_reference_of
-  :line: 298
+  :line: 336
   :message: ''
-- :test: test_textAssign_dynamic_text_should_increate_reference_to_2
-  :line: 303
+- :test: test_textAssign_dynamic_text_should_increase_reference_to_2
+  :line: 341
   :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 20
-  :passed: 20
+  :total: 21
+  :passed: 21
   :failed: 0
   :ignored: 0
 :stdout:
 - '[0x14] f_str:[a]:hello world!, start:11, len:100, str:!'
 - text[3]:dummy
+- '-----------------------------'
+- '-----Test for textNew-----'
 - text[1]:testing
+- '-----------------------------'
+- '-----Test for stringNew-----'
+- text[1]:Jason
+- '[0x1] f_str:[2]:Jason, start:0, len:5, str:Jason'
+- '-----------------------------'
+- '-----Test for textAssign-----'
 - '-----name1-----'
 - text[80000000]:jason
 - '-----name2------'
 - text[1]:Chuah
 - '-----name3-----'
 - text[2]:Chuah
+- '-----------------------------'
+- '-----Test for stringAssign-----'
+- text[1]:jason
+- '[0x2] f_str:[2]:jason, start:0, len:5, str:jason'
+- '[0x2] f_str:[2]:jason, start:0, len:5, str:jason'
+- '-----------------------------'
+- '-----Test for textDelete-----'
+- '-----name1-----'
+- text[80000000]:Jason
+- '-----name2------'
+- text[1]:Kwong
+- '-----name3-----'
+- text[2]:Kwong
+- '-----name4-----'
+- text[1]:Kwong
+- '-----name5-----'
+- text[1]:Kwong
+- '-------------------------------'
+- '-----Test for stringDelete-----'
 - text[1]:jason
 - '-----name1-----'
-- '-----name2------'
-- text[1]:jason
-- text[3]:Chuah
-- '-----name3-----'
-- (NULL)
-- text[1]:jas
-- text[2]:jas
-- text[2]:jas
-- (NULL)(NULL)
-- text[1]:Jason
-- '[0x1] f_str:[2]:Jason, start:0, len:5, str:Jason'
-- text[1]:jason
-- '[0x2] f_str:[2]:jason, start:0, len:5, str:jason'
-- '[0x2] f_str:[2]:jason, start:0, len:5, str:jason'
-- text[1]:jason
 - '[0x1] f_str:[2]:jason, start:0, len:5, str:jason'
+- '-----name2-----'
 - '[0x2] f_str:[2]:jason, start:0, len:5, str:jason'
-- '[0x2] f_str:[2]:jason, start:0, len:5, str:jason'
+- '-----name3-----'
+- '[0x1] f_str:[2]:jason, start:0, len:5, str:jason'
+- '-------------------------------'
+- '---------------------------------------------------------'
+- '-----Test for textDelete and return NULL at the end -----'
+- '-----name1-----'
+- text[80000000]:Jason
+- '-----name2------'
+- text[1]:Kwong
+- '-----name3-----'
+- text[2]:Kwong
+- '-----name4-----'
+- text[1]:Kwong
+- '-----name5-----'
+- (NULL)
+- '---------------------------------------------------------'
+- '-----Test for stringDelete and return NULL at the end -----'
+- '-----name1-----'
+- text[1]:Jason
+- '-----name2------'
+- '[0x1] f_str:[2]:Jason, start:0, len:5, str:Jason'
+- '-----name3-----'
+- '[0x2] f_str:[2]:Jason, start:0, len:5, str:Jason'
+- '-----name4-----'
+- '[0x1] f_str:[2]:Jason, start:0, len:5, str:Jason'
+- free
+- '-----name5-----'
+- 'NULL'
+- '-----------------------------'
+- '-----Test for textExplore-----'
 - text[80000000]:James ho
 - text[1]:jason
 - '---------'
 - text[2]:jason
 - text[2]:jason
-- (NULL)text[0]:jason
-- text[0]:jason
-- '---------'
-- 'name3: 003E5398'
+- text[1]:jason
+- text[1]:jason
+- (NULL)---------
+- 'name3: 00000000'
 - text[80000000]:James ho
 - xxxxxxxxx
 - xxxxxxxxx
@@ -119,7 +164,8 @@
 - '[0x2] f_str:[2]:hello, start:0, len:5, str:hello'
 - '[0x2] f_str:[2]:hello, start:0, len:5, str:hello'
 - '---------'
-- '[0x2] f_str:[2]:hello, start:0, len:5, str:hello'
+- '[0x1] f_str:[2]:hello, start:0, len:5, str:hello'
 - text[2]:hello
 - '---------'
-- (NULL)
+- text[1]:hello
+- '-----------------------------'
