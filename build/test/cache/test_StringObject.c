@@ -1442,32 +1442,112 @@ void test_stringRemove_should_remove_all_char_within_a_string(void){
 
 
 
-
-
-
-
  a=stringRemoveChar(string1);
 
  stringDump(string1);
 
 
 
- UnityAssertEqualNumber((_U_SINT)(('k')), (_U_SINT)((string1->text->string[0])), (((void *)0)), (_U_UINT)729, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)(('k')), (_U_SINT)((string1->text->string[0])), (((void *)0)), (_U_UINT)727, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)(('n')), (_U_SINT)((string1->text->string[1])), (((void *)0)), (_U_UINT)730, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)(('n')), (_U_SINT)((string1->text->string[1])), (((void *)0)), (_U_UINT)728, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)(('i')), (_U_SINT)((string1->text->string[2])), (((void *)0)), (_U_UINT)731, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)(('i')), (_U_SINT)((string1->text->string[2])), (((void *)0)), (_U_UINT)729, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)(('g')), (_U_SINT)((string1->text->string[3])), (((void *)0)), (_U_UINT)732, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)(('g')), (_U_SINT)((string1->text->string[3])), (((void *)0)), (_U_UINT)730, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)(('h')), (_U_SINT)((string1->text->string[4])), (((void *)0)), (_U_UINT)733, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)(('h')), (_U_SINT)((string1->text->string[4])), (((void *)0)), (_U_UINT)731, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)(('t')), (_U_SINT)((string1->text->string[5])), (((void *)0)), (_U_UINT)734, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)(('t')), (_U_SINT)((string1->text->string[5])), (((void *)0)), (_U_UINT)732, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((-1)), (_U_SINT)((a)), (((void *)0)), (_U_UINT)735, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((-1)), (_U_SINT)((a)), (((void *)0)), (_U_UINT)733, UNITY_DISPLAY_STYLE_INT);
+
+ printf("-                                               -\n");
 
  printf("-                                               -\n");
 
- printf("-                                               -\n");
+}
+
+
+
+void test_stringLength_should_get_the_correct_length(void){
+
+ printf("-----Test for stringLength should get the correct length-----\n");
+
+
+
+ int input ;
+
+ Text * name1=textNew("pikachu");
+
+
+
+ String *string1=stringNew(name1);
+
+
+
+ input = stringLength(string1);
+
+ stringDump(string1);
+
+
+
+ UnityAssertEqualNumber((_U_SINT)((7)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)749, UNITY_DISPLAY_STYLE_INT);
+
+}
+
+
+
+void test_stringLength_should_get_the_correct_length2(void){
+
+ printf("-----Test for stringLength should get the correct length with space -----\n");
+
+
+
+ int input ;
+
+ Text * name1=textNew("     pikachu");
+
+
+
+ String *string1=stringNew(name1);
+
+
+
+ input = stringLength(string1);
+
+ stringDump(string1);
+
+
+
+ UnityAssertEqualNumber((_U_SINT)((12)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)763, UNITY_DISPLAY_STYLE_INT);
+
+}
+
+
+
+void test_stringLength_should_get_the_correct_length3(void){
+
+ printf("-----Test for stringLength should get the correct length with space and tab-----\n");
+
+
+
+ int input ;
+
+ Text * name1=textNew("     \t \t \t \t \t \t \t pikachu");
+
+
+
+ String *string1=stringNew(name1);
+
+
+
+ input = stringLength(string1);
+
+ stringDump(string1);
+
+
+
+ UnityAssertEqualNumber((_U_SINT)((26)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)777, UNITY_DISPLAY_STYLE_INT);
 
 }

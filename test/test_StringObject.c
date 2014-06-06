@@ -721,8 +721,6 @@ void test_stringRemove_should_remove_all_char_within_a_string(void){
 	
 	stringRemoveChar(string1);
 	
-	
-	
 	a=stringRemoveChar(string1);
 	stringDump(string1);
 	
@@ -735,5 +733,47 @@ void test_stringRemove_should_remove_all_char_within_a_string(void){
 	TEST_ASSERT_EQUAL(-1,a);
 	printf("-                                               -\n");
 	printf("-                                               -\n");
+}
+
+void test_stringLength_should_get_the_correct_length(void){
+	printf("-----Test for stringLength should get the correct length-----\n");
+	
+	int input ;
+	Text * name1=textNew("pikachu");
+	
+	String *string1=stringNew(name1);
+	
+	input = stringLength(string1);
+	stringDump(string1);
+	
+	TEST_ASSERT_EQUAL(7,input);
+}
+
+void test_stringLength_should_get_the_correct_length2(void){
+	printf("-----Test for stringLength should get the correct length with space -----\n");
+	
+	int input ;
+	Text * name1=textNew("     pikachu");
+	
+	String *string1=stringNew(name1);
+	
+	input = stringLength(string1);
+	stringDump(string1);
+	
+	TEST_ASSERT_EQUAL(12,input);
+}
+
+void test_stringLength_should_get_the_correct_length3(void){
+	printf("-----Test for stringLength should get the correct length with space and tab-----\n");
+	
+	int input ;
+	Text * name1=textNew("     \t \t \t \t \t \t \t pikachu");
+	
+	String *string1=stringNew(name1);
+	
+	input = stringLength(string1);
+	stringDump(string1);
+	
+	TEST_ASSERT_EQUAL(26,input);
 }
 

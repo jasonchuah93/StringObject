@@ -68,6 +68,9 @@ extern void test_stringRemove_should_remove_first_char_within_a_string(void);
 extern void test_stringRemove_should_remove_three_char_within_a_string(void);
 extern void test_stringRemove_should_remove_five_char_within_a_string(void);
 extern void test_stringRemove_should_remove_all_char_within_a_string(void);
+extern void test_stringLength_should_get_the_correct_length(void);
+extern void test_stringLength_should_get_the_correct_length2(void);
+extern void test_stringLength_should_get_the_correct_length3(void);
 
 
 //=======Test Reset Option=====
@@ -117,6 +120,9 @@ int main(void)
   RUN_TEST(test_stringRemove_should_remove_three_char_within_a_string, 651);
   RUN_TEST(test_stringRemove_should_remove_five_char_within_a_string, 673);
   RUN_TEST(test_stringRemove_should_remove_all_char_within_a_string, 702);
+  RUN_TEST(test_stringLength_should_get_the_correct_length, 738);
+  RUN_TEST(test_stringLength_should_get_the_correct_length2, 752);
+  RUN_TEST(test_stringLength_should_get_the_correct_length3, 766);
 
   return (UnityEnd());
 }

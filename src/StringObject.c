@@ -181,7 +181,9 @@ int stringRemoveChar(String *string){
 	
 } 
 	
-
+int stringLength(String *string){
+	return string->length;
+}
 
 
 

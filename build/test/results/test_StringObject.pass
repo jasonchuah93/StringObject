@@ -105,11 +105,20 @@
 - :test: test_stringRemove_should_remove_all_char_within_a_string
   :line: 702
   :message: ''
+- :test: test_stringLength_should_get_the_correct_length
+  :line: 738
+  :message: ''
+- :test: test_stringLength_should_get_the_correct_length2
+  :line: 752
+  :message: ''
+- :test: test_stringLength_should_get_the_correct_length3
+  :line: 766
+  :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 34
-  :passed: 34
+  :total: 37
+  :passed: 37
   :failed: 0
   :ignored: 0
 :stdout:
@@ -324,3 +333,10 @@
 - '[0x1] f_str:[2]:knight, start:6, len:0, str:'
 - '-                                               -'
 - '-                                               -'
+- '-----Test for stringLength should get the correct length-----'
+- '[0x1] f_str:[2]:pikachu, start:0, len:7, str:pikachu'
+- '-----Test for stringLength should get the correct length with space -----'
+- '[0x1] f_str:[2]:     pikachu, start:0, len:12, str:     pikachu'
+- '-----Test for stringLength should get the correct length with space and tab-----'
+- "[0x1] f_str:[2]:     \t \t \t \t \t \t \t pikachu, start:0, len:26, str:     \t
+  \t \t \t \t \t \t pikachu"
