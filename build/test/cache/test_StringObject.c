@@ -140,7 +140,7 @@ void test_textNew_should_create_a_dynamic_text(void){
 
  printf("-                                               -\n");
 
- printf("-                                               -\n");
+
 
 }
 
@@ -168,7 +168,7 @@ void test_stringNew_should_create_string_with_static_text(void){
 
  UnityAssertEqualNumber((_U_SINT)((0x01)), (_U_SINT)((string->reference)), (((void *)0)), (_U_UINT)86, UNITY_DISPLAY_STYLE_INT);
 
- printf("-                                               -\n");
+
 
  printf("-                                               -\n");
 
@@ -200,7 +200,7 @@ void test_stringNew_should_create_string_with_dynamic_text(void){
 
  UnityAssertEqualNumber((_U_SINT)((0x01)), (_U_SINT)((string->reference)), (((void *)0)), (_U_UINT)102, UNITY_DISPLAY_STYLE_INT);
 
- printf("-                                               -\n");
+
 
  printf("-                                               -\n");
 
@@ -264,7 +264,7 @@ void test_textAssign_should_increase_text_reference(void){
 
  UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((name5->reference)), (((void *)0)), (_U_UINT)134, UNITY_DISPLAY_STYLE_INT);
 
- printf("-                                               -\n");
+
 
  printf("-                                               -\n");
 
@@ -310,7 +310,7 @@ void test_textAssign_should__not_increase_text_reference(void){
 
  UnityAssertEqualNumber((_U_SINT)((name1->reference)), (_U_SINT)((name2->reference)), (((void *)0)), (_U_UINT)157, UNITY_DISPLAY_STYLE_INT);
 
- printf("-                                               -\n");
+
 
  printf("-                                               -\n");
 
@@ -364,7 +364,7 @@ void test_stringAssign_should_increase_reference(void){
 
  UnityAssertEqualNumber((_U_SINT)((0x05)), (_U_SINT)((string3->reference)), (((void *)0)), (_U_UINT)184, UNITY_DISPLAY_STYLE_INT);
 
- printf("-                                               -\n");
+
 
  printf("-                                               -\n");
 
@@ -404,7 +404,7 @@ void test_stringAssign_should_not_increase_reference(void){
 
  UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((string3->reference)), (((void *)0)), (_U_UINT)204, UNITY_DISPLAY_STYLE_INT);
 
- printf("-                                               -\n");
+
 
  printf("-                                               -\n");
 
@@ -484,7 +484,7 @@ void test_textDelete_should_delete_reference_for_dynamic_text(void){
 
  printf("-                                               -\n");
 
- printf("-                                               -\n");
+
 
 
 
@@ -518,7 +518,7 @@ void test_textDelete_should_not_delete_reference_for_static_text(void){
 
 
 
- printf("-                                               -\n");
+
 
  printf("-                                               -\n");
 
@@ -584,7 +584,7 @@ void test_stringDelete_should_delete_reference(void)
 
  UnityAssertEqualNumber((_U_SINT)((3)), (_U_SINT)((string1->reference)), (((void *)0)), (_U_UINT)294, UNITY_DISPLAY_STYLE_INT);
 
- printf("-                                               -\n");
+
 
  printf("-                                               -\n");
 
@@ -650,7 +650,7 @@ void test_stringDelete_should_not_delete_reference_for_text(void)
 
  UnityAssertEqualNumber((_U_SINT)((3)), (_U_SINT)((string1->reference)), (((void *)0)), (_U_UINT)327, UNITY_DISPLAY_STYLE_INT);
 
- printf("-                                               -\n");
+
 
  printf("-                                               -\n");
 
@@ -734,7 +734,7 @@ void test_textDelete_should_delete_all_reference_and_return_null(void){
 
 
 
- printf("-                                               -\n");
+
 
  printf("-                                               -\n");
 
@@ -820,7 +820,7 @@ void test_stringDelete_should_delete_all_reference_and_return_null(void)
 
 
 
- printf("-                                               -\n");
+
 
  printf("-                                               -\n");
 
@@ -834,7 +834,7 @@ void test_text_explore(void){
 
 
 
- printf("-----------------------------\n");
+
 
  printf("-----Test for textExplore-----\n");
 
@@ -1638,27 +1638,23 @@ void test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet1(
 
  String *string1=stringNew(name1);
 
- stringDump(string1);
-
 
 
  String *string2 = stringRemoveWordContaining(string1,"ap");
 
- stringDump(string2);
+
+
+ UnityAssertEqualNumber((_U_SINT)(('a')), (_U_SINT)((string2->text->string[string2->start])), (((void *)0)), (_U_UINT)825, UNITY_DISPLAY_STYLE_INT);
+
+ UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((string2->start)), (((void *)0)), (_U_UINT)826, UNITY_DISPLAY_STYLE_INT);
+
+ UnityAssertEqualNumber((_U_SINT)((2)), (_U_SINT)((string2->length)), (((void *)0)), (_U_UINT)827, UNITY_DISPLAY_STYLE_INT);
 
 
 
- UnityAssertEqualNumber((_U_SINT)(('a')), (_U_SINT)((string2->text->string[string2->start])), (((void *)0)), (_U_UINT)827, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((2)), (_U_SINT)((string1->start)), (((void *)0)), (_U_UINT)829, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((string2->start)), (((void *)0)), (_U_UINT)828, UNITY_DISPLAY_STYLE_INT);
-
- UnityAssertEqualNumber((_U_SINT)((2)), (_U_SINT)((string2->length)), (((void *)0)), (_U_UINT)829, UNITY_DISPLAY_STYLE_INT);
-
-
-
- UnityAssertEqualNumber((_U_SINT)((2)), (_U_SINT)((string1->start)), (((void *)0)), (_U_UINT)831, UNITY_DISPLAY_STYLE_INT);
-
- UnityAssertEqualNumber((_U_SINT)((3)), (_U_SINT)((string1->length)), (((void *)0)), (_U_UINT)832, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((3)), (_U_SINT)((string1->length)), (((void *)0)), (_U_UINT)830, UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -1666,51 +1662,57 @@ void test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet1(
 
 
 
+void test_stringIsEqual_should_return_one_if_both_string_is_same(void){
 
+ printf("-----Test for stringIsEqual -----\n");
 
-void test_stringIsEqual_should_result_both_string_is_same(void){
+ char input;
 
- int input;
+ Text *name1=textNew("pineapple");
 
- Text *name1=textNew("apple");
-
- String *string1=stringNew(name1);
+ String *string1 = stringNew(name1);
 
 
 
  Text *name2=textNew("apple");
 
- String *string2=stringNew(name2);
+ String *string2 = stringNew(name2);
 
 
 
- input=stringIsEqual(string1,string2);
+ string1->start = string1->start+4;
+
+ string1->length = string1->length-4;
 
 
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)847, UNITY_DISPLAY_STYLE_INT);
+ input= stringIsEqual(string1,string2);
+
+ stringDump(string1);
+
+ stringDump(string2);
 
 
+
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)850, UNITY_DISPLAY_STYLE_INT);
+
+ UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((string1->length)), (((void *)0)), (_U_UINT)851, UNITY_DISPLAY_STYLE_INT);
+
+ printf("-                                               -\n");
 
 }
 
 
 
-void test_stringIsEqual_should_result_both_string_the_start_is_different_but_length_is_same(void){
+void test_stringIsEqual_should_return_one_for_both_string_the_start_is_different_but_length_is_same(void){
 
- printf("-----Test for stringIsEqual if text have same length but different start-----\n");
+
 
  int input ;
 
  Text *name1=textNew("apple");
 
  String *string1=stringNew(name1);
-
-
-
- stringRemoveChar(string1);
-
- stringRemoveChar(string1);
 
 
 
@@ -1720,21 +1722,19 @@ void test_stringIsEqual_should_result_both_string_the_start_is_different_but_len
 
 
 
+ string1->start = string1->start+2;
+
+ string1->length = string1->length-2;
+
+
+
  input = stringIsEqual(string1,string2);
 
- stringDump(string1);
-
- stringDump(string2);
 
 
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)869, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)867, UNITY_DISPLAY_STYLE_INT);
-
-
-
- printf("-                                               -\n");
-
- printf("-                                               -\n");
+ UnityAssertEqualNumber((_U_SINT)((3)), (_U_SINT)((string1->length)), (((void *)0)), (_U_UINT)870, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -1742,7 +1742,7 @@ void test_stringIsEqual_should_result_both_string_the_start_is_different_but_len
 
 void test_stringIsEqual_should_result_both_string_the_start_is_different_but_length_is_same2(void){
 
- printf("-----Test for stringIsEqual if text have same length but different start-----\n");
+
 
  int input ;
 
@@ -1752,15 +1752,43 @@ void test_stringIsEqual_should_result_both_string_the_start_is_different_but_len
 
 
 
- stringRemoveChar(string1);
-
- stringRemoveChar(string1);
-
- stringRemoveChar(string1);
-
-
-
  Text *name2=textNew("sung");
+
+ String *string2=stringNew(name2);
+
+
+
+ string1->start = string1->start+3;
+
+ string1->length = string1->length-3;
+
+
+
+ input = stringIsEqual(string1,string2);
+
+
+
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)887, UNITY_DISPLAY_STYLE_INT);
+
+ UnityAssertEqualNumber((_U_SINT)((4)), (_U_SINT)((string1->length)), (((void *)0)), (_U_UINT)888, UNITY_DISPLAY_STYLE_INT);
+
+}
+
+
+
+void test_stringIsEqual_should_return_zero_if_both_string_the_is_different(void){
+
+
+
+ int input ;
+
+ Text *name1=textNew("samsung");
+
+ String *string1=stringNew(name1);
+
+
+
+ Text *name2=textNew("motorola");
 
  String *string2=stringNew(name2);
 
@@ -1768,19 +1796,11 @@ void test_stringIsEqual_should_result_both_string_the_start_is_different_but_len
 
  input = stringIsEqual(string1,string2);
 
- stringDump(string1);
-
- stringDump(string2);
 
 
-
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)890, UNITY_DISPLAY_STYLE_INT);
-
+ UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)902, UNITY_DISPLAY_STYLE_INT);
 
 
- printf("-                                               -\n");
-
- printf("-                                               -\n");
 
 }
 
@@ -1818,9 +1838,9 @@ void test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case(void)
 
  stringDump(string2);
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)912, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)922, UNITY_DISPLAY_STYLE_INT);
 
- printf("-                                               -\n");
+
 
  printf("-                                               -\n");
 
@@ -1860,9 +1880,9 @@ void test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case2(void
 
  stringDump(string2);
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)933, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)943, UNITY_DISPLAY_STYLE_INT);
 
- printf("-                                               -\n");
+
 
  printf("-                                               -\n");
 

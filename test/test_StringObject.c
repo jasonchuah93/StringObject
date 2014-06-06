@@ -70,7 +70,7 @@ void test_textNew_should_create_a_dynamic_text(void){
 	
 	TEST_ASSERT_EQUAL(1,text->reference);
 	printf("-                                               -\n");
-	printf("-                                               -\n");
+	
 }
 
 void test_stringNew_should_create_string_with_static_text(void){
@@ -84,7 +84,7 @@ void test_stringNew_should_create_string_with_static_text(void){
 	
 	TEST_ASSERT_EQUAL(0X80000000,new->reference);
 	TEST_ASSERT_EQUAL(0x01,string->reference);
-	printf("-                                               -\n");
+	
 	printf("-                                               -\n");
 
 }
@@ -100,7 +100,7 @@ void test_stringNew_should_create_string_with_dynamic_text(void){
 	
 	TEST_ASSERT_EQUAL(0X02,new->reference);
 	TEST_ASSERT_EQUAL(0x01,string->reference);
-	printf("-                                               -\n");
+	
 	printf("-                                               -\n");
 
 }
@@ -132,7 +132,7 @@ void test_textAssign_should_increase_text_reference(void){
 	TEST_ASSERT_EQUAL(5,name3->reference);
 	TEST_ASSERT_EQUAL(5,name4->reference);
 	TEST_ASSERT_EQUAL(5,name5->reference);
-	printf("-                                               -\n");
+	
 	printf("-                                               -\n");
 
 }
@@ -155,7 +155,7 @@ void test_textAssign_should__not_increase_text_reference(void){
 	TEST_ASSERT_EQUAL(0X80000000,name1->reference);
 	TEST_ASSERT_EQUAL(0X80000000,name2->reference);
 	TEST_ASSERT_EQUAL(name1->reference,name2->reference);
-	printf("-                                               -\n");
+	
 	printf("-                                               -\n");
 
 }
@@ -182,7 +182,7 @@ void test_stringAssign_should_increase_reference(void){
 	TEST_ASSERT_EQUAL(0x05,string3->reference);
 	TEST_ASSERT_EQUAL(0x05,string3->reference);
 	TEST_ASSERT_EQUAL(0x05,string3->reference);
-	printf("-                                               -\n");
+	
 	printf("-                                               -\n");
 
 }
@@ -202,7 +202,7 @@ void test_stringAssign_should_not_increase_reference(void){
 	TEST_ASSERT_EQUAL(1,string1->reference);
 	TEST_ASSERT_EQUAL(1,string2->reference);
 	TEST_ASSERT_EQUAL(1,string3->reference);
-	printf("-                                               -\n");
+	
 	printf("-                                               -\n");
 
 }
@@ -242,7 +242,7 @@ void test_textDelete_should_delete_reference_for_dynamic_text(void){
 	TEST_ASSERT_EQUAL(3,name1->reference);
 	
 	printf("-                                               -\n");
-	printf("-                                               -\n");
+	
 
 }
 
@@ -259,7 +259,7 @@ void test_textDelete_should_not_delete_reference_for_static_text(void){
 	
 	TEST_ASSERT_EQUAL(0x80000000,name1->reference);
 	
-	printf("-                                               -\n");
+	
 	printf("-                                               -\n");
 
 }
@@ -292,7 +292,7 @@ void test_stringDelete_should_delete_reference(void)
 	stringDump(string7);
 	
 	TEST_ASSERT_EQUAL(3,string1->reference);
-	printf("-                                               -\n");
+	
 	printf("-                                               -\n");
 
 }
@@ -325,7 +325,7 @@ void test_stringDelete_should_not_delete_reference_for_text(void)
 	stringDump(string7);
 	
 	TEST_ASSERT_EQUAL(3,string1->reference);
-	printf("-                                               -\n");
+	
 	printf("-                                               -\n");
 
 }
@@ -367,7 +367,7 @@ void test_textDelete_should_delete_all_reference_and_return_null(void){
 	
 	TEST_ASSERT_EQUAL(NULL,name10);
 	
-	printf("-                                               -\n");
+	
 	printf("-                                               -\n");
 
 }
@@ -410,14 +410,14 @@ void test_stringDelete_should_delete_all_reference_and_return_null(void)
 	printf("\n");
 	TEST_ASSERT_EQUAL(NULL,string10);
 	
-	printf("-                                               -\n");
+	
 	printf("-                                               -\n");
 
 }
 
 void test_text_explore(void){
 	
-	printf("-----------------------------\n");
+	
 	printf("-----Test for textExplore-----\n");
 	
 	Text *name1 = t"James ho";
@@ -819,10 +819,8 @@ void test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet1(
 	
 	Text *name1=textNew("apple");
 	String *string1=stringNew(name1);
-	stringDump(string1);
 	
 	String *string2 = stringRemoveWordContaining(string1,"ap");
-	stringDump(string2);
 	
 	TEST_ASSERT_EQUAL('a',string2->text->string[string2->start]);
 	TEST_ASSERT_EQUAL(0,string2->start);
@@ -833,64 +831,76 @@ void test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet1(
 	
 }
 
-
-void test_stringIsEqual_should_result_both_string_is_same(void){
-	int input;
-	Text *name1=textNew("apple");
-	String *string1=stringNew(name1);
-
-	Text *name2=textNew("apple");
-	String *string2=stringNew(name2);
+void test_stringIsEqual_should_return_one_if_both_string_is_same(void){
+	printf("-----Test for stringIsEqual -----\n");
+	char input;
+	Text *name1=textNew("pineapple");
+	String *string1 = stringNew(name1);
 	
-	input=stringIsEqual(string1,string2);
+	Text *name2=textNew("apple");
+	String *string2 = stringNew(name2);
+	
+	string1->start = string1->start+4;
+	string1->length = string1->length-4;
+	
+	input= stringIsEqual(string1,string2);
+	stringDump(string1);
+	stringDump(string2);
 	
 	TEST_ASSERT_EQUAL(1,input);
-	
+	TEST_ASSERT_EQUAL(5,string1->length);
+	printf("-                                               -\n");
 }
 
-void test_stringIsEqual_should_result_both_string_the_start_is_different_but_length_is_same(void){
-	printf("-----Test for stringIsEqual if text have same length but different start-----\n");
+void test_stringIsEqual_should_return_one_for_both_string_the_start_is_different_but_length_is_same(void){
+	
 	int input ;
 	Text *name1=textNew("apple");
 	String *string1=stringNew(name1);
-	
-	stringRemoveChar(string1);
-	stringRemoveChar(string1);
 	
 	Text *name2=textNew("ple");
 	String *string2=stringNew(name2);
 	
+	string1->start = string1->start+2;
+	string1->length = string1->length-2;
+	
 	input = stringIsEqual(string1,string2);
-	stringDump(string1);
-	stringDump(string2);
 	
 	TEST_ASSERT_EQUAL(1,input);
-	
-	printf("-                                               -\n");
-	printf("-                                               -\n");
+	TEST_ASSERT_EQUAL(3,string1->length);
 }
 
 void test_stringIsEqual_should_result_both_string_the_start_is_different_but_length_is_same2(void){
-	printf("-----Test for stringIsEqual if text have same length but different start-----\n");
+	
 	int input ;
 	Text *name1=textNew("samsung");
 	String *string1=stringNew(name1);
 	
-	stringRemoveChar(string1);
-	stringRemoveChar(string1);
-	stringRemoveChar(string1);
-	
 	Text *name2=textNew("sung");
 	String *string2=stringNew(name2);
 	
+	string1->start = string1->start+3;
+	string1->length = string1->length-3;
+	
 	input = stringIsEqual(string1,string2);
-	stringDump(string1);
-	stringDump(string2);
 	
 	TEST_ASSERT_EQUAL(1,input);
+	TEST_ASSERT_EQUAL(4,string1->length);
+}
+
+void test_stringIsEqual_should_return_zero_if_both_string_the_is_different(void){
 	
-	printf("-                                               -\n");
-	printf("-                                               -\n");
+	int input ;
+	Text *name1=textNew("samsung");
+	String *string1=stringNew(name1);
+	
+	Text *name2=textNew("motorola");
+	String *string2=stringNew(name2);
+	
+	input = stringIsEqual(string1,string2);
+	
+	TEST_ASSERT_EQUAL(0,input);
+	
 }
 
 void test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case(void){
@@ -910,7 +920,7 @@ void test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case(void)
 	stringDump(string1);
 	stringDump(string2);
 	TEST_ASSERT_EQUAL(1,input);
-	printf("-                                               -\n");
+	
 	printf("-                                               -\n");
 }
 
@@ -931,6 +941,6 @@ void test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case2(void
 	stringDump(string1);
 	stringDump(string2);
 	TEST_ASSERT_EQUAL(1,input);
-	printf("-                                               -\n");
+	
 	printf("-                                               -\n");
 }

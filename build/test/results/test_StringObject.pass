@@ -123,26 +123,29 @@
 - :test: test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet1
   :line: 818
   :message: ''
-- :test: test_stringIsEqual_should_result_both_string_is_same
-  :line: 837
+- :test: test_stringIsEqual_should_return_one_if_both_string_is_same
+  :line: 834
   :message: ''
-- :test: test_stringIsEqual_should_result_both_string_the_start_is_different_but_length_is_same
-  :line: 851
+- :test: test_stringIsEqual_should_return_one_for_both_string_the_start_is_different_but_length_is_same
+  :line: 855
   :message: ''
 - :test: test_stringIsEqual_should_result_both_string_the_start_is_different_but_length_is_same2
   :line: 873
   :message: ''
+- :test: test_stringIsEqual_should_return_zero_if_both_string_the_is_different
+  :line: 891
+  :message: ''
 - :test: test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case
-  :line: 896
+  :line: 906
   :message: ''
 - :test: test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case2
-  :line: 917
+  :line: 927
   :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 45
-  :passed: 45
+  :total: 46
+  :passed: 46
   :failed: 0
   :ignored: 0
 :stdout:
@@ -155,16 +158,13 @@
 - '-----Test for textNew to make a dynamic text-----'
 - text[1]:Justice
 - '-                                               -'
-- '-                                               -'
 - '-----Test for stringNew to create string from static text-----'
 - text[80000000]:Exia
 - '[0x1] f_str:[80000000]:Exia, start:0, len:4, str:Exia'
 - '-                                               -'
-- '-                                               -'
 - '-----Test for stringNew to create string from dynamic text-----'
 - text[1]:00Raiser
 - '[0x1] f_str:[2]:00Raiser, start:0, len:8, str:00Raiser'
-- '-                                               -'
 - '-                                               -'
 - '-----Test for textAssign to increase text reference-----'
 - text[1]:Arios
@@ -173,13 +173,11 @@
 - text[4]:Arios
 - text[5]:Arios
 - '-                                               -'
-- '-                                               -'
 - '-----Test for textAssign to not to increase text reference-----'
 - '-----name1-----'
 - text[80000000]:Dynames
 - '-----name2-----'
 - text[80000000]:Dynames
-- '-                                               -'
 - '-                                               -'
 - '-----Test for stringAssign to increase reference-----'
 - text[1]:Unicorn
@@ -188,12 +186,10 @@
 - '[0x4] f_str:[2]:Unicorn, start:0, len:7, str:Unicorn'
 - '[0x5] f_str:[2]:Unicorn, start:0, len:7, str:Unicorn'
 - '-                                               -'
-- '-                                               -'
 - '-----Test for stringAssign to not to increase reference-----'
 - text[80000000]:Banshee
 - '[0x1] f_str:[80000000]:Banshee, start:0, len:7, str:Banshee'
 - '[0x1] f_str:[80000000]:Banshee, start:0, len:7, str:Banshee'
-- '-                                               -'
 - '-                                               -'
 - '-----Test for textDelete should delete reference on dynamic text -----'
 - text[1]:Destiny
@@ -204,11 +200,9 @@
 - text[4]:Destiny
 - text[3]:Destiny
 - '-                                               -'
-- '-                                               -'
 - '-----Test for textDelete should not delete reference on static text -----'
 - text[80000000]:Legend
 - text[80000000]:Legend
-- '-                                               -'
 - '-                                               -'
 - '-----Test for stringDelete should delete reference-----'
 - text[1]:Strike
@@ -220,7 +214,6 @@
 - '[0x4] f_str:[2]:Strike, start:0, len:6, str:Strike'
 - '[0x3] f_str:[2]:Strike, start:0, len:6, str:Strike'
 - '-                                               -'
-- '-                                               -'
 - '-----Test for stringDelete should not delete reference for text-----'
 - text[80000000]:QanTa
 - '[0x1] f_str:[80000000]:QanTa, start:0, len:5, str:QanTa'
@@ -230,7 +223,6 @@
 - '[0x5] f_str:[80000000]:QanTa, start:0, len:5, str:QanTa'
 - '[0x4] f_str:[80000000]:QanTa, start:0, len:5, str:QanTa'
 - '[0x3] f_str:[80000000]:QanTa, start:0, len:5, str:QanTa'
-- '-                                               -'
 - '-                                               -'
 - '-----Test for textDelete should delete all reference and return NULL -----'
 - text[1]:Impulse
@@ -243,7 +235,6 @@
 - text[2]:Impulse
 - text[1]:Impulse
 - '(NULL) '
-- '-                                               -'
 - '-                                               -'
 - '-----Test for stringDelete should delete all reference-----'
 - text[1]:Infinite
@@ -259,8 +250,6 @@
 - 'NULL'
 - ''
 - '-                                               -'
-- '-                                               -'
-- '-----------------------------'
 - '-----Test for textExplore-----'
 - text[80000000]:James ho
 - text[1]:jason
@@ -380,17 +369,9 @@
 - '[0x1] f_str:[2]:blackberry, start:6, len:4, str:erry'
 - '-                                               -'
 - '-                                               -'
+- '-----Test for stringIsEqual -----'
+- '[0x1] f_str:[2]:pineapple, start:4, len:5, str:apple'
 - '[0x1] f_str:[2]:apple, start:0, len:5, str:apple'
-- '[0x1] f_str:[3]:apple, start:0, len:2, str:ap'
-- '-----Test for stringIsEqual if text have same length but different start-----'
-- '[0x1] f_str:[2]:apple, start:2, len:3, str:ple'
-- '[0x1] f_str:[2]:ple, start:0, len:3, str:ple'
-- '-                                               -'
-- '-                                               -'
-- '-----Test for stringIsEqual if text have same length but different start-----'
-- '[0x1] f_str:[2]:samsung, start:3, len:4, str:sung'
-- '[0x1] f_str:[2]:sung, start:0, len:4, str:sung'
-- '-                                               -'
 - '-                                               -'
 - '-----Test for stringIsEqualCaseSensitive if text have same case sensitive-----'
 - Before
@@ -400,7 +381,6 @@
 - '[0x1] f_str:[2]:apple, start:0, len:5, str:apple'
 - '[0x1] f_str:[2]:apple, start:0, len:5, str:apple'
 - '-                                               -'
-- '-                                               -'
 - '-----Test for stringIsEqualCaseSensitive if text have same case sensitive 2-----'
 - Before
 - '[0x1] f_str:[2]:HandPhone, start:0, len:9, str:HandPhone'
@@ -408,5 +388,4 @@
 - After
 - '[0x1] f_str:[2]:handphone, start:0, len:9, str:handphone'
 - '[0x1] f_str:[2]:handphone, start:0, len:9, str:handphone'
-- '-                                               -'
 - '-                                               -'
