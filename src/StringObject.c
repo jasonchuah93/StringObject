@@ -230,6 +230,7 @@ String *stringRemoveWordContaining(String *string,char containSet[]){
 }
 
 int stringIsEqual(String *string1,String *string2){
+	
 	if(string1->length == string2->length)
 	{
 		return 1;
@@ -238,8 +239,6 @@ int stringIsEqual(String *string1,String *string2){
 	{
 		if(string1->start == string2->start)
 		{	
-			stringRemoveChar(string1);
-			stringRemoveChar(string1);
 			return 1;
 		}
 		else 

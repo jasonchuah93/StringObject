@@ -76,6 +76,7 @@ extern void test_stringRemoveWordNotContaining_should_test_input_and_start_with_
 extern void test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet1(void);
 extern void test_stringIsEqual_should_result_both_string_is_same(void);
 extern void test_stringIsEqual_should_result_both_string_the_start_is_different_but_length_is_same(void);
+extern void test_stringIsEqual_should_result_both_string_the_start_is_different_but_length_is_same2(void);
 extern void test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case(void);
 extern void test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case2(void);
 
@@ -135,8 +136,9 @@ int main(void)
   RUN_TEST(test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet1, 818);
   RUN_TEST(test_stringIsEqual_should_result_both_string_is_same, 837);
   RUN_TEST(test_stringIsEqual_should_result_both_string_the_start_is_different_but_length_is_same, 851);
-  RUN_TEST(test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case, 873);
-  RUN_TEST(test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case2, 894);
+  RUN_TEST(test_stringIsEqual_should_result_both_string_the_start_is_different_but_length_is_same2, 873);
+  RUN_TEST(test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case, 896);
+  RUN_TEST(test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case2, 917);
 
   return (UnityEnd());
 }

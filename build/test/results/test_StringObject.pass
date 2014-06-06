@@ -129,17 +129,20 @@
 - :test: test_stringIsEqual_should_result_both_string_the_start_is_different_but_length_is_same
   :line: 851
   :message: ''
-- :test: test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case
+- :test: test_stringIsEqual_should_result_both_string_the_start_is_different_but_length_is_same2
   :line: 873
   :message: ''
+- :test: test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case
+  :line: 896
+  :message: ''
 - :test: test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case2
-  :line: 894
+  :line: 917
   :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 44
-  :passed: 44
+  :total: 45
+  :passed: 45
   :failed: 0
   :ignored: 0
 :stdout:
@@ -382,6 +385,11 @@
 - '-----Test for stringIsEqual if text have same length but different start-----'
 - '[0x1] f_str:[2]:apple, start:2, len:3, str:ple'
 - '[0x1] f_str:[2]:ple, start:0, len:3, str:ple'
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringIsEqual if text have same length but different start-----'
+- '[0x1] f_str:[2]:samsung, start:3, len:4, str:sung'
+- '[0x1] f_str:[2]:sung, start:0, len:4, str:sung'
 - '-                                               -'
 - '-                                               -'
 - '-----Test for stringIsEqualCaseSensitive if text have same case sensitive-----'

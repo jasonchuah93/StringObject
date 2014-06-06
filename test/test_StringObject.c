@@ -854,15 +854,38 @@ void test_stringIsEqual_should_result_both_string_the_start_is_different_but_len
 	Text *name1=textNew("apple");
 	String *string1=stringNew(name1);
 	
+	stringRemoveChar(string1);
+	stringRemoveChar(string1);
 	
 	Text *name2=textNew("ple");
 	String *string2=stringNew(name2);
-	
 	
 	input = stringIsEqual(string1,string2);
 	stringDump(string1);
 	stringDump(string2);
 	
+	TEST_ASSERT_EQUAL(1,input);
+	
+	printf("-                                               -\n");
+	printf("-                                               -\n");
+}
+
+void test_stringIsEqual_should_result_both_string_the_start_is_different_but_length_is_same2(void){
+	printf("-----Test for stringIsEqual if text have same length but different start-----\n");
+	int input ;
+	Text *name1=textNew("samsung");
+	String *string1=stringNew(name1);
+	
+	stringRemoveChar(string1);
+	stringRemoveChar(string1);
+	stringRemoveChar(string1);
+	
+	Text *name2=textNew("sung");
+	String *string2=stringNew(name2);
+	
+	input = stringIsEqual(string1,string2);
+	stringDump(string1);
+	stringDump(string2);
 	
 	TEST_ASSERT_EQUAL(1,input);
 	

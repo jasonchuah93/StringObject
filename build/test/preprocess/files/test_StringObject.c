@@ -1708,13 +1708,15 @@ void test_stringIsEqual_should_result_both_string_the_start_is_different_but_len
 
 
 
+ stringRemoveChar(string1);
+
+ stringRemoveChar(string1);
+
 
 
  Text *name2=textNew("ple");
 
  String *string2=stringNew(name2);
-
-
 
 
 
@@ -1726,9 +1728,53 @@ void test_stringIsEqual_should_result_both_string_the_start_is_different_but_len
 
 
 
-
-
  UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)867, UNITY_DISPLAY_STYLE_INT);
+
+
+
+ printf("-                                               -\n");
+
+ printf("-                                               -\n");
+
+}
+
+
+
+void test_stringIsEqual_should_result_both_string_the_start_is_different_but_length_is_same2(void){
+
+ printf("-----Test for stringIsEqual if text have same length but different start-----\n");
+
+ int input ;
+
+ Text *name1=textNew("samsung");
+
+ String *string1=stringNew(name1);
+
+
+
+ stringRemoveChar(string1);
+
+ stringRemoveChar(string1);
+
+ stringRemoveChar(string1);
+
+
+
+ Text *name2=textNew("sung");
+
+ String *string2=stringNew(name2);
+
+
+
+ input = stringIsEqual(string1,string2);
+
+ stringDump(string1);
+
+ stringDump(string2);
+
+
+
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)890, UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -1772,7 +1818,7 @@ void test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case(void)
 
  stringDump(string2);
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)889, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)912, UNITY_DISPLAY_STYLE_INT);
 
  printf("-                                               -\n");
 
@@ -1814,7 +1860,7 @@ void test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case2(void
 
  stringDump(string2);
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)910, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)933, UNITY_DISPLAY_STYLE_INT);
 
  printf("-                                               -\n");
 
