@@ -71,6 +71,11 @@ extern void test_stringRemove_should_remove_all_char_within_a_string(void);
 extern void test_stringLength_should_get_the_correct_length(void);
 extern void test_stringLength_should_get_the_correct_length2(void);
 extern void test_stringLength_should_get_the_correct_length3(void);
+extern void test_stringRemoveWordNotContaining_should_test_input__and_start_with_alphabet(void);
+extern void test_stringRemoveWordNotContaining_should_test_input_and_start_with_alphabet2(void);
+extern void test_stringIsEqual_should_result_both_string_is_same(void);
+extern void test_stringIsEqual_should_result_both_string_is_same_but_length_is_different(void);
+extern void test_stringIsEqual_should_result_both_string_the_start_is_different_but_length_is_same(void);
 
 
 //=======Test Reset Option=====
@@ -121,8 +126,13 @@ int main(void)
   RUN_TEST(test_stringRemove_should_remove_five_char_within_a_string, 673);
   RUN_TEST(test_stringRemove_should_remove_all_char_within_a_string, 702);
   RUN_TEST(test_stringLength_should_get_the_correct_length, 738);
-  RUN_TEST(test_stringLength_should_get_the_correct_length2, 752);
-  RUN_TEST(test_stringLength_should_get_the_correct_length3, 766);
+  RUN_TEST(test_stringLength_should_get_the_correct_length2, 754);
+  RUN_TEST(test_stringLength_should_get_the_correct_length3, 770);
+  RUN_TEST(test_stringRemoveWordNotContaining_should_test_input__and_start_with_alphabet, 786);
+  RUN_TEST(test_stringRemoveWordNotContaining_should_test_input_and_start_with_alphabet2, 802);
+  RUN_TEST(test_stringIsEqual_should_result_both_string_is_same, 818);
+  RUN_TEST(test_stringIsEqual_should_result_both_string_is_same_but_length_is_different, 838);
+  RUN_TEST(test_stringIsEqual_should_result_both_string_the_start_is_different_but_length_is_same, 858);
 
   return (UnityEnd());
 }

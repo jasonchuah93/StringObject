@@ -167,24 +167,67 @@ int stringRemoveChar(String *string){
 	stringStart=string->text->string[string->start];
 	stringEnd=string->text->string[string->length];
 	
-	if(stringStart != stringEnd > string->text->string[0])
+	while(stringStart != stringEnd > string->text->string[0])
 	{
 			string->start++;
 			string->length--;
 			return stringStart;
 	}
-	else
-	{
-		return -1;
-		
-	}
 	
+	return -1;
 } 
 	
 int stringLength(String *string){
 	return string->length;
 }
 
+String *stringRemoveWordNotContaining(String *string,char *delimiters){
+	
+	int i=0,j=0;
+	char stringStart;
+	char stringEnd;
+	char newString;
+	
+	char isAlphabet = string->text->string[i];
+	
+	while(string->text->string[i]!=0){
+		if((string->text->string[i]!=delimiters[j]) || (isAlphabet <= 'a' && isAlphabet >='z')){
+			string->start++;
+			string->length--;
+		}
+		else if(string->text->string[i] == delimiters[0]){
+			
+			return string;
+		}
+		
+		i++;
+		
+	}	
+	
+	return string;
+}
 
+String *stringRemoveWordContaining(String *string,char *containSet[]){
 
+}
 
+int stringIsEqual(String *string1,String *string2){
+	
+	if(string1->start==string2->start)
+	{	
+				
+		
+		
+		return 1;
+	}
+	else 
+	{
+		return 0;
+	}
+	
+}
+
+int stringIsEqualCaseInSensitive(String *string1,String *string2){
+	
+	
+}

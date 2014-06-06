@@ -1494,6 +1494,10 @@ void test_stringLength_should_get_the_correct_length(void){
 
  UnityAssertEqualNumber((_U_SINT)((7)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)749, UNITY_DISPLAY_STYLE_INT);
 
+ printf("-                                               -\n");
+
+ printf("-                                               -\n");
+
 }
 
 
@@ -1520,7 +1524,11 @@ void test_stringLength_should_get_the_correct_length2(void){
 
 
 
- UnityAssertEqualNumber((_U_SINT)((12)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)763, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((12)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)765, UNITY_DISPLAY_STYLE_INT);
+
+ printf("-                                               -\n");
+
+ printf("-                                               -\n");
 
 }
 
@@ -1548,6 +1556,194 @@ void test_stringLength_should_get_the_correct_length3(void){
 
 
 
- UnityAssertEqualNumber((_U_SINT)((26)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)777, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((26)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)781, UNITY_DISPLAY_STYLE_INT);
+
+ printf("-                                               -\n");
+
+ printf("-                                               -\n");
+
+}
+
+
+
+void test_stringRemoveWordNotContaining_should_test_input__and_start_with_alphabet(void){
+
+ printf("-----Test for stringRemoveWordNotContaining -----\n");
+
+ Text * name1=textNew("nokia");
+
+ String *string1= stringNew(name1);
+
+ stringDump(string1);
+
+ String *string2= stringRemoveWordNotContaining(string1,"ok");
+
+ stringDump(string2);
+
+
+
+ UnityAssertEqualNumber((_U_SINT)(('n')), (_U_SINT)((string2->text->string[0])), (((void *)0)), (_U_UINT)794, UNITY_DISPLAY_STYLE_INT);
+
+ UnityAssertEqualNumber((_U_SINT)(('o')), (_U_SINT)((string2->text->string[1])), (((void *)0)), (_U_UINT)795, UNITY_DISPLAY_STYLE_INT);
+
+
+
+
+
+ printf("-                                               -\n");
+
+ printf("-                                               -\n");
+
+}
+
+
+
+void test_stringRemoveWordNotContaining_should_test_input_and_start_with_alphabet2(void){
+
+ printf("-----Test for stringRemoveWordNotContaining -----\n");
+
+ Text * name1=textNew("blackberry");
+
+ String *string1= stringNew(name1);
+
+ stringDump(string1);
+
+
+
+ UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((string1->start)), (((void *)0)), (_U_UINT)808, UNITY_DISPLAY_STYLE_INT);
+
+
+
+ String *string2= stringRemoveWordNotContaining(string1,"er");
+
+ stringDump(string2);
+
+ UnityAssertEqualNumber((_U_SINT)((6)), (_U_SINT)((string1->start)), (((void *)0)), (_U_UINT)812, UNITY_DISPLAY_STYLE_INT);
+
+
+
+ printf("-                                               -\n");
+
+ printf("-                                               -\n");
+
+}
+
+
+
+void test_stringIsEqual_should_result_both_string_is_same(void){
+
+ printf("-----Test for stringIsEqual if text is same -----\n");
+
+ int input ;
+
+ Text *name1=textNew("apple");
+
+ String *string1=stringNew(name1);
+
+ stringDump(string1);
+
+
+
+ Text *name2=textNew("apple");
+
+ String *string2=stringNew(name2);
+
+ stringDump(string2);
+
+
+
+ input = stringIsEqual(string1,string2);
+
+
+
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)831, UNITY_DISPLAY_STYLE_INT);
+
+
+
+
+
+ printf("-                                               -\n");
+
+ printf("-                                               -\n");
+
+}
+
+
+
+void test_stringIsEqual_should_result_both_string_is_same_but_length_is_different(void){
+
+ printf("-----Test for stringIsEqual if text is different -----\n");
+
+ int input ;
+
+ Text *name1=textNew("apple");
+
+ String *string1=stringNew(name1);
+
+ stringDump(string1);
+
+
+
+ Text *name2=textNew("ple");
+
+ String *string2=stringNew(name2);
+
+ stringDump(string2);
+
+
+
+ input = stringIsEqual(string1,string2);
+
+
+
+ UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)851, UNITY_DISPLAY_STYLE_INT);
+
+
+
+
+
+ printf("-                                               -\n");
+
+ printf("-                                               -\n");
+
+}
+
+
+
+void test_stringIsEqual_should_result_both_string_the_start_is_different_but_length_is_same(void){
+
+ printf("-----Test for stringIsEqual if text have same length but different start-----\n");
+
+ int input ;
+
+ Text *name1=textNew("apple");
+
+ String *string1=stringNew(name1);
+
+ stringDump(string1);
+
+
+
+
+
+ Text *name2=textNew("ple");
+
+ String *string2=stringNew(name2);
+
+ stringDump(string2);
+
+
+
+ input = stringIsEqual(string1,string2);
+
+
+
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)872, UNITY_DISPLAY_STYLE_INT);
+
+
+
+ printf("-                                               -\n");
+
+ printf("-                                               -\n");
 
 }
