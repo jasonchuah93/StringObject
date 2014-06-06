@@ -158,6 +158,30 @@ void stringTrim(String *string){
 	stringTrimRight(string);
 }
 
+//Test 2
+int stringRemoveChar(String *string){
+	
+	char stringStart;
+	char stringEnd;
+	
+	stringStart=string->text->string[string->start];
+	stringEnd=string->text->string[string->length];
+	
+	if(stringStart != stringEnd > string->text->string[0])
+	{
+			string->start++;
+			string->length--;
+			return stringStart;
+	}
+	else
+	{
+		return -1;
+		
+	}
+	
+} 
+	
+
 
 
 

@@ -4,100 +4,112 @@
   :file: test_StringObject.c
 :successes:
 - :test: test_StringDump_explore
-  :line: 15
+  :line: 14
   :message: ''
 - :test: test_textDump_explore
-  :line: 36
+  :line: 35
   :message: ''
 - :test: test_textNew_should_create_a_static_text
-  :line: 47
+  :line: 46
   :message: ''
 - :test: test_textNew_should_create_a_dynamic_text
-  :line: 62
+  :line: 61
   :message: ''
 - :test: test_stringNew_should_create_string_with_static_text
-  :line: 77
+  :line: 76
   :message: ''
 - :test: test_stringNew_should_create_string_with_dynamic_text
-  :line: 93
+  :line: 92
   :message: ''
 - :test: test_textAssign_should_increase_text_reference
-  :line: 109
+  :line: 108
   :message: ''
 - :test: test_textAssign_should__not_increase_text_reference
-  :line: 141
+  :line: 140
   :message: ''
 - :test: test_stringAssign_should_increase_reference
-  :line: 164
+  :line: 163
   :message: ''
 - :test: test_stringAssign_should_not_increase_reference
-  :line: 191
+  :line: 190
   :message: ''
 - :test: test_textDelete_should_delete_reference_for_dynamic_text
-  :line: 211
+  :line: 210
   :message: ''
 - :test: test_textDelete_should_not_delete_reference_for_static_text
-  :line: 250
+  :line: 249
   :message: ''
 - :test: test_stringDelete_should_delete_reference
-  :line: 268
+  :line: 267
   :message: ''
-- :test: test_stringDelete_should__not_delete_reference_for_text
-  :line: 301
+- :test: test_stringDelete_should_not_delete_reference_for_text
+  :line: 300
   :message: ''
 - :test: test_textDelete_should_delete_all_reference_and_return_null
-  :line: 334
+  :line: 333
   :message: ''
 - :test: test_stringDelete_should_delete_all_reference_and_return_null
-  :line: 376
+  :line: 375
   :message: ''
 - :test: test_text_explore
-  :line: 419
+  :line: 418
   :message: ''
 - :test: test_stringSkip_given_Hello_and_skip_2_should_become_llo
-  :line: 469
+  :line: 467
   :message: ''
 - :test: test_stringSkip_given_gundam_and_skip_4_should_become_am
-  :line: 483
+  :line: 481
   :message: ''
 - :test: test_stringSkip_given_gundam_and_skip_6_should_return_null
-  :line: 497
+  :line: 495
   :message: ''
 - :test: test_stringSkip_given_beyond_ra_and_skip_2_should_make_start_equals_2_length_equals_0
-  :line: 511
+  :line: 509
   :message: ''
 - :test: test_stringTrimLeft_given_Amazing_prefixed_with_2_space_should_remove_the_spaces
-  :line: 525
+  :line: 523
   :message: ''
 - :test: test_stringTrimLeft_given_Saviour_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab
-  :line: 539
+  :line: 537
   :message: ''
 - :test: test_stringTrimRight_given_Comet_postfixed_with_3_space_should_remove_the_spaces
-  :line: 553
+  :line: 551
   :message: ''
 - :test: test_stringTrimRight_given_hello_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab
-  :line: 567
+  :line: 565
   :message: ''
 - :test: test_stringTrim_given_hello_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab
-  :line: 582
+  :line: 580
   :message: ''
 - :test: test_stringTrim_given_Kamaguchi_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab
-  :line: 595
+  :line: 593
   :message: ''
 - :test: test_stringTrim_given_Ferraro_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab
-  :line: 608
+  :line: 606
   :message: ''
 - :test: test_textNew_should_create_a_text_with_reference_of_1
-  :line: 621
+  :line: 619
   :message: ''
 - :test: test_textAssign_dynamic_text_should_increase_reference_to_2
-  :line: 628
+  :line: 626
+  :message: ''
+- :test: test_stringRemove_should_remove_first_char_within_a_string
+  :line: 635
+  :message: ''
+- :test: test_stringRemove_should_remove_three_char_within_a_string
+  :line: 651
+  :message: ''
+- :test: test_stringRemove_should_remove_five_char_within_a_string
+  :line: 673
+  :message: ''
+- :test: test_stringRemove_should_remove_all_char_within_a_string
+  :line: 702
   :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 30
-  :passed: 30
+  :total: 34
+  :passed: 34
   :failed: 0
   :ignored: 0
 :stdout:
@@ -285,5 +297,30 @@
 - '-----Test for stringTrim both sides Hello to remove the spaces and tab -----'
 - "[0x1] f_str:[80000000]:\t \t \t Ferrari \t \t\t, start:6, len:18, str:Ferrari \t
   \t\t"
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringRemove should remove k in knight and return k-----'
+- text[1]:knight
+- '[0x1] f_str:[2]:knight, start:0, len:6, str:knight'
+- '[0x1] f_str:[2]:knight, start:1, len:5, str:night'
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringRemove should remove kni in knight and return kni-----'
+- text[1]:knight
+- '[0x1] f_str:[2]:knight, start:0, len:6, str:knight'
+- '[0x1] f_str:[2]:knight, start:3, len:3, str:ght'
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringRemove should remove 5 character in knight and return knigh-----'
+- text[1]:knight
+- '[0x1] f_str:[2]:knight, start:0, len:6, str:knight'
+- '[0x1] f_str:[2]:knight, start:5, len:1, str:t'
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringRemove should remove all character in knight and return -1
+  -----'
+- text[1]:knight
+- '[0x1] f_str:[2]:knight, start:0, len:6, str:knight'
+- '[0x1] f_str:[2]:knight, start:6, len:0, str:'
 - '-                                               -'
 - '-                                               -'

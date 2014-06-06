@@ -11,7 +11,6 @@ void setUp(void){}
 
 void tearDown(void){}
 
-
 void test_StringDump_explore(void){
 	
 	FakeText fakeText={
@@ -298,7 +297,7 @@ void test_stringDelete_should_delete_reference(void)
 
 }
 
-void test_stringDelete_should__not_delete_reference_for_text(void)
+void test_stringDelete_should_not_delete_reference_for_text(void)
 {	
 	printf("-----Test for stringDelete should not delete reference for text-----\n");
 	Text * name1=t"QanTa";
@@ -464,7 +463,6 @@ void test_text_explore(void){
 	textDump(msg);
 	printf("-----------------------------\n");
 }
-
 
 void test_stringSkip_given_Hello_and_skip_2_should_become_llo(){
 	printf("-----Test for stringSkip on hello and become llo-----\n");
@@ -634,5 +632,108 @@ void test_textAssign_dynamic_text_should_increase_reference_to_2(void){
 	
 }
 
+void test_stringRemove_should_remove_first_char_within_a_string(void){
+	printf("-----Test for stringRemove should remove k in knight and return k-----\n");
+	Text * name1=textNew("knight");
+	textDump(name1);
+	
+	String *string1=stringNew(name1);
+	stringDump(string1);
+	
+	stringRemoveChar(string1);
+	stringDump(string1);
+	
+	TEST_ASSERT_EQUAL('k',string1->text->string[0]);
+	printf("-                                               -\n");
+	printf("-                                               -\n");
+}
 
+void test_stringRemove_should_remove_three_char_within_a_string(void){
+	printf("-----Test for stringRemove should remove kni in knight and return kni-----\n");
+	Text * name1=textNew("knight");
+	textDump(name1);
+	
+	String *string1=stringNew(name1);
+	stringDump(string1);
+	
+	stringRemoveChar(string1);
+	
+	stringRemoveChar(string1);
+	
+	stringRemoveChar(string1);
+	stringDump(string1);
+	
+	TEST_ASSERT_EQUAL('k',string1->text->string[0]);
+	TEST_ASSERT_EQUAL('n',string1->text->string[1]);
+	TEST_ASSERT_EQUAL('i',string1->text->string[2]);
+	printf("-                                               -\n");
+	printf("-                                               -\n");
+}
+
+void test_stringRemove_should_remove_five_char_within_a_string(void){
+	printf("-----Test for stringRemove should remove 5 character in knight and return knigh-----\n");
+	Text * name1=textNew("knight");
+	textDump(name1);
+	
+	String *string1=stringNew(name1);
+	stringDump(string1);
+	
+	stringRemoveChar(string1);
+	
+	stringRemoveChar(string1);
+	
+	stringRemoveChar(string1);
+	
+	stringRemoveChar(string1);
+	
+	stringRemoveChar(string1);
+	stringDump(string1);
+	
+	TEST_ASSERT_EQUAL('k',string1->text->string[0]);
+	TEST_ASSERT_EQUAL('n',string1->text->string[1]);
+	TEST_ASSERT_EQUAL('i',string1->text->string[2]);
+	TEST_ASSERT_EQUAL('g',string1->text->string[3]);
+	TEST_ASSERT_EQUAL('h',string1->text->string[4]);
+	
+	printf("-                                               -\n");
+	printf("-                                               -\n");
+}
+
+void test_stringRemove_should_remove_all_char_within_a_string(void){
+	printf("-----Test for stringRemove should remove all character in knight and return -1 -----\n");
+	
+	char a;
+	Text * name1=textNew("knight");
+	textDump(name1);
+	
+	String *string1=stringNew(name1);
+	stringDump(string1);
+	
+	stringRemoveChar(string1);
+	
+	stringRemoveChar(string1);
+	
+	stringRemoveChar(string1);
+	
+	stringRemoveChar(string1);
+	
+	stringRemoveChar(string1);
+	
+	stringRemoveChar(string1);
+	
+	
+	
+	a=stringRemoveChar(string1);
+	stringDump(string1);
+	
+	TEST_ASSERT_EQUAL('k',string1->text->string[0]);
+	TEST_ASSERT_EQUAL('n',string1->text->string[1]);
+	TEST_ASSERT_EQUAL('i',string1->text->string[2]);
+	TEST_ASSERT_EQUAL('g',string1->text->string[3]);
+	TEST_ASSERT_EQUAL('h',string1->text->string[4]);
+	TEST_ASSERT_EQUAL('t',string1->text->string[5]);
+	TEST_ASSERT_EQUAL(-1,a);
+	printf("-                                               -\n");
+	printf("-                                               -\n");
+}
 
