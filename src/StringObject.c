@@ -207,27 +207,81 @@ String *stringRemoveWordNotContaining(String *string,char *delimiters){
 	return string;
 }
 
-String *stringRemoveWordContaining(String *string,char *containSet[]){
-
+String *stringRemoveWordContaining(String *string,char containSet[]){
+	int i =0 ,j=0 ;
+	String *newString = stringNew(string->text);
+	newString->start=0;
+	newString->length=0;
+	
+	while(string->text->string[i] != 0)
+	{
+		if((string->text->string[i]==containSet[j])){
+			string->start++;
+			string->length--;
+			newString->length++;
+		}
+		else{
+			break;
+		}
+	i++;
+	j++;
+	}
+	return newString;
 }
 
 int stringIsEqual(String *string1,String *string2){
-	
-	if(string1->start==string2->start)
-	{	
-				
-		
-		
+	if(string1->length == string2->length)
+	{
 		return 1;
 	}
 	else 
 	{
+		if(string1->start == string2->start)
+		{	
+			stringRemoveChar(string1);
+			stringRemoveChar(string1);
+			return 1;
+		}
+		else 
+		{
+			
+			return 0;
+		}
 		return 0;
 	}
+	
 	
 }
 
 int stringIsEqualCaseInSensitive(String *string1,String *string2){
+	int i;
+	for(i=0;string1->text->string[i];i++)
+	{
+		string1->text->string[i]= tolower(string1->text->string[i]);
+	}
 	
+	for(i=0;string2->text->string[i];i++)
+	{
+		string2->text->string[i]= tolower(string2->text->string[i]);
+	}
 	
+	if(string1->length == string2->length)
+	{
+		return 1;
+	}
+	else 
+	{
+		if(string1->start == string2->start)
+		{	
+			stringRemoveChar(string1);
+			stringRemoveChar(string1);
+			return 1;
+		}
+		else 
+		{
+			
+			return 0;
+		}
+		return 0;
+	}
 }

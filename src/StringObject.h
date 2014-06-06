@@ -40,7 +40,7 @@ void stringSkip(String *string,int numOfChar2Skip);
 int stringRemoveChar(String *string);
 int stringLength(String *string);
 String *stringRemoveWordNotContaining(String *string,char *delimiters);
-String *stringRemoveWordContaining(String *string,char *containSet[] );
+String *stringRemoveWordContaining(String *string,char containSet[] );
 int stringIsEqual(String *string1,String *string2);
 int stringIsEqualCaseInSensitive(String *string1,String *string2);
 #endif // StringObject_H

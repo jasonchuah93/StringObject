@@ -109,16 +109,37 @@
   :line: 738
   :message: ''
 - :test: test_stringLength_should_get_the_correct_length2
-  :line: 752
+  :line: 754
   :message: ''
 - :test: test_stringLength_should_get_the_correct_length3
-  :line: 766
+  :line: 770
+  :message: ''
+- :test: test_stringRemoveWordNotContaining_should_test_input__and_start_with_alphabet
+  :line: 786
+  :message: ''
+- :test: test_stringRemoveWordNotContaining_should_test_input_and_start_with_alphabet2
+  :line: 802
+  :message: ''
+- :test: test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet1
+  :line: 818
+  :message: ''
+- :test: test_stringIsEqual_should_result_both_string_is_same
+  :line: 837
+  :message: ''
+- :test: test_stringIsEqual_should_result_both_string_the_start_is_different_but_length_is_same
+  :line: 851
+  :message: ''
+- :test: test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case
+  :line: 873
+  :message: ''
+- :test: test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case2
+  :line: 894
   :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 37
-  :passed: 37
+  :total: 44
+  :passed: 44
   :failed: 0
   :ignored: 0
 :stdout:
@@ -335,8 +356,49 @@
 - '-                                               -'
 - '-----Test for stringLength should get the correct length-----'
 - '[0x1] f_str:[2]:pikachu, start:0, len:7, str:pikachu'
+- '-                                               -'
+- '-                                               -'
 - '-----Test for stringLength should get the correct length with space -----'
 - '[0x1] f_str:[2]:     pikachu, start:0, len:12, str:     pikachu'
+- '-                                               -'
+- '-                                               -'
 - '-----Test for stringLength should get the correct length with space and tab-----'
 - "[0x1] f_str:[2]:     \t \t \t \t \t \t \t pikachu, start:0, len:26, str:     \t
   \t \t \t \t \t \t pikachu"
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringRemoveWordNotContaining -----'
+- '[0x1] f_str:[2]:nokia, start:0, len:5, str:nokia'
+- '[0x1] f_str:[2]:nokia, start:1, len:4, str:okia'
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringRemoveWordNotContaining -----'
+- '[0x1] f_str:[2]:blackberry, start:0, len:10, str:blackberry'
+- '[0x1] f_str:[2]:blackberry, start:6, len:4, str:erry'
+- '-                                               -'
+- '-                                               -'
+- '[0x1] f_str:[2]:apple, start:0, len:5, str:apple'
+- '[0x1] f_str:[3]:apple, start:0, len:2, str:ap'
+- '-----Test for stringIsEqual if text have same length but different start-----'
+- '[0x1] f_str:[2]:apple, start:2, len:3, str:ple'
+- '[0x1] f_str:[2]:ple, start:0, len:3, str:ple'
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringIsEqualCaseSensitive if text have same case sensitive-----'
+- Before
+- '[0x1] f_str:[2]:aPPLE, start:0, len:5, str:aPPLE'
+- '[0x1] f_str:[2]:ApplE, start:0, len:5, str:ApplE'
+- After
+- '[0x1] f_str:[2]:apple, start:0, len:5, str:apple'
+- '[0x1] f_str:[2]:apple, start:0, len:5, str:apple'
+- '-                                               -'
+- '-                                               -'
+- '-----Test for stringIsEqualCaseSensitive if text have same case sensitive 2-----'
+- Before
+- '[0x1] f_str:[2]:HandPhone, start:0, len:9, str:HandPhone'
+- '[0x1] f_str:[2]:hANDpHonE, start:0, len:9, str:hANDpHonE'
+- After
+- '[0x1] f_str:[2]:handphone, start:0, len:9, str:handphone'
+- '[0x1] f_str:[2]:handphone, start:0, len:9, str:handphone'
+- '-                                               -'
+- '-                                               -'

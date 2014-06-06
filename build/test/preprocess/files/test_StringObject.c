@@ -1630,17 +1630,51 @@ void test_stringRemoveWordNotContaining_should_test_input_and_start_with_alphabe
 
 
 
-void test_stringIsEqual_should_result_both_string_is_same(void){
+void test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet1(void){
 
- printf("-----Test for stringIsEqual if text is same -----\n");
 
- int input ;
 
  Text *name1=textNew("apple");
 
  String *string1=stringNew(name1);
 
  stringDump(string1);
+
+
+
+ String *string2 = stringRemoveWordContaining(string1,"ap");
+
+ stringDump(string2);
+
+
+
+ UnityAssertEqualNumber((_U_SINT)(('a')), (_U_SINT)((string2->text->string[string2->start])), (((void *)0)), (_U_UINT)827, UNITY_DISPLAY_STYLE_INT);
+
+ UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((string2->start)), (((void *)0)), (_U_UINT)828, UNITY_DISPLAY_STYLE_INT);
+
+ UnityAssertEqualNumber((_U_SINT)((2)), (_U_SINT)((string2->length)), (((void *)0)), (_U_UINT)829, UNITY_DISPLAY_STYLE_INT);
+
+
+
+ UnityAssertEqualNumber((_U_SINT)((2)), (_U_SINT)((string1->start)), (((void *)0)), (_U_UINT)831, UNITY_DISPLAY_STYLE_INT);
+
+ UnityAssertEqualNumber((_U_SINT)((3)), (_U_SINT)((string1->length)), (((void *)0)), (_U_UINT)832, UNITY_DISPLAY_STYLE_INT);
+
+
+
+}
+
+
+
+
+
+void test_stringIsEqual_should_result_both_string_is_same(void){
+
+ int input;
+
+ Text *name1=textNew("apple");
+
+ String *string1=stringNew(name1);
 
 
 
@@ -1648,63 +1682,15 @@ void test_stringIsEqual_should_result_both_string_is_same(void){
 
  String *string2=stringNew(name2);
 
- stringDump(string2);
+
+
+ input=stringIsEqual(string1,string2);
 
 
 
- input = stringIsEqual(string1,string2);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)847, UNITY_DISPLAY_STYLE_INT);
 
 
-
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)831, UNITY_DISPLAY_STYLE_INT);
-
-
-
-
-
- printf("-                                               -\n");
-
- printf("-                                               -\n");
-
-}
-
-
-
-void test_stringIsEqual_should_result_both_string_is_same_but_length_is_different(void){
-
- printf("-----Test for stringIsEqual if text is different -----\n");
-
- int input ;
-
- Text *name1=textNew("apple");
-
- String *string1=stringNew(name1);
-
- stringDump(string1);
-
-
-
- Text *name2=textNew("ple");
-
- String *string2=stringNew(name2);
-
- stringDump(string2);
-
-
-
- input = stringIsEqual(string1,string2);
-
-
-
- UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)851, UNITY_DISPLAY_STYLE_INT);
-
-
-
-
-
- printf("-                                               -\n");
-
- printf("-                                               -\n");
 
 }
 
@@ -1720,8 +1706,6 @@ void test_stringIsEqual_should_result_both_string_the_start_is_different_but_len
 
  String *string1=stringNew(name1);
 
- stringDump(string1);
-
 
 
 
@@ -1730,17 +1714,107 @@ void test_stringIsEqual_should_result_both_string_the_start_is_different_but_len
 
  String *string2=stringNew(name2);
 
- stringDump(string2);
+
 
 
 
  input = stringIsEqual(string1,string2);
 
+ stringDump(string1);
+
+ stringDump(string2);
 
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)872, UNITY_DISPLAY_STYLE_INT);
 
 
+
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)867, UNITY_DISPLAY_STYLE_INT);
+
+
+
+ printf("-                                               -\n");
+
+ printf("-                                               -\n");
+
+}
+
+
+
+void test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case(void){
+
+
+
+ printf("-----Test for stringIsEqualCaseSensitive if text have same case sensitive-----\n");
+
+ int input ;
+
+ printf("Before\n");
+
+ Text *name1=textNew("aPPLE");
+
+ String *string1=stringNew(name1);
+
+ stringDump(string1);
+
+
+
+ Text *name2=textNew("ApplE");
+
+ String *string2=stringNew(name2);
+
+ stringDump(string2);
+
+ printf("After\n");
+
+ input = stringIsEqualCaseInSensitive(string1,string2);
+
+ stringDump(string1);
+
+ stringDump(string2);
+
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)889, UNITY_DISPLAY_STYLE_INT);
+
+ printf("-                                               -\n");
+
+ printf("-                                               -\n");
+
+}
+
+
+
+void test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case2(void){
+
+
+
+ printf("-----Test for stringIsEqualCaseSensitive if text have same case sensitive 2-----\n");
+
+ int input ;
+
+ printf("Before\n");
+
+ Text *name1=textNew("HandPhone");
+
+ String *string1=stringNew(name1);
+
+ stringDump(string1);
+
+
+
+ Text *name2=textNew("hANDpHonE");
+
+ String *string2=stringNew(name2);
+
+ stringDump(string2);
+
+ printf("After\n");
+
+ input = stringIsEqualCaseInSensitive(string1,string2);
+
+ stringDump(string1);
+
+ stringDump(string2);
+
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)910, UNITY_DISPLAY_STYLE_INT);
 
  printf("-                                               -\n");
 

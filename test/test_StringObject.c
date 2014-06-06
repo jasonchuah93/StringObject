@@ -815,44 +815,37 @@ void test_stringRemoveWordNotContaining_should_test_input_and_start_with_alphabe
 	printf("-                                               -\n");
 }
 
-void test_stringIsEqual_should_result_both_string_is_same(void){
-	printf("-----Test for stringIsEqual if text is same -----\n");
-	int input ;
+void test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet1(void){
+	
 	Text *name1=textNew("apple");
 	String *string1=stringNew(name1);
 	stringDump(string1);
 	
-	Text *name2=textNew("apple");
-	String *string2=stringNew(name2);
+	String *string2 = stringRemoveWordContaining(string1,"ap");
 	stringDump(string2);
 	
-	input = stringIsEqual(string1,string2);
+	TEST_ASSERT_EQUAL('a',string2->text->string[string2->start]);
+	TEST_ASSERT_EQUAL(0,string2->start);
+	TEST_ASSERT_EQUAL(2,string2->length);
+	
+	TEST_ASSERT_EQUAL(2,string1->start);
+	TEST_ASSERT_EQUAL(3,string1->length);
+	
+}
+
+
+void test_stringIsEqual_should_result_both_string_is_same(void){
+	int input;
+	Text *name1=textNew("apple");
+	String *string1=stringNew(name1);
+
+	Text *name2=textNew("apple");
+	String *string2=stringNew(name2);
+	
+	input=stringIsEqual(string1,string2);
 	
 	TEST_ASSERT_EQUAL(1,input);
 	
-	
-	printf("-                                               -\n");
-	printf("-                                               -\n");
-}
-
-void test_stringIsEqual_should_result_both_string_is_same_but_length_is_different(void){
-	printf("-----Test for stringIsEqual if text is different -----\n");
-	int input ;
-	Text *name1=textNew("apple");
-	String *string1=stringNew(name1);
-	stringDump(string1);
-	
-	Text *name2=textNew("ple");
-	String *string2=stringNew(name2);
-	stringDump(string2);
-	
-	input = stringIsEqual(string1,string2);
-	
-	TEST_ASSERT_EQUAL(0,input);
-	
-	
-	printf("-                                               -\n");
-	printf("-                                               -\n");
 }
 
 void test_stringIsEqual_should_result_both_string_the_start_is_different_but_length_is_same(void){
@@ -860,17 +853,61 @@ void test_stringIsEqual_should_result_both_string_the_start_is_different_but_len
 	int input ;
 	Text *name1=textNew("apple");
 	String *string1=stringNew(name1);
-	stringDump(string1);
 	
 	
 	Text *name2=textNew("ple");
 	String *string2=stringNew(name2);
-	stringDump(string2);
+	
 	
 	input = stringIsEqual(string1,string2);
+	stringDump(string1);
+	stringDump(string2);
+	
 	
 	TEST_ASSERT_EQUAL(1,input);
 	
+	printf("-                                               -\n");
+	printf("-                                               -\n");
+}
+
+void test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case(void){
+	
+	printf("-----Test for stringIsEqualCaseSensitive if text have same case sensitive-----\n");
+	int input ;
+	printf("Before\n");
+	Text *name1=textNew("aPPLE");
+	String *string1=stringNew(name1);
+	stringDump(string1);
+	
+	Text *name2=textNew("ApplE");
+	String *string2=stringNew(name2);
+	stringDump(string2);
+	printf("After\n");
+	input = stringIsEqualCaseInSensitive(string1,string2);
+	stringDump(string1);
+	stringDump(string2);
+	TEST_ASSERT_EQUAL(1,input);
+	printf("-                                               -\n");
+	printf("-                                               -\n");
+}
+
+void test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case2(void){
+	
+	printf("-----Test for stringIsEqualCaseSensitive if text have same case sensitive 2-----\n");
+	int input ;
+	printf("Before\n");
+	Text *name1=textNew("HandPhone");
+	String *string1=stringNew(name1);
+	stringDump(string1);
+	
+	Text *name2=textNew("hANDpHonE");
+	String *string2=stringNew(name2);
+	stringDump(string2);
+	printf("After\n");
+	input = stringIsEqualCaseInSensitive(string1,string2);
+	stringDump(string1);
+	stringDump(string2);
+	TEST_ASSERT_EQUAL(1,input);
 	printf("-                                               -\n");
 	printf("-                                               -\n");
 }
