@@ -37,6 +37,11 @@ extern void tearDown(void);
 extern void test_numberNew_should_get_single_digit_value_and_type(void);
 extern void test_numberNew_should_get_more_than_single_digit_value_and_type(void);
 extern void test_numberNew_should_get_negative_value_and_type(void);
+extern void test_identifierNew_should_identifier_the_content(void);
+extern void test_operatorNewBySymbol_should_identify_the_symbol(void);
+extern void test_operatorNewBySymbol_should_identify_the_different_symbol(void);
+extern void test_operatorNewBySymbol_should_identify_the_different_symbol2(void);
+extern void test_operatorNewBySymbol_should_identify_the_different_symbol3(void);
 
 
 //=======Test Reset Option=====
@@ -55,6 +60,11 @@ int main(void)
   RUN_TEST(test_numberNew_should_get_single_digit_value_and_type, 11);
   RUN_TEST(test_numberNew_should_get_more_than_single_digit_value_and_type, 20);
   RUN_TEST(test_numberNew_should_get_negative_value_and_type, 29);
+  RUN_TEST(test_identifierNew_should_identifier_the_content, 38);
+  RUN_TEST(test_operatorNewBySymbol_should_identify_the_symbol, 61);
+  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol, 71);
+  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol2, 81);
+  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol3, 91);
 
   return (UnityEnd());
 }

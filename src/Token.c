@@ -3,6 +3,9 @@
 #include "CharSet.h"
 #include <malloc.h>
 
+#define MAIN_OPERATOR_TABLE_SIZE (sizeof(mainOperatorTable)/(sizeof(OperatorInfo))
+#define ALTERNATIVE_OPERATOR_TABLE_SIZE (sizeof(alternativeOperatorTable)/(sizeof(OperatorInfo))
+
 OperatorInfo mainOperatorTable[] = {
   {.symbol="~", .id=BITWISE_NOT_OP, .precedence=150, .affix=INFIX, .assoc=LEFT_TO_RIGHT},
   {.symbol="!", .id=LOGICAL_NOT_OP, .precedence=150, .affix=INFIX, .assoc=LEFT_TO_RIGHT},
@@ -49,7 +52,23 @@ Number *numberNew(int value) {
  *          and "&&".
  */
 Operator *operatorNewBySymbol(char *symbol) {
-  return NULL;
+  
+  Operator *operators=malloc(sizeof(Operator));
+  
+  operators->type=OPERATOR_TOKEN;
+	int i=0;
+	while(mainOperatorTable[i].symbol!=0){
+	if(strcmp(mainOperatorTable[i].symbol,symbol)!=0)
+	{
+		operators->info = &mainOperatorTable[i];
+	}
+	
+	
+		
+	i++;
+	}
+	return operators;
+	
 }
 
 /**
@@ -71,7 +90,13 @@ Operator *operatorNewByID(OperatorID id) {
  *   name is the name of the identifier.
  */
 Identifier *identifierNew(Text *name) {
-  return NULL;
+	Identifier *identifiers=malloc(sizeof(Identifier));
+	
+	identifiers->type=IDENTIFIER_TOKEN;
+	identifiers->name=name;
+	identifiers->number->value=0;
+	
+	return identifiers;
 }
 
 /**

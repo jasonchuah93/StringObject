@@ -12,11 +12,26 @@
 - :test: test_numberNew_should_get_negative_value_and_type
   :line: 29
   :message: ''
+- :test: test_identifierNew_should_identifier_the_content
+  :line: 38
+  :message: ''
+- :test: test_operatorNewBySymbol_should_identify_the_symbol
+  :line: 61
+  :message: ''
+- :test: test_operatorNewBySymbol_should_identify_the_different_symbol
+  :line: 71
+  :message: ''
+- :test: test_operatorNewBySymbol_should_identify_the_different_symbol2
+  :line: 81
+  :message: ''
+- :test: test_operatorNewBySymbol_should_identify_the_different_symbol3
+  :line: 91
+  :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 3
-  :passed: 3
+  :total: 8
+  :passed: 8
   :failed: 0
   :ignored: 0
 :stdout: []

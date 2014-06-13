@@ -69,7 +69,7 @@ typedef struct {
 
 typedef struct {
   TokenType type;
-  char *name;
+  Text *name;
   Number *number;
 } Identifier;
 
