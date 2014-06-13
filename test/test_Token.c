@@ -97,3 +97,13 @@ void test_operatorNewBySymbol_should_identify_the_different_symbol3(void){
 	TEST_ASSERT_EQUAL(OPERATOR_TOKEN,operator1->type);
 	TEST_ASSERT_EQUAL(1,symbol1);
 }
+
+void test_operatorNewBySymbol_should_identify_the_different_symbol4(void){
+	int symbol1;
+	
+	Operator *operator1 = operatorNewBySymbol("~");
+	
+	symbol1=strcmp("~",operator1->info->symbol);
+	TEST_ASSERT_EQUAL(OPERATOR_TOKEN,operator1->type);
+	TEST_ASSERT_EQUAL(1,symbol1);
+}

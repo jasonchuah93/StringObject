@@ -190,3 +190,23 @@ void test_operatorNewBySymbol_should_identify_the_different_symbol3(void){
  UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((symbol1)), (((void *)0)), (_U_UINT)98, UNITY_DISPLAY_STYLE_INT);
 
 }
+
+
+
+void test_operatorNewBySymbol_should_identify_the_different_symbol4(void){
+
+ int symbol1;
+
+
+
+ Operator *operator1 = operatorNewBySymbol("~");
+
+
+
+ symbol1=strcmp("~",operator1->info->symbol);
+
+ UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((operator1->type)), (((void *)0)), (_U_UINT)107, UNITY_DISPLAY_STYLE_INT);
+
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((symbol1)), (((void *)0)), (_U_UINT)108, UNITY_DISPLAY_STYLE_INT);
+
+}

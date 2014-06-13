@@ -42,6 +42,7 @@ extern void test_operatorNewBySymbol_should_identify_the_symbol(void);
 extern void test_operatorNewBySymbol_should_identify_the_different_symbol(void);
 extern void test_operatorNewBySymbol_should_identify_the_different_symbol2(void);
 extern void test_operatorNewBySymbol_should_identify_the_different_symbol3(void);
+extern void test_operatorNewBySymbol_should_identify_the_different_symbol4(void);
 
 
 //=======Test Reset Option=====
@@ -65,6 +66,7 @@ int main(void)
   RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol, 71);
   RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol2, 81);
   RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol3, 91);
+  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol4, 101);
 
   return (UnityEnd());
 }
