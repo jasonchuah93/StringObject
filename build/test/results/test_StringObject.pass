@@ -4,374 +4,182 @@
   :file: test_StringObject.c
 :successes:
 - :test: test_StringDump_explore
-  :line: 14
-  :message: ''
-- :test: test_textDump_explore
-  :line: 35
-  :message: ''
-- :test: test_textNew_should_create_a_static_text
-  :line: 46
-  :message: ''
-- :test: test_textNew_should_create_a_dynamic_text
-  :line: 61
+  :line: 16
   :message: ''
 - :test: test_stringNew_should_create_string_with_static_text
-  :line: 76
+  :line: 38
   :message: ''
 - :test: test_stringNew_should_create_string_with_dynamic_text
-  :line: 92
-  :message: ''
-- :test: test_textAssign_should_increase_text_reference
-  :line: 108
-  :message: ''
-- :test: test_textAssign_should__not_increase_text_reference
-  :line: 140
+  :line: 54
   :message: ''
 - :test: test_stringAssign_should_increase_reference
-  :line: 163
+  :line: 72
   :message: ''
 - :test: test_stringAssign_should_not_increase_reference
-  :line: 190
-  :message: ''
-- :test: test_textDelete_should_delete_reference_for_dynamic_text
-  :line: 210
-  :message: ''
-- :test: test_textDelete_should_not_delete_reference_for_static_text
-  :line: 249
+  :line: 99
   :message: ''
 - :test: test_stringDelete_should_delete_reference
-  :line: 267
+  :line: 120
   :message: ''
 - :test: test_stringDelete_should_not_delete_reference_for_text
-  :line: 300
-  :message: ''
-- :test: test_textDelete_should_delete_all_reference_and_return_null
-  :line: 333
+  :line: 153
   :message: ''
 - :test: test_stringDelete_should_delete_all_reference_and_return_null
-  :line: 375
-  :message: ''
-- :test: test_text_explore
-  :line: 418
+  :line: 187
   :message: ''
 - :test: test_stringSkip_given_Hello_and_skip_2_should_become_llo
-  :line: 467
+  :line: 231
   :message: ''
 - :test: test_stringSkip_given_gundam_and_skip_4_should_become_am
-  :line: 481
+  :line: 245
   :message: ''
 - :test: test_stringSkip_given_gundam_and_skip_6_should_return_null
-  :line: 495
+  :line: 259
   :message: ''
 - :test: test_stringSkip_given_beyond_ra_and_skip_2_should_make_start_equals_2_length_equals_0
-  :line: 509
+  :line: 273
   :message: ''
 - :test: test_stringTrimLeft_given_Amazing_prefixed_with_2_space_should_remove_the_spaces
-  :line: 523
+  :line: 287
   :message: ''
 - :test: test_stringTrimLeft_given_Saviour_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab
-  :line: 537
+  :line: 301
   :message: ''
 - :test: test_stringTrimRight_given_Comet_postfixed_with_3_space_should_remove_the_spaces
-  :line: 551
+  :line: 315
   :message: ''
 - :test: test_stringTrimRight_given_hello_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab
-  :line: 565
+  :line: 329
   :message: ''
 - :test: test_stringTrim_given_hello_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab
-  :line: 580
+  :line: 344
   :message: ''
 - :test: test_stringTrim_given_Kamaguchi_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab
-  :line: 593
+  :line: 357
   :message: ''
 - :test: test_stringTrim_given_Ferraro_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab
-  :line: 606
-  :message: ''
-- :test: test_textNew_should_create_a_text_with_reference_of_1
-  :line: 619
-  :message: ''
-- :test: test_textAssign_dynamic_text_should_increase_reference_to_2
-  :line: 626
+  :line: 370
   :message: ''
 - :test: test_stringRemove_should_remove_first_char_within_a_string
-  :line: 635
+  :line: 385
   :message: ''
 - :test: test_stringRemove_should_remove_three_char_within_a_string
-  :line: 651
+  :line: 401
   :message: ''
 - :test: test_stringRemove_should_remove_five_char_within_a_string
-  :line: 673
+  :line: 423
   :message: ''
 - :test: test_stringRemove_should_remove_all_char_within_a_string
-  :line: 702
+  :line: 452
   :message: ''
 - :test: test_stringLength_should_get_the_correct_length
-  :line: 738
+  :line: 488
   :message: ''
 - :test: test_stringLength_should_get_the_correct_length2
-  :line: 754
+  :line: 504
   :message: ''
 - :test: test_stringLength_should_get_the_correct_length3
-  :line: 770
+  :line: 520
   :message: ''
-- :test: test_stringRemoveWordNotContaining_should_test_input__and_start_with_alphabet
-  :line: 786
+- :test: test_stringRemoveWordNotContaining_should_test_input_and_start_with_alphabet
+  :line: 536
   :message: ''
 - :test: test_stringRemoveWordNotContaining_should_test_input_and_start_with_alphabet2
-  :line: 802
+  :line: 547
   :message: ''
 - :test: test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet1
-  :line: 818
+  :line: 562
+  :message: ''
+- :test: test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet2
+  :line: 579
+  :message: ''
+- :test: test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet3
+  :line: 596
+  :message: ''
+- :test: test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet4
+  :line: 613
   :message: ''
 - :test: test_stringIsEqual_should_return_one_if_both_string_is_same
-  :line: 834
+  :line: 630
   :message: ''
-- :test: test_stringIsEqual_should_return_one_for_both_string_the_start_is_different_but_length_is_same
-  :line: 855
+- :test: test_stringIsEqual_should_return_one_if_both_string_is_same01
+  :line: 651
   :message: ''
-- :test: test_stringIsEqual_should_result_both_string_the_start_is_different_but_length_is_same2
-  :line: 873
+- :test: test_stringIsEqual_should_return_zero_if_both_string_is_same02
+  :line: 672
   :message: ''
-- :test: test_stringIsEqual_should_return_zero_if_both_string_the_is_different
-  :line: 891
+- :test: test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case
+  :line: 693
   :message: ''
-- :test: test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case
-  :line: 906
+- :test: test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case2
+  :line: 714
   :message: ''
-- :test: test_stringIsEqualCaseSensitive_should_set_all_alphabet_to_lower_case2
-  :line: 927
+- :test: test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case01
+  :line: 735
+  :message: ''
+- :test: test_stringCharAt_should_return_negative_one_if_startIndex_is_more_than_lenght
+  :line: 756
+  :message: ''
+- :test: test_stringCharAt_should_return_relative_character
+  :line: 765
+  :message: ''
+- :test: test_stringCharAt_should_return_relative_character2
+  :line: 777
+  :message: ''
+- :test: test_stringCharAtInSet_should_return_negative_one
+  :line: 789
+  :message: ''
+- :test: test_stringCharAtInSet_should_return_relative_character2
+  :line: 800
+  :message: ''
+- :test: test_stringCharAtInSet_should_return_relative_character3
+  :line: 811
   :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 46
-  :passed: 46
+  :total: 44
+  :passed: 44
   :failed: 0
   :ignored: 0
 :stdout:
 - '[0x14] f_str:[a]:hello world!, start:11, len:100, str:!'
-- text[3]:dummy
-- '-----Test for textNew to make a static text-----'
-- text[80000000]:Freedom
-- '-                                               -'
-- '-                                               -'
-- '-----Test for textNew to make a dynamic text-----'
-- text[1]:Justice
-- '-                                               -'
-- '-----Test for stringNew to create string from static text-----'
-- text[80000000]:Exia
-- '[0x1] f_str:[80000000]:Exia, start:0, len:4, str:Exia'
-- '-                                               -'
-- '-----Test for stringNew to create string from dynamic text-----'
-- text[1]:00Raiser
-- '[0x1] f_str:[2]:00Raiser, start:0, len:8, str:00Raiser'
-- '-                                               -'
-- '-----Test for textAssign to increase text reference-----'
-- text[1]:Arios
-- text[2]:Arios
-- text[3]:Arios
-- text[4]:Arios
-- text[5]:Arios
-- '-                                               -'
-- '-----Test for textAssign to not to increase text reference-----'
-- '-----name1-----'
-- text[80000000]:Dynames
-- '-----name2-----'
-- text[80000000]:Dynames
-- '-                                               -'
-- '-----Test for stringAssign to increase reference-----'
-- text[1]:Unicorn
-- '[0x2] f_str:[2]:Unicorn, start:0, len:7, str:Unicorn'
-- '[0x3] f_str:[2]:Unicorn, start:0, len:7, str:Unicorn'
-- '[0x4] f_str:[2]:Unicorn, start:0, len:7, str:Unicorn'
-- '[0x5] f_str:[2]:Unicorn, start:0, len:7, str:Unicorn'
-- '-                                               -'
-- '-----Test for stringAssign to not to increase reference-----'
-- text[80000000]:Banshee
-- '[0x1] f_str:[80000000]:Banshee, start:0, len:7, str:Banshee'
-- '[0x1] f_str:[80000000]:Banshee, start:0, len:7, str:Banshee'
-- '-                                               -'
-- '-----Test for textDelete should delete reference on dynamic text -----'
-- text[1]:Destiny
-- text[2]:Destiny
-- text[3]:Destiny
-- text[4]:Destiny
-- text[5]:Destiny
-- text[4]:Destiny
-- text[3]:Destiny
-- '-                                               -'
-- '-----Test for textDelete should not delete reference on static text -----'
-- text[80000000]:Legend
-- text[80000000]:Legend
-- '-                                               -'
-- '-----Test for stringDelete should delete reference-----'
-- text[1]:Strike
-- '[0x1] f_str:[2]:Strike, start:0, len:6, str:Strike'
-- '[0x2] f_str:[2]:Strike, start:0, len:6, str:Strike'
-- '[0x3] f_str:[2]:Strike, start:0, len:6, str:Strike'
-- '[0x4] f_str:[2]:Strike, start:0, len:6, str:Strike'
 - '[0x5] f_str:[2]:Strike, start:0, len:6, str:Strike'
-- '[0x4] f_str:[2]:Strike, start:0, len:6, str:Strike'
-- '[0x3] f_str:[2]:Strike, start:0, len:6, str:Strike'
-- '-                                               -'
 - '-----Test for stringDelete should not delete reference for text-----'
-- text[80000000]:QanTa
-- '[0x1] f_str:[80000000]:QanTa, start:0, len:5, str:QanTa'
-- '[0x2] f_str:[80000000]:QanTa, start:0, len:5, str:QanTa'
-- '[0x3] f_str:[80000000]:QanTa, start:0, len:5, str:QanTa'
-- '[0x4] f_str:[80000000]:QanTa, start:0, len:5, str:QanTa'
-- '[0x5] f_str:[80000000]:QanTa, start:0, len:5, str:QanTa'
-- '[0x4] f_str:[80000000]:QanTa, start:0, len:5, str:QanTa'
-- '[0x3] f_str:[80000000]:QanTa, start:0, len:5, str:QanTa'
-- '-                                               -'
-- '-----Test for textDelete should delete all reference and return NULL -----'
-- text[1]:Impulse
-- text[2]:Impulse
-- text[3]:Impulse
-- text[4]:Impulse
-- text[5]:Impulse
-- text[4]:Impulse
-- text[3]:Impulse
-- text[2]:Impulse
-- text[1]:Impulse
-- '(NULL) '
-- '-                                               -'
-- '-----Test for stringDelete should delete all reference-----'
 - text[1]:Infinite
-- '[0x1] f_str:[2]:Infinite, start:0, len:8, str:Infinite'
-- '[0x2] f_str:[2]:Infinite, start:0, len:8, str:Infinite'
-- '[0x3] f_str:[2]:Infinite, start:0, len:8, str:Infinite'
-- '[0x4] f_str:[2]:Infinite, start:0, len:8, str:Infinite'
-- '[0x5] f_str:[2]:Infinite, start:0, len:8, str:Infinite'
-- '[0x4] f_str:[2]:Infinite, start:0, len:8, str:Infinite'
-- '[0x3] f_str:[2]:Infinite, start:0, len:8, str:Infinite'
-- '[0x2] f_str:[2]:Infinite, start:0, len:8, str:Infinite'
-- '[0x1] f_str:[2]:Infinite, start:0, len:8, str:Infinite'
-- 'NULL'
-- ''
-- '-                                               -'
-- '-----Test for textExplore-----'
-- text[80000000]:James ho
-- text[1]:jason
-- '---------'
-- text[2]:jason
-- text[2]:jason
-- text[1]:jason
-- text[1]:jason
-- (NULL)---------
-- 'name3: 00000000'
-- text[80000000]:James ho
-- xxxxxxxxx
-- xxxxxxxxx
-- text[1]:hello
-- xxxxxxxxx
-- '[0x1] f_str:[2]:hello, start:0, len:5, str:hello'
-- xxxxxxxxx
-- '[0x2] f_str:[2]:hello, start:0, len:5, str:hello'
-- '[0x2] f_str:[2]:hello, start:0, len:5, str:hello'
-- '---------'
-- '[0x1] f_str:[2]:hello, start:0, len:5, str:hello'
-- text[2]:hello
-- '---------'
-- text[1]:hello
-- '-----------------------------'
-- '-----Test for stringSkip on hello and become llo-----'
-- '[0x1] f_str:[80000000]:Hello, start:2, len:4, str:llo'
-- '-                                               -'
-- '-                                               -'
-- '-----Test for stringSkip on gundam and become am-----'
-- '[0x1] f_str:[80000000]:gundam, start:4, len:5, str:am'
-- '-                                               -'
-- '-                                               -'
-- '-----Test for stringSkip on gundam and return null-----'
-- '[0x1] f_str:[80000000]:gundam, start:6, len:0, str:'
-- '-                                               -'
-- '-                                               -'
-- '-----Test for stringSkip beyond ra for start = 2 and length = 0---'
-- '[0x1] f_str:[80000000]:ra, start:2, len:0, str:'
-- '-                                               -'
-- '-                                               -'
-- '-----Test for stringTrimLeft Amazing to remove the space -----'
-- '[0x1] f_str:[2]:  Amazing, start:2, len:9, str:Amazing'
-- '-                                               -'
-- '-                                               -'
-- '-----Test for stringTrimLeft Saviour to remove the space and tab -----'
-- "[0x1] f_str:[80000000]:\t\tSaviour\t, start:2, len:10, str:Saviour\t"
-- '-                                               -'
-- '-                                               -'
-- '-----Test for stringTrimRight Comet to remove the spaces -----'
-- "[0x1] f_str:[80000000]:  Comet \t   , start:1, len:11, str: Comet \t   "
-- '-                                               -'
-- '-                                               -'
-- '-----Test for stringTrimRight Hello to remove the spaces and tab -----'
-- "[0x1] f_str:[80000000]:\thello\t\t, start:1, len:7, str:hello\t\t"
-- '-                                               -'
-- '-                                               -'
-- '-----Test for stringTrim both sides Hello to remove the spaces and tab -----'
-- "[0x1] f_str:[80000000]:\t \t \t hello \t \t , start:6, len:16, str:hello \t \t "
-- '-                                               -'
-- '-                                               -'
-- '-----Test for stringTrim both sides Hello to remove the spaces and tab -----'
-- "[0x1] f_str:[80000000]:\t \t Kamguchi \t \t\t, start:4, len:17, str:Kamguchi \t
-  \t\t"
-- '-                                               -'
-- '-                                               -'
-- '-----Test for stringTrim both sides Hello to remove the spaces and tab -----'
-- "[0x1] f_str:[80000000]:\t \t \t Ferrari \t \t\t, start:6, len:18, str:Ferrari \t
-  \t\t"
-- '-                                               -'
-- '-                                               -'
-- '-----Test for stringRemove should remove k in knight and return k-----'
-- text[1]:knight
-- '[0x1] f_str:[2]:knight, start:0, len:6, str:knight'
-- '[0x1] f_str:[2]:knight, start:1, len:5, str:night'
-- '-                                               -'
-- '-                                               -'
-- '-----Test for stringRemove should remove kni in knight and return kni-----'
-- text[1]:knight
-- '[0x1] f_str:[2]:knight, start:0, len:6, str:knight'
-- '[0x1] f_str:[2]:knight, start:3, len:3, str:ght'
-- '-                                               -'
-- '-                                               -'
-- '-----Test for stringRemove should remove 5 character in knight and return knigh-----'
-- text[1]:knight
-- '[0x1] f_str:[2]:knight, start:0, len:6, str:knight'
-- '[0x1] f_str:[2]:knight, start:5, len:1, str:t'
-- '-                                               -'
-- '-                                               -'
-- '-----Test for stringRemove should remove all character in knight and return -1
-  -----'
-- text[1]:knight
-- '[0x1] f_str:[2]:knight, start:0, len:6, str:knight'
-- '[0x1] f_str:[2]:knight, start:6, len:0, str:'
-- '-                                               -'
-- '-                                               -'
-- '-----Test for stringLength should get the correct length-----'
-- '[0x1] f_str:[2]:pikachu, start:0, len:7, str:pikachu'
-- '-                                               -'
-- '-                                               -'
-- '-----Test for stringLength should get the correct length with space -----'
-- '[0x1] f_str:[2]:     pikachu, start:0, len:12, str:     pikachu'
-- '-                                               -'
-- '-                                               -'
-- '-----Test for stringLength should get the correct length with space and tab-----'
-- "[0x1] f_str:[2]:     \t \t \t \t \t \t \t pikachu, start:0, len:26, str:     \t
-  \t \t \t \t \t \t pikachu"
+- '-----Test for stringRemoveWordNotContaining -----'
+- '[0x1] f_str:[80000000]:Bulldog, start:4, len:3, str:dog'
+- '[0x1] f_str:[80000000]:Bulldog, start:0, len:4, str:Bull'
 - '-                                               -'
 - '-                                               -'
 - '-----Test for stringRemoveWordNotContaining -----'
-- '[0x1] f_str:[2]:nokia, start:0, len:5, str:nokia'
-- '[0x1] f_str:[2]:nokia, start:1, len:4, str:okia'
+- '[0x1] f_str:[4]:BaskinRobbin, start:1, len:4, str:aski'
+- '[0x1] f_str:[4]:BaskinRobbin, start:5, len:7, str:nRobbin'
 - '-                                               -'
 - '-                                               -'
-- '-----Test for stringRemoveWordNotContaining -----'
-- '[0x1] f_str:[2]:blackberry, start:0, len:10, str:blackberry'
-- '[0x1] f_str:[2]:blackberry, start:6, len:4, str:erry'
+- '[0x1] f_str:[3]:apple, start:3, len:2, str:le'
+- '[0x1] f_str:[3]:apple, start:0, len:3, str:app'
 - '-                                               -'
+- '[0x1] f_str:[3]:1234ABCD56, start:0, len:4, str:1234'
+- '[0x1] f_str:[3]:1234ABCD56, start:4, len:6, str:ABCD56'
+- '-                                               -'
+- '[0x1] f_str:[3]:1234ABCD56, start:0, len:4, str:1234'
+- '[0x1] f_str:[3]:1234ABCD56, start:4, len:6, str:ABCD56'
+- '-                                               -'
+- '[0x1] f_str:[3]:1234ABCD56, start:0, len:4, str:1234'
+- '[0x1] f_str:[3]:1234ABCD56, start:4, len:6, str:ABCD56'
 - '-                                               -'
 - '-----Test for stringIsEqual -----'
 - '[0x1] f_str:[2]:pineapple, start:4, len:5, str:apple'
 - '[0x1] f_str:[2]:apple, start:0, len:5, str:apple'
+- '-                                               -'
+- '-----Test for stringIsEqual -----'
+- '[0x1] f_str:[2]:apkle, start:4, len:5, str:e'
+- '[0x1] f_str:[2]:apple, start:0, len:5, str:apple'
+- '-                                               -'
+- '-----Test for stringIsEqual -----'
+- '[0x1] f_str:[2]:apple, start:4, len:6, str:e'
+- '[0x1] f_str:[2]:apple , start:0, len:6, str:apple '
 - '-                                               -'
 - '-----Test for stringIsEqualCaseSensitive if text have same case sensitive-----'
 - Before
@@ -388,4 +196,12 @@
 - After
 - '[0x1] f_str:[2]:handphone, start:0, len:9, str:handphone'
 - '[0x1] f_str:[2]:handphone, start:0, len:9, str:handphone'
+- '-                                               -'
+- '-----Test for stringIsEqualCaseSensitive if text have same case sensitive 2-----'
+- Before
+- '[0x1] f_str:[2]:apple, start:0, len:5, str:apple'
+- '[0x1] f_str:[2]:ApPLe, start:0, len:5, str:ApPLe'
+- After
+- '[0x1] f_str:[2]:apple, start:0, len:5, str:apple'
+- '[0x1] f_str:[2]:apple, start:0, len:5, str:apple'
 - '-                                               -'

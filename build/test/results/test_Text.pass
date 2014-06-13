@@ -1,0 +1,57 @@
+---
+:source:
+  :path: test
+  :file: test_Text.c
+:successes:
+- :test: test_textDump_explore
+  :line: 16
+  :message: ''
+- :test: test_textNew_should_create_a_static_text
+  :line: 27
+  :message: ''
+- :test: test_textNew_should_create_a_dynamic_text
+  :line: 42
+  :message: ''
+- :test: test_textAssign_should_increase_text_reference
+  :line: 57
+  :message: ''
+- :test: test_textAssign_should__not_increase_text_reference
+  :line: 89
+  :message: ''
+- :test: test_textDelete_should_delete_reference_for_dynamic_text
+  :line: 112
+  :message: ''
+- :test: test_textDelete_should_not_delete_reference_for_static_text
+  :line: 151
+  :message: ''
+- :test: test_textDelete_should_delete_all_reference_and_return_null
+  :line: 169
+  :message: ''
+- :test: test_text_explore
+  :line: 211
+  :message: ''
+- :test: test_textNew_should_create_a_text_with_reference_of_1
+  :line: 260
+  :message: ''
+- :test: test_textAssign_dynamic_text_should_increase_reference_to_2
+  :line: 267
+  :message: ''
+:failures: []
+:ignores: []
+:counts:
+  :total: 11
+  :passed: 11
+  :failed: 0
+  :ignored: 0
+:stdout:
+- text[3]:dummy
+- '-----Test for textNew to make a static text-----'
+- text[80000000]:Freedom
+- '-                                               -'
+- '-                                               -'
+- '-----Test for textNew to make a dynamic text-----'
+- text[1]:Justice
+- '-                                               -'
+- '-----name1-----'
+- '-----name2-----'
+- '---------'

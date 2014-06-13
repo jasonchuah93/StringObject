@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "Token.h"
 #include "CharSet.h"
+#include <malloc.h>
 
 OperatorInfo mainOperatorTable[] = {
   {.symbol="~", .id=BITWISE_NOT_OP, .precedence=150, .affix=INFIX, .assoc=LEFT_TO_RIGHT},
@@ -29,10 +30,15 @@ OperatorInfo alternativeOperatorTable[] = {
  * Create a Number token initialized to the value given.
  *
  * Input:
- *   value  is the value to initialized with
+ *   value is the value to initialized with
  */
 Number *numberNew(int value) {
-  return NULL;
+  Number *numbers=malloc(sizeof(Number));
+ 
+  numbers->type=NUMBER_TOKEN;
+  numbers->value=value;
+  
+  return numbers;
 }
 
 /**
