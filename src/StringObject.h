@@ -42,5 +42,5 @@ int stringLength(String *string);
 String *stringRemoveWordNotContaining(String *string,char *delimiters);
 String *stringRemoveWordContaining(String *string,char containSet[] );
 int stringIsEqual(String *string1,String *string2);
-int stringIsEqualCaseInSensitive(String *string1,String *string2);
+int stringIsEqualCaseInsensitive(String *string1,String *string2);
 #endif // StringObject_H

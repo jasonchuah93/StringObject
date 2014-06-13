@@ -4,136 +4,139 @@
   :file: test_StringObject.c
 :successes:
 - :test: test_StringDump_explore
-  :line: 14
+  :line: 15
   :message: ''
 - :test: test_textDump_explore
-  :line: 35
+  :line: 36
   :message: ''
 - :test: test_textNew_should_create_a_static_text
-  :line: 46
+  :line: 47
   :message: ''
 - :test: test_textNew_should_create_a_dynamic_text
-  :line: 61
+  :line: 62
   :message: ''
 - :test: test_stringNew_should_create_string_with_static_text
-  :line: 76
+  :line: 77
   :message: ''
 - :test: test_stringNew_should_create_string_with_dynamic_text
-  :line: 92
+  :line: 93
   :message: ''
 - :test: test_textAssign_should_increase_text_reference
-  :line: 108
+  :line: 109
   :message: ''
 - :test: test_textAssign_should__not_increase_text_reference
-  :line: 140
+  :line: 141
   :message: ''
 - :test: test_stringAssign_should_increase_reference
-  :line: 163
+  :line: 164
   :message: ''
 - :test: test_stringAssign_should_not_increase_reference
-  :line: 190
+  :line: 191
   :message: ''
 - :test: test_textDelete_should_delete_reference_for_dynamic_text
-  :line: 210
+  :line: 211
   :message: ''
 - :test: test_textDelete_should_not_delete_reference_for_static_text
-  :line: 249
+  :line: 250
   :message: ''
 - :test: test_stringDelete_should_delete_reference
-  :line: 267
+  :line: 268
   :message: ''
 - :test: test_stringDelete_should_not_delete_reference_for_text
-  :line: 300
+  :line: 301
   :message: ''
 - :test: test_textDelete_should_delete_all_reference_and_return_null
-  :line: 333
+  :line: 334
   :message: ''
 - :test: test_stringDelete_should_delete_all_reference_and_return_null
-  :line: 375
+  :line: 376
   :message: ''
 - :test: test_text_explore
-  :line: 418
+  :line: 419
   :message: ''
 - :test: test_stringSkip_given_Hello_and_skip_2_should_become_llo
-  :line: 467
+  :line: 468
   :message: ''
 - :test: test_stringSkip_given_gundam_and_skip_4_should_become_am
-  :line: 481
+  :line: 482
   :message: ''
 - :test: test_stringSkip_given_gundam_and_skip_6_should_return_null
-  :line: 495
+  :line: 496
   :message: ''
 - :test: test_stringSkip_given_beyond_ra_and_skip_2_should_make_start_equals_2_length_equals_0
-  :line: 509
+  :line: 510
   :message: ''
 - :test: test_stringTrimLeft_given_Amazing_prefixed_with_2_space_should_remove_the_spaces
-  :line: 523
+  :line: 524
   :message: ''
 - :test: test_stringTrimLeft_given_Saviour_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab
-  :line: 537
+  :line: 538
   :message: ''
 - :test: test_stringTrimRight_given_Comet_postfixed_with_3_space_should_remove_the_spaces
-  :line: 551
+  :line: 552
   :message: ''
 - :test: test_stringTrimRight_given_hello_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab
-  :line: 565
+  :line: 566
   :message: ''
 - :test: test_stringTrim_given_hello_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab
-  :line: 580
+  :line: 581
   :message: ''
 - :test: test_stringTrim_given_Kamaguchi_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab
-  :line: 593
+  :line: 594
   :message: ''
 - :test: test_stringTrim_given_Ferraro_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab
-  :line: 606
+  :line: 607
   :message: ''
 - :test: test_textNew_should_create_a_text_with_reference_of_1
-  :line: 619
+  :line: 620
   :message: ''
 - :test: test_textAssign_dynamic_text_should_increase_reference_to_2
-  :line: 626
+  :line: 627
   :message: ''
 - :test: test_stringRemove_should_remove_first_char_within_a_string
-  :line: 635
+  :line: 636
   :message: ''
 - :test: test_stringRemove_should_remove_three_char_within_a_string
-  :line: 651
+  :line: 652
   :message: ''
 - :test: test_stringRemove_should_remove_five_char_within_a_string
-  :line: 673
+  :line: 674
   :message: ''
 - :test: test_stringRemove_should_remove_all_char_within_a_string
-  :line: 702
+  :line: 703
   :message: ''
 - :test: test_stringLength_should_get_the_correct_length
-  :line: 738
+  :line: 739
   :message: ''
 - :test: test_stringLength_should_get_the_correct_length2
-  :line: 754
+  :line: 755
   :message: ''
 - :test: test_stringLength_should_get_the_correct_length3
-  :line: 770
+  :line: 771
   :message: ''
-- :test: test_stringRemoveWordNotContaining_should_test_input__and_start_with_alphabet
-  :line: 786
+- :test: test_stringRemoveWordNotContaining_should_test_input_and_start_with_alphabet
+  :line: 787
   :message: ''
-- :test: test_stringRemoveWordNotContaining_should_test_input_and_start_with_alphabet2
-  :line: 802
+- :test: test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet1
+  :line: 814
   :message: ''
-- :test: test_stringIsEqual_should_result_both_string_is_same
-  :line: 818
+- :test: test_stringIsEqual_should_return_one_if_both_string_is_same
+  :line: 831
   :message: ''
-- :test: test_stringIsEqual_should_result_both_string_the_start_is_different_but_length_is_same
-  :line: 858
+- :test: test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case
+  :line: 903
+  :message: ''
+- :test: test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case2
+  :line: 924
   :message: ''
 :failures:
-- :test: test_stringIsEqual_should_result_both_string_is_same_but_length_is_different
-  :line: 851
-  :message: Expected 0 Was 1
+- :test: test_stringRemoveWordNotContaining_should_test_input_and_start_with_alphabet2
+  :line: 808
+  :message: Expected 8 Was 7
 :ignores: []
 :counts:
-  :total: 42
-  :passed: 41
+  :total: 43
+  :passed: 42
   :failed: 1
   :ignored: 0
 :stdout:
@@ -146,16 +149,13 @@
 - '-----Test for textNew to make a dynamic text-----'
 - text[1]:Justice
 - '-                                               -'
-- '-                                               -'
 - '-----Test for stringNew to create string from static text-----'
 - text[80000000]:Exia
 - '[0x1] f_str:[80000000]:Exia, start:0, len:4, str:Exia'
 - '-                                               -'
-- '-                                               -'
 - '-----Test for stringNew to create string from dynamic text-----'
 - text[1]:00Raiser
 - '[0x1] f_str:[2]:00Raiser, start:0, len:8, str:00Raiser'
-- '-                                               -'
 - '-                                               -'
 - '-----Test for textAssign to increase text reference-----'
 - text[1]:Arios
@@ -164,13 +164,11 @@
 - text[4]:Arios
 - text[5]:Arios
 - '-                                               -'
-- '-                                               -'
 - '-----Test for textAssign to not to increase text reference-----'
 - '-----name1-----'
 - text[80000000]:Dynames
 - '-----name2-----'
 - text[80000000]:Dynames
-- '-                                               -'
 - '-                                               -'
 - '-----Test for stringAssign to increase reference-----'
 - text[1]:Unicorn
@@ -179,12 +177,10 @@
 - '[0x4] f_str:[2]:Unicorn, start:0, len:7, str:Unicorn'
 - '[0x5] f_str:[2]:Unicorn, start:0, len:7, str:Unicorn'
 - '-                                               -'
-- '-                                               -'
 - '-----Test for stringAssign to not to increase reference-----'
 - text[80000000]:Banshee
 - '[0x1] f_str:[80000000]:Banshee, start:0, len:7, str:Banshee'
 - '[0x1] f_str:[80000000]:Banshee, start:0, len:7, str:Banshee'
-- '-                                               -'
 - '-                                               -'
 - '-----Test for textDelete should delete reference on dynamic text -----'
 - text[1]:Destiny
@@ -195,11 +191,9 @@
 - text[4]:Destiny
 - text[3]:Destiny
 - '-                                               -'
-- '-                                               -'
 - '-----Test for textDelete should not delete reference on static text -----'
 - text[80000000]:Legend
 - text[80000000]:Legend
-- '-                                               -'
 - '-                                               -'
 - '-----Test for stringDelete should delete reference-----'
 - text[1]:Strike
@@ -211,7 +205,6 @@
 - '[0x4] f_str:[2]:Strike, start:0, len:6, str:Strike'
 - '[0x3] f_str:[2]:Strike, start:0, len:6, str:Strike'
 - '-                                               -'
-- '-                                               -'
 - '-----Test for stringDelete should not delete reference for text-----'
 - text[80000000]:QanTa
 - '[0x1] f_str:[80000000]:QanTa, start:0, len:5, str:QanTa'
@@ -221,7 +214,6 @@
 - '[0x5] f_str:[80000000]:QanTa, start:0, len:5, str:QanTa'
 - '[0x4] f_str:[80000000]:QanTa, start:0, len:5, str:QanTa'
 - '[0x3] f_str:[80000000]:QanTa, start:0, len:5, str:QanTa'
-- '-                                               -'
 - '-                                               -'
 - '-----Test for textDelete should delete all reference and return NULL -----'
 - text[1]:Impulse
@@ -234,7 +226,6 @@
 - text[2]:Impulse
 - text[1]:Impulse
 - '(NULL) '
-- '-                                               -'
 - '-                                               -'
 - '-----Test for stringDelete should delete all reference-----'
 - text[1]:Infinite
@@ -250,8 +241,6 @@
 - 'NULL'
 - ''
 - '-                                               -'
-- '-                                               -'
-- '-----------------------------'
 - '-----Test for textExplore-----'
 - text[80000000]:James ho
 - text[1]:jason
@@ -362,25 +351,32 @@
 - '-                                               -'
 - '-                                               -'
 - '-----Test for stringRemoveWordNotContaining -----'
-- '[0x1] f_str:[2]:nokia, start:0, len:5, str:nokia'
-- '[0x1] f_str:[2]:nokia, start:1, len:4, str:okia'
+- '[0x1] f_str:[80000000]:Bulldog, start:4, len:3, str:dog'
+- '[0x1] f_str:[80000000]:Bulldog, start:0, len:4, str:Bull'
 - '-                                               -'
 - '-                                               -'
 - '-----Test for stringRemoveWordNotContaining -----'
 - '[0x1] f_str:[2]:blackberry, start:0, len:10, str:blackberry'
-- '[0x1] f_str:[2]:blackberry, start:6, len:4, str:erry'
+- '[0x1] f_str:[4]:blackberry, start:0, len:7, str:blackbe'
+- '[0x1] f_str:[3]:apple, start:2, len:3, str:ple'
+- '[0x1] f_str:[3]:apple, start:0, len:2, str:ap'
+- '-----Test for stringIsEqual -----'
+- '[0x1] f_str:[2]:pineapple, start:4, len:5, str:apple'
+- '[0x1] f_str:[2]:apple, start:0, len:5, str:apple'
 - '-                                               -'
-- '-                                               -'
-- '-----Test for stringIsEqual if text is same -----'
+- '-----Test for stringIsEqualCaseSensitive if text have same case sensitive-----'
+- Before
+- '[0x1] f_str:[2]:aPPLE, start:0, len:5, str:aPPLE'
+- '[0x1] f_str:[2]:ApplE, start:0, len:5, str:ApplE'
+- After
 - '[0x1] f_str:[2]:apple, start:0, len:5, str:apple'
 - '[0x1] f_str:[2]:apple, start:0, len:5, str:apple'
 - '-                                               -'
-- '-                                               -'
-- '-----Test for stringIsEqual if text is different -----'
-- '[0x1] f_str:[2]:apple, start:0, len:5, str:apple'
-- '[0x1] f_str:[2]:ple, start:0, len:3, str:ple'
-- '-----Test for stringIsEqual if text have same length but different start-----'
-- '[0x1] f_str:[2]:apple, start:0, len:5, str:apple'
-- '[0x1] f_str:[2]:ple, start:0, len:3, str:ple'
-- '-                                               -'
+- '-----Test for stringIsEqualCaseSensitive if text have same case sensitive 2-----'
+- Before
+- '[0x1] f_str:[2]:HandPhone, start:0, len:9, str:HandPhone'
+- '[0x1] f_str:[2]:hANDpHonE, start:0, len:9, str:hANDpHonE'
+- After
+- '[0x1] f_str:[2]:handphone, start:0, len:9, str:handphone'
+- '[0x1] f_str:[2]:handphone, start:0, len:9, str:handphone'
 - '-                                               -'
