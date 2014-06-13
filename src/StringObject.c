@@ -2,15 +2,10 @@
 #include<string.h>
 #include <malloc.h>
 #include "StringObject.h"
+#include "Text.h"
 
 
-void textDump(Text *text){
-	if(text ==NULL){
-		printf("(NULL)");
-		return;
-	}
-	printf("text[%x]:%s\n",text->reference,text->string);
-}
+
 
 void stringDump(String *string){
 	uint32 index = 0, len= 0;
@@ -49,40 +44,7 @@ void stringDump(String *string){
 		
 }
 
-Text *textAssign(Text *text){
-	if(text->reference !=0x80000000){
-		text->reference++;
-		
-	}
-	return text;
-}
-		
-Text *textNew(char *charStr){
-	Text *text = (Text *)malloc(strlen(charStr)+4+1);
-		//Character string copy from charStr to text->string
-		//...
-	strcpy(text->string,charStr); //destination source
-	text->reference=1;
-	return text;
-}
 
-Text *textDel(Text *text){
-
-	//if text->reference is not equals to 0x80000000 do//
-	//normal text deletion
-	// elso do nothing
-	
-	if(text->reference <0x80000000 &&text->reference >0){
-		text->reference--;
-		if(text->reference == 0){
-		free(text);
-		return NULL;
-		}
-	
-	}
-	
-	return text;
-}
 
 String *stringNew(Text *text){
 	String *str=malloc(sizeof(String));
@@ -190,49 +152,58 @@ String *stringRemoveWordNotContaining(String *string,char *delimiters){
 	deletedString->length=0;
 	char isAlphabet = string->text->string[i];
 	
-	
 	while(isAlphabet!=0){
 		while(delimiters[j]!=0){
-		if(string->text->string[i+1]!=delimiters[j]){
-			string->start++;
-			string->length--;
-			deletedString->length++;
-		}
-		else {
+		if(string->text->string[i]!=delimiters[j]){
 			goto here;
 		}
-		
+		else{
+			
+			deletedString->start=string->start;
+			deletedString->length=i-string->start;
+			string->start=i;
+			string->length=string->length-deletedString->length;
+			return deletedString;
+			
+			}
+		here:
 		j++;
-		}
 		
-		j--;
-		i++;
 		}
-	
-	here:
-	
-	return deletedString;
+		i++;
+		j=0;
+		
+		}
 }
 
 String *stringRemoveWordContaining(String *string,char containSet[]){
-	int i =0 ,j=0 ;
+	int i =0 ,j=0 ,value=0;
 	String *newString = stringNew(string->text);
-	newString->start=0;
+	newString->start=string->start;
 	newString->length=0;
 	
-	while(string->text->string[i] != 0)
-	{
+	while(string->text->string[i] != 0){
+	while(containSet[j]!=0){
 		if((string->text->string[i]==containSet[j])){
 			string->start++;
 			string->length--;
 			newString->length++;
+			goto here;
 		}
 		else{
-			break;
+			value++;
 		}
-	i++;
-	j++;
+		j++;
 	}
+	if(value>=newString->length)
+	{
+		goto come;
+	}
+		here:
+		j=0;
+		i++;	
+	}
+	come:
 	return newString;
 }
 
@@ -242,6 +213,10 @@ int stringIsEqual(String *string1,String *string2){
 	stringStart = string1->text->string[i + string1->start];
 	int stringEnd;
 	stringEnd = string2->text->string[i + string2->start];
+	
+	if(string1->start == string2->start){
+		return 1;
+	}
 	
 	if(string1->length == string2->length){
 		return 1;
@@ -257,10 +232,9 @@ int stringIsEqual(String *string1,String *string2){
 		
 	}
 
-	return 0;
+	
 	
 }
-
 int stringIsEqualCaseInsensitive(String *string1,String *string2){
 	int i;
 	for(i=0;string1->text->string[i];i++)
@@ -275,4 +249,44 @@ int stringIsEqualCaseInsensitive(String *string1,String *string2){
 	
 	stringIsEqual(string1,string2);
 	
+}
+
+/**
+*Return the character at the specified relative index
+of the string
+
+input :
+	str :	is String Object
+	relativeIndex : is the relative index into the string.
+					this value must be positive.
+					
+	Return the character at the relative index if exists.
+	Otherwise return -1.If relativeIndex is less than 0, return -1
+	as well
+**/
+
+int stringCharAt(String *str,int relativeIndex){
+	char finalIndex;
+	if(relativeIndex < 0 || str->start+relativeIndex >= str->length){
+		return -1;
+	}
+	else{
+		
+		finalIndex=str->text->string[str->start+relativeIndex];
+	}
+		return finalIndex;
+}
+
+int stringCharAtInSet(String *str,int relativeIndex,char set[]){
+	int j=0;
+	
+	int string1=str->text->string[str->start+relativeIndex];
+	
+	while(set[j]!=0){
+		if(string1==set[j]){
+			return 1;
+		}
+		j++;
+	}
+	return 0;
 }

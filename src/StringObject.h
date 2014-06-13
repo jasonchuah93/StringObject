@@ -3,14 +3,11 @@
 
 
 #include "Types.h"
+#include "Text.h"
 
 #define t (Text *)"\x00\x00\x00\x80"
 #define isSpace(ch) (ch == ' ' || ch== '\t')
  
-typedef struct Text{
-	uint32 reference;
-	char string[0];
-}Text;
 
 typedef struct String{
 	uint32 reference;
@@ -20,12 +17,6 @@ typedef struct String{
 }String;
 
 void stringDump(String *string);
-void textDump(Text *text);
-
-
-Text *textNew(char *charStr);
-Text *textAssign(Text *text);
-Text *textDel(Text *text);
 
 String *stringNew(Text *text);
 String *stringAssign(String *string);
@@ -43,4 +34,6 @@ String *stringRemoveWordNotContaining(String *string,char *delimiters);
 String *stringRemoveWordContaining(String *string,char containSet[] );
 int stringIsEqual(String *string1,String *string2);
 int stringIsEqualCaseInsensitive(String *string1,String *string2);
+int stringCharAt(String *str,int relativeIndex);
+int stringCharAtInSet(String *str,int relativeIndex,char set[]);
 #endif // StringObject_H
