@@ -4,6 +4,7 @@
 #include "CustomTypeAssert.h"
 
 
+
 typedef struct FakeText{
 	uint32 reference;
 	char string[80];
@@ -818,3 +819,115 @@ void test_stringCharAtInSet_should_return_relative_character3(void){
 	
 	TEST_ASSERT_EQUAL(1,input);
 }
+
+void test_stringSubstringInChar_Phone016_should_return_016(void){
+	
+	char *input;
+	Text *name1=textNew("Phone016");
+	String *string1=stringNew(name1);
+	
+	input = stringSubstringInChar(string1,5,3);
+	printf("%s\n",input);
+	
+	TEST_ASSERT_EQUAL_STRING("016",input);
+}
+
+void test_stringSubstringInChar2_HandPhone016123_should_return_016(void){
+	
+	char *input;
+	Text *name1=textNew("HandPhone016123");
+	String *string1=stringNew(name1);
+	
+	input = stringSubstringInChar(string1,4,13);
+	printf("%s\n",input);
+	
+	TEST_ASSERT_EQUAL_STRING("Phone016123",input);
+}
+
+void test_stringSubstringInChar_Phone016_should_return_NULL_if_length_of_string_exceeded(void){
+	
+	char *input;
+	Text *name1=textNew("Phone016");
+	String *string1=stringNew(name1);
+	
+	input = stringSubstringInChar(string1,1,10);
+	printf("%s\n",input);
+	
+	TEST_ASSERT_EQUAL_STRING(" ",input);
+}
+
+void test_stringSubstringInText_Phone016_should_return_016(void){
+	
+	Text *name1=textNew("Phone016");
+	String *string1=stringNew(name1);
+	
+	Text *stringText = stringSubstringInText(string1,5,3);
+	
+	
+	TEST_ASSERT_EQUAL(1,stringText->reference);
+	TEST_ASSERT_EQUAL_STRING("016",stringText->string);
+
+}
+
+void test_stringSubstringInText_should_get_substring(void){
+	
+	Text *name1=textNew("HandPhone016123");
+	String *string1=stringNew(name1);
+	
+	Text *stringText = stringSubstringInText(string1,6,6);
+	
+	
+	TEST_ASSERT_EQUAL(1,stringText->reference);
+	TEST_ASSERT_EQUAL_STRING("one016",stringText->string);
+
+}
+
+void test_stringSubstringInText_should_return_empty_string(void){
+	
+	Text *name1=textNew("HandPhone016123");
+	String *string1=stringNew(name1);
+	
+	Text *stringText = stringSubstringInText(string1,6,20);
+	
+	
+	TEST_ASSERT_EQUAL(1,stringText->reference);
+	TEST_ASSERT_EQUAL_STRING(" ",stringText->string);
+
+}
+
+void test_stringToInteger_should_return_integer_type(void){
+	int input;
+	Text *name1=textNew("HandPhone016123");
+	String *string1=stringNew(name1);
+	string1->start=10;
+	string1->length=5;
+	
+	input=stringToInteger(string1);
+	
+	TEST_ASSERT_EQUAL(16123,input);
+}
+
+void test_stringToInteger_should_return_integer_type2(void){
+	int input;
+	Text *name1=textNew("Hand016123Phone");
+	String *string1=stringNew(name1);
+	string1->start=5;
+	string1->length=4;
+	
+	input=stringToInteger(string1);
+	
+	TEST_ASSERT_EQUAL(1612,input);
+}
+
+void test_stringToInteger_should_return_integer_type3(void){
+	int input;
+	Text *name1=textNew("Hand016123Phone");
+	String *string1=stringNew(name1);
+	string1->start=5;
+	string1->length=4;
+	
+	input=stringToInteger(string1);
+	
+	TEST_ASSERT_EQUAL(1612,input);
+}
+

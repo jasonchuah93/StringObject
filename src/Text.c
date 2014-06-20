@@ -2,6 +2,7 @@
 #include<string.h>
 #include <malloc.h>
 #include "Text.h"
+#include "StringObject.h"
 
 void textDump(Text *text){
 	if(text ==NULL){
@@ -45,3 +46,4 @@ Text *textDel(Text *text){
 	
 	return text;
 }
+

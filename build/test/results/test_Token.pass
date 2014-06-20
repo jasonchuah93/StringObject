@@ -7,34 +7,49 @@
   :line: 11
   :message: ''
 - :test: test_numberNew_should_get_more_than_single_digit_value_and_type
-  :line: 20
+  :line: 21
   :message: ''
 - :test: test_numberNew_should_get_negative_value_and_type
-  :line: 29
+  :line: 31
   :message: ''
 - :test: test_identifierNew_should_identifier_the_content
-  :line: 38
+  :line: 41
+  :message: ''
+- :test: test_identifierNew_should_identifier_the_content_two
+  :line: 53
+  :message: ''
+- :test: test_identifierNew_should_identifier_the_content_three
+  :line: 65
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_symbol
-  :line: 61
+  :line: 77
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_different_symbol
-  :line: 71
+  :line: 88
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_different_symbol2
-  :line: 81
+  :line: 99
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_different_symbol3
-  :line: 91
+  :line: 110
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_different_symbol4
-  :line: 101
+  :line: 121
+  :message: ''
+- :test: test_operatorNewByID_should_identify_the_different_symbol
+  :line: 132
+  :message: ''
+- :test: test_operatorNewByID_should_identify_the_different_symbol2
+  :line: 141
+  :message: ''
+- :test: test_operatorNewByID_should_identify_the_different_symbol3
+  :line: 150
   :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 9
-  :passed: 9
+  :total: 14
+  :passed: 14
   :failed: 0
   :ignored: 0
 :stdout: []

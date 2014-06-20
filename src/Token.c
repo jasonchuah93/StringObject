@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "Token.h"
 #include "CharSet.h"
+#include "StringObject.h"
+#include "Text.h"
 #include <malloc.h>
 
 #define MAIN_OPERATOR_TABLE_SIZE (sizeof(mainOperatorTable)/(sizeof(OperatorInfo))
@@ -36,7 +38,7 @@ OperatorInfo alternativeOperatorTable[] = {
  *   value is the value to initialized with
  */
 Number *numberNew(int value) {
-  Number *numbers=malloc(sizeof(Number));
+  Number *numbers=malloc(sizeof(value));
  
   numbers->type=NUMBER_TOKEN;
   numbers->value=value;
@@ -53,7 +55,7 @@ Number *numberNew(int value) {
  */
 Operator *operatorNewBySymbol(char *symbol) {
   
-  Operator *operators=malloc(sizeof(Operator));
+  Operator *operators=malloc(sizeof(symbol));
   
   operators->type=OPERATOR_TOKEN;
 	int i=0;
@@ -62,9 +64,6 @@ Operator *operatorNewBySymbol(char *symbol) {
 	{
 		operators->info = &mainOperatorTable[i];
 	}
-	
-	
-		
 	i++;
 	}
 	return operators;
@@ -79,7 +78,19 @@ Operator *operatorNewBySymbol(char *symbol) {
  *          and CLOSING_BRACKET_OP.
  */
 Operator *operatorNewByID(OperatorID id) {
-  return NULL;
+ 
+ Operator *operators=malloc(sizeof(id));
+  
+  operators->type=OPERATOR_TOKEN;
+	int i=0;
+	while(mainOperatorTable[i].id!=0){
+	if(mainOperatorTable[i].id==id)
+	{
+		operators->info = &mainOperatorTable[i];
+	}
+	i++;
+	}
+	return operators;
 }
 
 /**
@@ -90,7 +101,7 @@ Operator *operatorNewByID(OperatorID id) {
  *   name is the name of the identifier.
  */
 Identifier *identifierNew(Text *name) {
-	Identifier *identifiers=malloc(sizeof(Identifier));
+	Identifier *identifiers=malloc(sizeof(name));
 	
 	identifiers->type=IDENTIFIER_TOKEN;
 	identifiers->name=name;
@@ -110,5 +121,12 @@ Identifier *identifierNew(Text *name) {
  *    Number, Operator, and Identifier tokens
  */
 Token *getToken(String *str) {
-  return NULL;
-}
+ 
+  
+ 
+  
+  
+  
+  
+  
+ }

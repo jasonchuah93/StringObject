@@ -3,6 +3,7 @@
 #include <malloc.h>
 #include "StringObject.h"
 #include "Text.h"
+#include <stdlib.h>
 
 
 
@@ -290,3 +291,53 @@ int stringCharAtInSet(String *str,int relativeIndex,char set[]){
 	}
 	return 0;
 }
+
+
+
+int stringToInteger(String *str){
+	
+	int relativePosition,length;
+	char *stringInteger; //In string form
+	int integerString; //In integer form
+	
+	relativePosition=str->start;
+	length=str->length;
+	stringInteger=stringSubstringInChar(str,relativePosition,length);
+	integerString=atoi(stringInteger);
+	free(stringInteger);
+	return integerString;
+}
+
+char *stringSubstringInChar(String *str,int relativePosition,int length){
+	
+	char *subString = malloc(sizeof(char)*(length+1));
+	int i=0,j=0;
+	
+	
+	if(length <= str->length){
+	for(i=0,j = relativePosition;j <= relativePosition+length-1;i++,j++)
+	{
+		subString[i]=str->text->string[j];
+		
+	}
+	}
+	else{
+		return " ";
+	}
+	subString[i]=0;
+	return subString;
+}
+
+Text *stringSubstringInText(String *str,int relativePosition,int length){
+	char *charStr=stringSubstringInChar(str,relativePosition,length);
+	Text *Newtext=textNew(charStr);
+	free(charStr);
+	return Newtext;
+
+}
+
+
+
+
+  	
+

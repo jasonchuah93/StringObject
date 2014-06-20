@@ -38,11 +38,16 @@ extern void test_numberNew_should_get_single_digit_value_and_type(void);
 extern void test_numberNew_should_get_more_than_single_digit_value_and_type(void);
 extern void test_numberNew_should_get_negative_value_and_type(void);
 extern void test_identifierNew_should_identifier_the_content(void);
+extern void test_identifierNew_should_identifier_the_content_two(void);
+extern void test_identifierNew_should_identifier_the_content_three(void);
 extern void test_operatorNewBySymbol_should_identify_the_symbol(void);
 extern void test_operatorNewBySymbol_should_identify_the_different_symbol(void);
 extern void test_operatorNewBySymbol_should_identify_the_different_symbol2(void);
 extern void test_operatorNewBySymbol_should_identify_the_different_symbol3(void);
 extern void test_operatorNewBySymbol_should_identify_the_different_symbol4(void);
+extern void test_operatorNewByID_should_identify_the_different_symbol(void);
+extern void test_operatorNewByID_should_identify_the_different_symbol2(void);
+extern void test_operatorNewByID_should_identify_the_different_symbol3(void);
 
 
 //=======Test Reset Option=====
@@ -59,14 +64,19 @@ int main(void)
   Unity.TestFile = "test_Token.c";
   UnityBegin();
   RUN_TEST(test_numberNew_should_get_single_digit_value_and_type, 11);
-  RUN_TEST(test_numberNew_should_get_more_than_single_digit_value_and_type, 20);
-  RUN_TEST(test_numberNew_should_get_negative_value_and_type, 29);
-  RUN_TEST(test_identifierNew_should_identifier_the_content, 38);
-  RUN_TEST(test_operatorNewBySymbol_should_identify_the_symbol, 61);
-  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol, 71);
-  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol2, 81);
-  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol3, 91);
-  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol4, 101);
+  RUN_TEST(test_numberNew_should_get_more_than_single_digit_value_and_type, 21);
+  RUN_TEST(test_numberNew_should_get_negative_value_and_type, 31);
+  RUN_TEST(test_identifierNew_should_identifier_the_content, 41);
+  RUN_TEST(test_identifierNew_should_identifier_the_content_two, 53);
+  RUN_TEST(test_identifierNew_should_identifier_the_content_three, 65);
+  RUN_TEST(test_operatorNewBySymbol_should_identify_the_symbol, 77);
+  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol, 88);
+  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol2, 99);
+  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol3, 110);
+  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol4, 121);
+  RUN_TEST(test_operatorNewByID_should_identify_the_different_symbol, 132);
+  RUN_TEST(test_operatorNewByID_should_identify_the_different_symbol2, 141);
+  RUN_TEST(test_operatorNewByID_should_identify_the_different_symbol3, 150);
 
   return (UnityEnd());
 }
