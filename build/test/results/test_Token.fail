@@ -1,0 +1,61 @@
+---
+:source:
+  :path: test
+  :file: test_Token.c
+:successes:
+- :test: test_numberNew_should_get_single_digit_value_and_type
+  :line: 14
+  :message: ''
+- :test: test_numberNew_should_get_more_than_single_digit_value_and_type
+  :line: 24
+  :message: ''
+- :test: test_numberNew_should_get_negative_value_and_type
+  :line: 34
+  :message: ''
+- :test: test_identifierNew_should_identifier_the_content
+  :line: 44
+  :message: ''
+- :test: test_identifierNew_should_identifier_the_content_two
+  :line: 56
+  :message: ''
+- :test: test_identifierNew_should_identifier_the_content_three
+  :line: 68
+  :message: ''
+- :test: test_operatorNewByID_should_identify_the_different_symbol
+  :line: 135
+  :message: ''
+- :test: test_operatorNewByID_should_identify_the_different_symbol2
+  :line: 144
+  :message: ''
+- :test: test_operatorNewByID_should_identify_the_different_symbol3
+  :line: 153
+  :message: ''
+- :test: test_getToken_should_get_number_token_from_string
+  :line: 161
+  :message: ''
+- :test: test_getToken_should_get_more_number_token_from_string
+  :line: 171
+  :message: ''
+- :test: test_getToken_should_get_more_number_token_from_string_got_space
+  :line: 181
+  :message: ''
+- :test: test_getToken_should_get_operator_token_from_string
+  :line: 195
+  :message: ''
+- :test: test_getToken_should_get_identifier_token_from_string
+  :line: 234
+  :message: ''
+:failures:
+- :test: test_getToken_should_get_operator_token_from_string2
+  :line: 218
+  :message: Expected '&&' Was '&'
+:ignores: []
+:counts:
+  :total: 15
+  :passed: 14
+  :failed: 1
+  :ignored: 0
+:stdout:
+- '234'
+- +
+- '&'

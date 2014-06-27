@@ -1254,6 +1254,42 @@ void test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet4(
 
 
 
+void xtest_stringRemoveWordContaining_should_test_input_and_start_with_alphabet5(void){
+
+
+
+ Text *name1=textNew("1234ABCD56");
+
+ String *string1=stringNew(name1);
+
+
+
+ String *string2 = stringRemoveWordContaining(string1,"ABCD");
+
+ stringDump(string2);
+
+ stringDump(string1);
+
+
+
+ UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((string2->start)), (((void *)0)), (_U_UINT)640, UNITY_DISPLAY_STYLE_INT);
+
+ UnityAssertEqualNumber((_U_SINT)((4)), (_U_SINT)((string2->length)), (((void *)0)), (_U_UINT)641, UNITY_DISPLAY_STYLE_INT);
+
+
+
+ UnityAssertEqualNumber((_U_SINT)((4)), (_U_SINT)((string1->start)), (((void *)0)), (_U_UINT)643, UNITY_DISPLAY_STYLE_INT);
+
+ UnityAssertEqualNumber((_U_SINT)((6)), (_U_SINT)((string1->length)), (((void *)0)), (_U_UINT)644, UNITY_DISPLAY_STYLE_INT);
+
+ printf("-                                               -\n");
+
+}
+
+
+
+
+
 void test_stringIsEqual_should_return_one_if_both_string_is_same(void){
 
  printf("-----Test for stringIsEqual -----\n");
@@ -1286,9 +1322,9 @@ void test_stringIsEqual_should_return_one_if_both_string_is_same(void){
 
 
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)647, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)665, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((string1->length)), (((void *)0)), (_U_UINT)648, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((string1->length)), (((void *)0)), (_U_UINT)666, UNITY_DISPLAY_STYLE_INT);
 
  printf("-                                               -\n");
 
@@ -1328,9 +1364,9 @@ void test_stringIsEqual_should_return_one_if_both_string_is_same01(void){
 
 
 
- UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)668, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)686, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((string1->length)), (((void *)0)), (_U_UINT)669, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((string1->length)), (((void *)0)), (_U_UINT)687, UNITY_DISPLAY_STYLE_INT);
 
  printf("-                                               -\n");
 
@@ -1370,9 +1406,9 @@ void test_stringIsEqual_should_return_zero_if_both_string_is_same02(void){
 
 
 
- UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)689, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)707, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((6)), (_U_SINT)((string1->length)), (((void *)0)), (_U_UINT)690, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((6)), (_U_SINT)((string1->length)), (((void *)0)), (_U_UINT)708, UNITY_DISPLAY_STYLE_INT);
 
  printf("-                                               -\n");
 
@@ -1412,7 +1448,7 @@ void test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case(voi
 
  stringDump(string2);
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)710, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)728, UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -1454,7 +1490,7 @@ void test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case2(vo
 
  stringDump(string2);
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)731, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)749, UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -1496,7 +1532,7 @@ void test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case01(v
 
  stringDump(string2);
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)752, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)770, UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -1518,7 +1554,7 @@ void test_stringCharAt_should_return_negative_one_if_startIndex_is_more_than_len
 
 
 
- UnityAssertEqualNumber((_U_SINT)((-1)), (_U_SINT)((stringCharAt(string1,0))), (((void *)0)), (_U_UINT)763, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((-1)), (_U_SINT)((stringCharAt(string1,0))), (((void *)0)), (_U_UINT)781, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -1542,7 +1578,7 @@ void test_stringCharAt_should_return_relative_character(void)
 
 
 
- UnityAssertEqualNumber((_U_SINT)(('l')), (_U_SINT)((input)), (((void *)0)), (_U_UINT)775, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)(('l')), (_U_SINT)((input)), (((void *)0)), (_U_UINT)793, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -1566,7 +1602,7 @@ void test_stringCharAt_should_return_relative_character2(void)
 
 
 
- UnityAssertEqualNumber((_U_SINT)(('o')), (_U_SINT)((input)), (((void *)0)), (_U_UINT)787, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)(('o')), (_U_SINT)((input)), (((void *)0)), (_U_UINT)805, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -1588,7 +1624,7 @@ void test_stringCharAtInSet_should_return_negative_one(void){
 
 
 
- UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)798, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)816, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -1610,7 +1646,7 @@ void test_stringCharAtInSet_should_return_relative_character2(void){
 
 
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)809, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)827, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -1632,7 +1668,7 @@ void test_stringCharAtInSet_should_return_relative_character3(void){
 
 
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)820, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)838, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -1656,7 +1692,7 @@ void test_stringSubstringInChar_Phone016_should_return_016(void){
 
 
 
- UnityAssertEqualString((const char*)("016"), (const char*)(input), (((void *)0)), (_U_UINT)832);
+ UnityAssertEqualString((const char*)("016"), (const char*)(input), (((void *)0)), (_U_UINT)850);
 
 }
 
@@ -1680,7 +1716,7 @@ void test_stringSubstringInChar2_HandPhone016123_should_return_016(void){
 
 
 
- UnityAssertEqualString((const char*)("Phone016123"), (const char*)(input), (((void *)0)), (_U_UINT)844);
+ UnityAssertEqualString((const char*)("Phone016123"), (const char*)(input), (((void *)0)), (_U_UINT)862);
 
 }
 
@@ -1704,7 +1740,7 @@ void test_stringSubstringInChar_Phone016_should_return_NULL_if_length_of_string_
 
 
 
- UnityAssertEqualString((const char*)(" "), (const char*)(input), (((void *)0)), (_U_UINT)856);
+ UnityAssertEqualString((const char*)(" "), (const char*)(input), (((void *)0)), (_U_UINT)874);
 
 }
 
@@ -1726,9 +1762,9 @@ void test_stringSubstringInText_Phone016_should_return_016(void){
 
 
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((stringText->reference)), (((void *)0)), (_U_UINT)867, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((stringText->reference)), (((void *)0)), (_U_UINT)885, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualString((const char*)("016"), (const char*)(stringText->string), (((void *)0)), (_U_UINT)868);
+ UnityAssertEqualString((const char*)("016"), (const char*)(stringText->string), (((void *)0)), (_U_UINT)886);
 
 
 
@@ -1752,9 +1788,9 @@ void test_stringSubstringInText_should_get_substring(void){
 
 
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((stringText->reference)), (((void *)0)), (_U_UINT)880, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((stringText->reference)), (((void *)0)), (_U_UINT)898, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualString((const char*)("one016"), (const char*)(stringText->string), (((void *)0)), (_U_UINT)881);
+ UnityAssertEqualString((const char*)("one016"), (const char*)(stringText->string), (((void *)0)), (_U_UINT)899);
 
 
 
@@ -1778,9 +1814,9 @@ void test_stringSubstringInText_should_return_empty_string(void){
 
 
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((stringText->reference)), (((void *)0)), (_U_UINT)893, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((stringText->reference)), (((void *)0)), (_U_UINT)911, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualString((const char*)(" "), (const char*)(stringText->string), (((void *)0)), (_U_UINT)894);
+ UnityAssertEqualString((const char*)(" "), (const char*)(stringText->string), (((void *)0)), (_U_UINT)912);
 
 
 
@@ -1806,7 +1842,7 @@ void test_stringToInteger_should_return_integer_type(void){
 
 
 
- UnityAssertEqualNumber((_U_SINT)((16123)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)907, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((16123)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)925, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -1830,7 +1866,7 @@ void test_stringToInteger_should_return_integer_type2(void){
 
 
 
- UnityAssertEqualNumber((_U_SINT)((1612)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)919, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1612)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)937, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -1854,6 +1890,6 @@ void test_stringToInteger_should_return_integer_type3(void){
 
 
 
- UnityAssertEqualNumber((_U_SINT)((1612)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)931, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1612)), (_U_SINT)((input)), (((void *)0)), (_U_UINT)949, UNITY_DISPLAY_STYLE_INT);
 
 }

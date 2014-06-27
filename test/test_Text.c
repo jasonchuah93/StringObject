@@ -35,8 +35,8 @@ void test_textNew_should_create_a_static_text(void){
 	textDump(text);
 	
 	TEST_ASSERT_EQUAL(0x80000000,text->reference);
-	printf("-                                               -\n");
-	printf("-                                               -\n");
+	//printf("-                                               -\n");
+	//printf("-                                               -\n");
 }
 
 void test_textNew_should_create_a_dynamic_text(void){
@@ -50,7 +50,7 @@ void test_textNew_should_create_a_dynamic_text(void){
 	textDump(text);
 	
 	TEST_ASSERT_EQUAL(1,text->reference);
-	printf("-                                               -\n");
+	//printf("-                                               -\n");
 	
 }
 
@@ -95,10 +95,10 @@ void test_textAssign_should__not_increase_text_reference(void){
 	
 	
 	name1=t"Dynames";
-	printf("-----name1-----\n");
+	//printf("-----name1-----\n");
 	//textDump(name1);
 	name2 = textAssign(name1);
-	printf("-----name2-----\n");
+	//printf("-----name2-----\n");
 	//textDump(name2);
 	
 	TEST_ASSERT_EQUAL(0X80000000,name1->reference);

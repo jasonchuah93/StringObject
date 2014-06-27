@@ -68,9 +68,9 @@ void test_textNew_should_create_a_static_text(void){
 
  UnityAssertEqualNumber((_U_SINT)((0x80000000)), (_U_SINT)((text->reference)), (((void *)0)), (_U_UINT)37, UNITY_DISPLAY_STYLE_INT);
 
- printf("-                                               -\n");
 
- printf("-                                               -\n");
+
+
 
 }
 
@@ -98,7 +98,7 @@ void test_textNew_should_create_a_dynamic_text(void){
 
  UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((text->reference)), (((void *)0)), (_U_UINT)52, UNITY_DISPLAY_STYLE_INT);
 
- printf("-                                               -\n");
+
 
 
 
@@ -188,13 +188,13 @@ void test_textAssign_should__not_increase_text_reference(void){
 
  name1=(Text *)"\x00\x00\x00\x80""Dynames";
 
- printf("-----name1-----\n");
+
 
 
 
  name2 = textAssign(name1);
 
- printf("-----name2-----\n");
+
 
 
 

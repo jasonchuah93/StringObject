@@ -15,3 +15,4 @@ void assertStringEqual(const char *expected, String *actual, int line, const cha
 	if(expected[i] != 0)
 		UNITY_TEST_FAIL(line, "Both strings are not the same.");
 }
+

@@ -100,67 +100,67 @@
   :line: 614
   :message: ''
 - :test: test_stringIsEqual_should_return_one_if_both_string_is_same
-  :line: 631
+  :line: 649
   :message: ''
 - :test: test_stringIsEqual_should_return_one_if_both_string_is_same01
-  :line: 652
+  :line: 670
   :message: ''
 - :test: test_stringIsEqual_should_return_zero_if_both_string_is_same02
-  :line: 673
+  :line: 691
   :message: ''
 - :test: test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case
-  :line: 694
+  :line: 712
   :message: ''
 - :test: test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case2
-  :line: 715
+  :line: 733
   :message: ''
 - :test: test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case01
-  :line: 736
+  :line: 754
   :message: ''
 - :test: test_stringCharAt_should_return_negative_one_if_startIndex_is_more_than_lenght
-  :line: 757
+  :line: 775
   :message: ''
 - :test: test_stringCharAt_should_return_relative_character
-  :line: 766
+  :line: 784
   :message: ''
 - :test: test_stringCharAt_should_return_relative_character2
-  :line: 778
+  :line: 796
   :message: ''
 - :test: test_stringCharAtInSet_should_return_negative_one
-  :line: 790
+  :line: 808
   :message: ''
 - :test: test_stringCharAtInSet_should_return_relative_character2
-  :line: 801
+  :line: 819
   :message: ''
 - :test: test_stringCharAtInSet_should_return_relative_character3
-  :line: 812
+  :line: 830
   :message: ''
 - :test: test_stringSubstringInChar_Phone016_should_return_016
-  :line: 823
+  :line: 841
   :message: ''
 - :test: test_stringSubstringInChar2_HandPhone016123_should_return_016
-  :line: 835
+  :line: 853
   :message: ''
 - :test: test_stringSubstringInChar_Phone016_should_return_NULL_if_length_of_string_exceeded
-  :line: 847
+  :line: 865
   :message: ''
 - :test: test_stringSubstringInText_Phone016_should_return_016
-  :line: 859
+  :line: 877
   :message: ''
 - :test: test_stringSubstringInText_should_get_substring
-  :line: 872
+  :line: 890
   :message: ''
 - :test: test_stringSubstringInText_should_return_empty_string
-  :line: 885
+  :line: 903
   :message: ''
 - :test: test_stringToInteger_should_return_integer_type
-  :line: 898
+  :line: 916
   :message: ''
 - :test: test_stringToInteger_should_return_integer_type2
-  :line: 910
+  :line: 928
   :message: ''
 - :test: test_stringToInteger_should_return_integer_type3
-  :line: 922
+  :line: 940
   :message: ''
 :failures: []
 :ignores: []

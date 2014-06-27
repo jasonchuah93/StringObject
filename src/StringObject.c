@@ -5,9 +5,6 @@
 #include "Text.h"
 #include <stdlib.h>
 
-
-
-
 void stringDump(String *string){
 	uint32 index = 0, len= 0;
 	char *fullString = "(NULL)";
@@ -122,6 +119,18 @@ void stringTrim(String *string){
 }
 
 //Test 2
+
+/**
+*Remove one character from String and return it.
+*The string is updated to reflect the change.
+*input :
+*	str :	is String Object
+*					
+*	Return the character removed if the string is not empty 
+*	Otherwise return -1
+*	
+**/
+
 int stringRemoveChar(String *string){
 	
 	char stringStart;
@@ -277,7 +286,18 @@ int stringCharAt(String *str,int relativeIndex){
 	}
 		return finalIndex;
 }
-
+/**
+*Determine if the character specified by the relative index in the
+*String is in the given set of characters
+*input :
+*	str :	is String Object
+*	relativeIndex : is the relative index into the string.
+*					this value must be positive.
+*					
+*	set 	is the set of character delimited by NULL
+*	Return 1 if the character is within the set.
+*	Otherwise return 0.
+**/
 int stringCharAtInSet(String *str,int relativeIndex,char set[]){
 	int j=0;
 	
@@ -291,8 +311,6 @@ int stringCharAtInSet(String *str,int relativeIndex,char set[]){
 	}
 	return 0;
 }
-
-
 
 int stringToInteger(String *str){
 	

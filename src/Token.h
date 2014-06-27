@@ -54,7 +54,7 @@ typedef struct {
 
 typedef struct {
   TokenType type;
-  int value;
+ 
 } Token;
 
 typedef struct {
@@ -78,5 +78,7 @@ Operator *operatorNewBySymbol(char *symbol);
 Operator *operatorNewByID(OperatorID id);
 Identifier *identifierNew(Text *name);
 Token *getToken(String *str);
+
+
 
 #endif // Token_H

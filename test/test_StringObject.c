@@ -628,6 +628,24 @@ void test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet4(
 	printf("-                                               -\n");
 }
 
+void xtest_stringRemoveWordContaining_should_test_input_and_start_with_alphabet5(void){
+	
+	Text *name1=textNew("1234ABCD56");
+	String *string1=stringNew(name1);
+	
+	String *string2 = stringRemoveWordContaining(string1,"ABCD");
+	stringDump(string2);
+	stringDump(string1);
+	
+	TEST_ASSERT_EQUAL(0,string2->start);
+	TEST_ASSERT_EQUAL(4,string2->length);
+	
+	TEST_ASSERT_EQUAL(4,string1->start);
+	TEST_ASSERT_EQUAL(6,string1->length);
+	printf("-                                               -\n");
+}
+
+
 void test_stringIsEqual_should_return_one_if_both_string_is_same(void){
 	printf("-----Test for stringIsEqual -----\n");
 	int input;
