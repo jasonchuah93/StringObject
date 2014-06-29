@@ -1698,7 +1698,7 @@ void test_stringSubstringInChar_Phone016_should_return_016(void){
 
 
 
-void test_stringSubstringInChar2_HandPhone016123_should_return_016(void){
+void test_stringSubstringInChar2_HandPhone016123_should_return_Phone016123(void){
 
 
 

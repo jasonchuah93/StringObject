@@ -4,14 +4,27 @@
 #include "Text.h"
 #include "StringObject.h"
 
+/*
+ * Use to display the data user input 
+ *
+ * Input:
+ *   text is the in Text type 
+ */
+ 
 void textDump(Text *text){
-	if(text ==NULL){
+	if(text == NULL){
 		printf("(NULL)");
 		return;
 	}
 	printf("text[%x]:%s\n",text->reference,text->string);
 }
 
+/**
+ * Use to increase reference of the text
+ *
+ * Input:
+ * 	text which user input
+ */
 Text *textAssign(Text *text){
 	if(text->reference !=0x80000000){
 		text->reference++;
@@ -19,7 +32,14 @@ Text *textAssign(Text *text){
 	}
 	return text;
 }
-		
+
+/**
+ * Use to convert the char type of the string into text type
+ *
+ * Input:
+ * 	charStr is the string user input
+ */
+  		
 Text *textNew(char *charStr){
 	Text *text = (Text *)malloc(strlen(charStr)+4+1);
 		//Character string copy from charStr to text->string
@@ -28,6 +48,13 @@ Text *textNew(char *charStr){
 	text->reference=1;
 	return text;
 }
+
+/**
+ * Use to delete one text reference 
+ *
+ * Input:
+ *	text which user input
+ */
 
 Text *textDel(Text *text){
 

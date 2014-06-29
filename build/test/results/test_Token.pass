@@ -4,52 +4,60 @@
   :file: test_Token.c
 :successes:
 - :test: test_numberNew_should_get_single_digit_value_and_type
-  :line: 11
+  :line: 14
   :message: ''
 - :test: test_numberNew_should_get_more_than_single_digit_value_and_type
-  :line: 21
+  :line: 24
   :message: ''
 - :test: test_numberNew_should_get_negative_value_and_type
-  :line: 31
+  :line: 34
   :message: ''
 - :test: test_identifierNew_should_identifier_the_content
-  :line: 41
-  :message: ''
-- :test: test_identifierNew_should_identifier_the_content_two
-  :line: 53
-  :message: ''
-- :test: test_identifierNew_should_identifier_the_content_three
-  :line: 65
+  :line: 44
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_symbol
-  :line: 77
+  :line: 78
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_different_symbol
   :line: 88
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_different_symbol2
-  :line: 99
+  :line: 98
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_different_symbol3
-  :line: 110
+  :line: 108
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_different_symbol4
-  :line: 121
+  :line: 118
   :message: ''
 - :test: test_operatorNewByID_should_identify_the_different_symbol
-  :line: 132
+  :line: 129
   :message: ''
 - :test: test_operatorNewByID_should_identify_the_different_symbol2
-  :line: 141
+  :line: 138
   :message: ''
 - :test: test_operatorNewByID_should_identify_the_different_symbol3
-  :line: 150
+  :line: 147
+  :message: ''
+- :test: test_getToken_should_get_number_token_from_string
+  :line: 155
+  :message: ''
+- :test: test_getToken_should_get_more_number_token_from_string
+  :line: 165
+  :message: ''
+- :test: test_getToken_should_get_more_number_token_from_string_got_space
+  :line: 175
+  :message: ''
+- :test: test_getToken_should_get_operator_token_from_string
+  :line: 187
   :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 14
-  :passed: 14
+  :total: 16
+  :passed: 16
   :failed: 0
   :ignored: 0
-:stdout: []
+:stdout:
+- '234'
+- +

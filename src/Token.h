@@ -54,7 +54,6 @@ typedef struct {
 
 typedef struct {
   TokenType type;
- 
 } Token;
 
 typedef struct {

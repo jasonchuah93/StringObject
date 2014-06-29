@@ -1,10 +1,18 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include<string.h>
 #include <malloc.h>
 #include "StringObject.h"
 #include "Text.h"
-#include <stdlib.h>
 
+
+/*
+ * Use to display the data user input 
+ *
+ * Input:
+ *   string is in String type 
+ */
+ 
 void stringDump(String *string){
 	uint32 index = 0, len= 0;
 	char *fullString = "(NULL)";
@@ -42,8 +50,12 @@ void stringDump(String *string){
 		
 }
 
-
-
+/*
+ * Use to convert text type data into string type
+ *
+ * Input:
+ *   string is in String type 
+ */
 String *stringNew(Text *text){
 	String *str=malloc(sizeof(String));
 	str->text = textAssign(text);
@@ -53,7 +65,13 @@ String *stringNew(Text *text){
 	return str;
 }
 
-String *stringAssign(String *string){
+/*
+ * Use to increase reference for string type data
+ *
+ * Input:
+ *   string is in String type 
+ */
+ String *stringAssign(String *string){
 	
 	if(string->reference != 0x80000000 ){
 		string->reference++;
@@ -62,6 +80,12 @@ String *stringAssign(String *string){
 	return string;
 }
 
+/*
+ * Use to decrease reference for string type data
+ *
+ * Input:
+ *   string is in String type 
+ */
 String *stringDel(String *string){
 	
 	string->reference--;
@@ -74,6 +98,13 @@ String *stringDel(String *string){
 	return string;
 }
 
+/*
+ * Use to skip character inside the string 
+ *
+ * Input:
+ *   string is in String type 
+ *	 numOfChar2Skip is how many character user want to skip 	
+ */
 void stringSkip(String *string,int numOfChar2Skip){
 	int fullLength = strlen(string->text->string);
 	if(string){
@@ -88,6 +119,12 @@ void stringSkip(String *string,int numOfChar2Skip){
 	}
 }
 
+/*
+ * Use to trim left to eliminate space between the string
+ *
+ * Input:
+ *   string is in String type 
+ */
 void stringTrimLeft(String *string){
 	int i=0;
 	int ch;
@@ -101,6 +138,12 @@ void stringTrimLeft(String *string){
 
 }
 
+/*
+ * Use to trim right to eliminate space between the string
+ *
+ * Input:
+ *   string is in String type 
+ */
 void stringTrimRight(String *string){
 	int i=0;
 	int ch;
@@ -112,6 +155,13 @@ void stringTrimRight(String *string){
 		string->length--;
 	}
 }
+
+/*
+ * Use to trim left and right to eliminate space between the string
+ *
+ * Input:
+ *   string is in String type 
+ */
 
 void stringTrim(String *string){
 	stringTrimLeft(string);
@@ -130,7 +180,6 @@ void stringTrim(String *string){
 *	Otherwise return -1
 *	
 **/
-
 int stringRemoveChar(String *string){
 	
 	char stringStart;
@@ -148,10 +197,18 @@ int stringRemoveChar(String *string){
 	
 	return -1;
 } 
-	
-int stringLength(String *string){
+
+/*
+ * Use to determine the length of the string
+ *
+ * Input:
+ *   string is in String type 
+ *	Return the correct length 
+ */
+	int stringLength(String *string){
 	return string->length;
 }
+
 
 String *stringRemoveWordNotContaining(String *string,char *delimiters){
 	
@@ -312,6 +369,15 @@ int stringCharAtInSet(String *str,int relativeIndex,char set[]){
 	return 0;
 }
 
+/**
+*	Convert string type data into integer type data 
+*	
+*
+*	Input :
+*		str is string type data
+*	
+*	Return data into integer form
+**/
 int stringToInteger(String *str){
 	
 	int relativePosition,length;
@@ -326,6 +392,18 @@ int stringToInteger(String *str){
 	return integerString;
 }
 
+/**
+*	Get substring within the full string of data in char type
+*	
+*
+*	Input :
+*		str is string type data
+*		relativePosition is the staring point of the sub string
+*		length is the total length of the string
+*	
+*	Return substring if the length do not exceed the string length
+*	Return empty space if the length exceed the string length
+**/
 char *stringSubstringInChar(String *str,int relativePosition,int length){
 	
 	char *subString = malloc(sizeof(char)*(length+1));
@@ -346,6 +424,18 @@ char *stringSubstringInChar(String *str,int relativePosition,int length){
 	return subString;
 }
 
+/**
+*	Get substring within the full string of data in Text type
+*	
+*
+*	Input :
+*		str is string type data
+*		relativePosition is the staring point of the sub string
+*		length is the total length of the string
+*	
+*	Return empty space if the length exceed the string length
+*	Return Newtext if the length do not excedd the string length
+**/
 Text *stringSubstringInText(String *str,int relativePosition,int length){
 	char *charStr=stringSubstringInChar(str,relativePosition,length);
 	Text *Newtext=textNew(charStr);

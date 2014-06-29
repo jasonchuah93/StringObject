@@ -79,7 +79,7 @@ extern void test_stringCharAtInSet_should_return_negative_one(void);
 extern void test_stringCharAtInSet_should_return_relative_character2(void);
 extern void test_stringCharAtInSet_should_return_relative_character3(void);
 extern void test_stringSubstringInChar_Phone016_should_return_016(void);
-extern void test_stringSubstringInChar2_HandPhone016123_should_return_016(void);
+extern void test_stringSubstringInChar2_HandPhone016123_should_return_Phone016123(void);
 extern void test_stringSubstringInChar_Phone016_should_return_NULL_if_length_of_string_exceeded(void);
 extern void test_stringSubstringInText_Phone016_should_return_016(void);
 extern void test_stringSubstringInText_should_get_substring(void);
@@ -147,7 +147,7 @@ int main(void)
   RUN_TEST(test_stringCharAtInSet_should_return_relative_character2, 819);
   RUN_TEST(test_stringCharAtInSet_should_return_relative_character3, 830);
   RUN_TEST(test_stringSubstringInChar_Phone016_should_return_016, 841);
-  RUN_TEST(test_stringSubstringInChar2_HandPhone016123_should_return_016, 853);
+  RUN_TEST(test_stringSubstringInChar2_HandPhone016123_should_return_Phone016123, 853);
   RUN_TEST(test_stringSubstringInChar_Phone016_should_return_NULL_if_length_of_string_exceeded, 865);
   RUN_TEST(test_stringSubstringInText_Phone016_should_return_016, 877);
   RUN_TEST(test_stringSubstringInText_should_get_substring, 890);

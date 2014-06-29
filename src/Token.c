@@ -58,17 +58,17 @@ Number *numberNew(int value) {
  */
 Operator *operatorNewBySymbol(char *symbol) {
   
-  Operator *operators=malloc(sizeof(symbol));
+  Operator *operators = malloc(sizeof(operators));
   
   operators->type=OPERATOR_TOKEN;
-	int i;
+	int i=0;
 	
-	for (i=0 ;i < 14; i++ ){
+	while(mainOperatorTable[i].symbol!=0){
 	if(strcmp(mainOperatorTable[i].symbol,symbol)==0)
 	{
-		operators->info =&mainOperatorTable[i];
+		operators->info = &mainOperatorTable[i];
 	}
-		
+	i++;
 	}
 	return operators;
 	
@@ -83,7 +83,7 @@ Operator *operatorNewBySymbol(char *symbol) {
  */
 Operator *operatorNewByID(OperatorID id) {
  
- Operator *operators=malloc(sizeof(id));
+ Operator *operators=malloc(sizeof(operators));
   
   operators->type=OPERATOR_TOKEN;
 	int i=0;
@@ -104,14 +104,17 @@ Operator *operatorNewByID(OperatorID id) {
  * Input:
  *   name is the name of the identifier.
  */
-Identifier *identifierNew(Text *name) {
-	Identifier *identifiers=malloc(sizeof(name));
+
+ Identifier *identifierNew(Text *name) {
 	
-	identifiers->type=IDENTIFIER_TOKEN;
-	identifiers->name=name;
-	identifiers->number->value=0;
+	Identifier *identifiers = malloc(sizeof(identifiers));
+	
+	identifiers->type = IDENTIFIER_TOKEN;
+	identifiers->name = name;
+	identifiers->number = NULL;
 	
 	return identifiers;
+	
 }
 
 /**
