@@ -1,10 +1,11 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <malloc.h>
 #include "Token.h"
 #include "CharSet.h"
 #include "StringObject.h"
 #include "Text.h"
-#include <malloc.h>
 
 
 
@@ -67,10 +68,11 @@ Operator *operatorNewBySymbol(char *symbol) {
 	if(strcmp(mainOperatorTable[i].symbol,symbol)==0)
 	{
 		operators->info = &mainOperatorTable[i];
+		return operators;
 	}
 	i++;
 	}
-	return operators;
+	return NULL;
 	
 }
 
@@ -91,10 +93,11 @@ Operator *operatorNewByID(OperatorID id) {
 	if(mainOperatorTable[i].id==id)
 	{
 		operators->info = &mainOperatorTable[i];
+		return operators;
 	}
 	i++;
 	}
-	return operators;
+	return NULL;
 }
 
 /**

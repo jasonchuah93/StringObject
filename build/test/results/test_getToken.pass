@@ -1,0 +1,26 @@
+---
+:source:
+  :path: test
+  :file: test_getToken.c
+:successes:
+- :test: test_getToken_should_get_number_token_from_string
+  :line: 10
+  :message: ''
+- :test: test_getToken_should_get_234_from_text_with_space
+  :line: 20
+  :message: ''
+- :test: test_getToken_should_get_234_from_text_with_space_and_alphabet
+  :line: 30
+  :message: ''
+- :test: test_getToken_should_get_operator_token_from_string
+  :line: 40
+  :message: ''
+:failures: []
+:ignores: []
+:counts:
+  :total: 4
+  :passed: 4
+  :failed: 0
+  :ignored: 0
+:stdout:
+- +
