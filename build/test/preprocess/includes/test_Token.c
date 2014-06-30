@@ -1,5 +1,7 @@
 ---
+- CException.h
 - CharSet.h
+- ErrorCode.h
 - StringObject.h
 - Text.h
 - Token.h

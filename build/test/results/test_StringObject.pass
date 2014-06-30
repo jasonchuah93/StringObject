@@ -4,163 +4,163 @@
   :file: test_StringObject.c
 :successes:
 - :test: test_StringDump_explore
-  :line: 17
+  :line: 15
   :message: ''
 - :test: test_stringNew_should_create_string_with_static_text
-  :line: 39
+  :line: 37
   :message: ''
 - :test: test_stringNew_should_create_string_with_dynamic_text
-  :line: 55
+  :line: 53
   :message: ''
 - :test: test_stringAssign_should_increase_reference
-  :line: 73
+  :line: 71
   :message: ''
 - :test: test_stringAssign_should_not_increase_reference
-  :line: 100
+  :line: 98
   :message: ''
 - :test: test_stringDelete_should_delete_reference
-  :line: 121
+  :line: 119
   :message: ''
 - :test: test_stringDelete_should_not_delete_reference_for_text
-  :line: 154
+  :line: 152
   :message: ''
 - :test: test_stringDelete_should_delete_all_reference_and_return_null
-  :line: 188
+  :line: 186
   :message: ''
 - :test: test_stringSkip_given_Hello_and_skip_2_should_become_llo
-  :line: 232
+  :line: 230
   :message: ''
 - :test: test_stringSkip_given_gundam_and_skip_4_should_become_am
-  :line: 246
+  :line: 244
   :message: ''
 - :test: test_stringSkip_given_gundam_and_skip_6_should_return_null
-  :line: 260
+  :line: 258
   :message: ''
 - :test: test_stringSkip_given_beyond_ra_and_skip_2_should_make_start_equals_2_length_equals_0
-  :line: 274
+  :line: 272
   :message: ''
 - :test: test_stringTrimLeft_given_Amazing_prefixed_with_2_space_should_remove_the_spaces
-  :line: 288
+  :line: 286
   :message: ''
 - :test: test_stringTrimLeft_given_Saviour_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab
-  :line: 302
+  :line: 300
   :message: ''
 - :test: test_stringTrimRight_given_Comet_postfixed_with_3_space_should_remove_the_spaces
-  :line: 316
+  :line: 314
   :message: ''
 - :test: test_stringTrimRight_given_hello_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab
-  :line: 330
+  :line: 328
   :message: ''
 - :test: test_stringTrim_given_hello_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab
-  :line: 345
+  :line: 343
   :message: ''
 - :test: test_stringTrim_given_Kamaguchi_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab
-  :line: 358
+  :line: 356
   :message: ''
 - :test: test_stringTrim_given_Ferraro_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab
-  :line: 371
+  :line: 369
   :message: ''
 - :test: test_stringRemove_should_remove_first_char_within_a_string
-  :line: 386
+  :line: 384
   :message: ''
 - :test: test_stringRemove_should_remove_three_char_within_a_string
-  :line: 402
+  :line: 400
   :message: ''
 - :test: test_stringRemove_should_remove_five_char_within_a_string
-  :line: 424
+  :line: 422
   :message: ''
 - :test: test_stringRemove_should_remove_all_char_within_a_string
-  :line: 453
+  :line: 451
   :message: ''
 - :test: test_stringLength_should_get_the_correct_length
-  :line: 489
+  :line: 487
   :message: ''
 - :test: test_stringLength_should_get_the_correct_length2
-  :line: 505
+  :line: 503
   :message: ''
 - :test: test_stringLength_should_get_the_correct_length3
-  :line: 521
+  :line: 519
   :message: ''
 - :test: test_stringRemoveWordNotContaining_should_test_input_and_start_with_alphabet
-  :line: 537
+  :line: 535
   :message: ''
 - :test: test_stringRemoveWordNotContaining_should_test_input_and_start_with_alphabet2
-  :line: 548
+  :line: 546
   :message: ''
 - :test: test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet1
-  :line: 563
+  :line: 561
   :message: ''
 - :test: test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet2
-  :line: 580
+  :line: 578
   :message: ''
 - :test: test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet3
-  :line: 597
+  :line: 595
   :message: ''
 - :test: test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet4
-  :line: 614
+  :line: 612
   :message: ''
 - :test: test_stringIsEqual_should_return_one_if_both_string_is_same
-  :line: 649
+  :line: 647
   :message: ''
 - :test: test_stringIsEqual_should_return_one_if_both_string_is_same01
-  :line: 670
+  :line: 668
   :message: ''
 - :test: test_stringIsEqual_should_return_zero_if_both_string_is_same02
-  :line: 691
+  :line: 689
   :message: ''
 - :test: test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case
-  :line: 712
+  :line: 710
   :message: ''
 - :test: test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case2
-  :line: 733
+  :line: 731
   :message: ''
 - :test: test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case01
-  :line: 754
+  :line: 752
   :message: ''
 - :test: test_stringCharAt_should_return_negative_one_if_startIndex_is_more_than_lenght
-  :line: 775
+  :line: 773
   :message: ''
 - :test: test_stringCharAt_should_return_relative_character
-  :line: 784
+  :line: 782
   :message: ''
 - :test: test_stringCharAt_should_return_relative_character2
-  :line: 796
+  :line: 794
   :message: ''
 - :test: test_stringCharAtInSet_should_return_negative_one
-  :line: 808
+  :line: 806
   :message: ''
 - :test: test_stringCharAtInSet_should_return_relative_character2
-  :line: 819
+  :line: 817
   :message: ''
 - :test: test_stringCharAtInSet_should_return_relative_character3
-  :line: 830
+  :line: 828
   :message: ''
 - :test: test_stringSubstringInChar_Phone016_should_return_016
-  :line: 841
+  :line: 839
   :message: ''
 - :test: test_stringSubstringInChar2_HandPhone016123_should_return_Phone016123
-  :line: 853
+  :line: 851
   :message: ''
 - :test: test_stringSubstringInChar_Phone016_should_return_NULL_if_length_of_string_exceeded
-  :line: 865
+  :line: 863
   :message: ''
 - :test: test_stringSubstringInText_Phone016_should_return_016
-  :line: 877
+  :line: 875
   :message: ''
 - :test: test_stringSubstringInText_should_get_substring
-  :line: 890
+  :line: 888
   :message: ''
 - :test: test_stringSubstringInText_should_return_empty_string
-  :line: 903
+  :line: 901
   :message: ''
 - :test: test_stringToInteger_should_return_integer_type
-  :line: 916
+  :line: 914
   :message: ''
 - :test: test_stringToInteger_should_return_integer_type2
-  :line: 928
+  :line: 926
   :message: ''
 - :test: test_stringToInteger_should_return_integer_type3
-  :line: 940
+  :line: 938
   :message: ''
 :failures: []
 :ignores: []

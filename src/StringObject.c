@@ -5,7 +5,6 @@
 #include "StringObject.h"
 #include "Text.h"
 
-
 /*
  * Use to display the data user input 
  *

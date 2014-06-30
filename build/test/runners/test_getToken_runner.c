@@ -36,8 +36,17 @@ extern void setUp(void);
 extern void tearDown(void);
 extern void test_getToken_should_get_number_token_from_string(void);
 extern void test_getToken_should_get_234_from_text_with_space(void);
-extern void test_getToken_should_get_234_from_text_with_space_and_alphabet(void);
-extern void test_getToken_should_get_operator_token_from_string(void);
+extern void test_getToken_should_get_234_from_text_with_space_and_alphabets(void);
+extern void test_getToken_should_get_234_from_text_with_alphabets(void);
+extern void test_getToken_should_get_2_from_text_with_alphabets_and_operators(void);
+extern void test_getToken_should_throw_an_error_for_this_expression(void);
+extern void test_getToken_should_get_operator_token_and_return_ADD_OP(void);
+extern void test_getToken_should_get_operator_token_and_return_MUL_OP(void);
+extern void test_getToken_should_get_double_operators_token_and_return_LOGICAL_AND_OP(void);
+extern void test_getToken_should_get_double_operators_token_and_return_LOGICAL_OR_OP(void);
+extern void test_getToken_should_get_two_different_operators_token_and_throw_an_error(void);
+extern void test_getToken_should_get_two_different_operators_token_and_throw_an_error2(void);
+extern void test_getToken_should_get_space_between_two_different_operators_token_and_throw_an_error(void);
 
 
 //=======Test Reset Option=====
@@ -53,10 +62,19 @@ int main(void)
 {
   Unity.TestFile = "test_getToken.c";
   UnityBegin();
-  RUN_TEST(test_getToken_should_get_number_token_from_string, 10);
-  RUN_TEST(test_getToken_should_get_234_from_text_with_space, 20);
-  RUN_TEST(test_getToken_should_get_234_from_text_with_space_and_alphabet, 30);
-  RUN_TEST(test_getToken_should_get_operator_token_from_string, 40);
+  RUN_TEST(test_getToken_should_get_number_token_from_string, 12);
+  RUN_TEST(test_getToken_should_get_234_from_text_with_space, 22);
+  RUN_TEST(test_getToken_should_get_234_from_text_with_space_and_alphabets, 32);
+  RUN_TEST(test_getToken_should_get_234_from_text_with_alphabets, 42);
+  RUN_TEST(test_getToken_should_get_2_from_text_with_alphabets_and_operators, 52);
+  RUN_TEST(test_getToken_should_throw_an_error_for_this_expression, 63);
+  RUN_TEST(test_getToken_should_get_operator_token_and_return_ADD_OP, 76);
+  RUN_TEST(test_getToken_should_get_operator_token_and_return_MUL_OP, 88);
+  RUN_TEST(test_getToken_should_get_double_operators_token_and_return_LOGICAL_AND_OP, 100);
+  RUN_TEST(test_getToken_should_get_double_operators_token_and_return_LOGICAL_OR_OP, 113);
+  RUN_TEST(test_getToken_should_get_two_different_operators_token_and_throw_an_error, 126);
+  RUN_TEST(test_getToken_should_get_two_different_operators_token_and_throw_an_error2, 139);
+  RUN_TEST(test_getToken_should_get_space_between_two_different_operators_token_and_throw_an_error, 152);
 
   return (UnityEnd());
 }

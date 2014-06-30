@@ -65,22 +65,22 @@ int main(void)
 {
   Unity.TestFile = "test_Token.c";
   UnityBegin();
-  RUN_TEST(test_numberNew_should_get_single_digit_value_and_type, 10);
-  RUN_TEST(test_numberNew_should_get_more_than_single_digit_value_and_type, 20);
-  RUN_TEST(test_numberNew_should_get_negative_value_and_type, 30);
-  RUN_TEST(test_identifierNew_should_identifier_the_content, 40);
-  RUN_TEST(test_identifierNew_should_identifier_the_content2, 51);
-  RUN_TEST(test_identifierNew_should_identifier_the_content_three, 62);
-  RUN_TEST(test_operatorNewBySymbol_should_identify_the_symbol, 74);
-  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol, 84);
-  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol2, 94);
-  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol3, 104);
-  RUN_TEST(test_operatorNewBySymbol_should__retur_NULL_if_input_invalid_symbol, 114);
-  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol4, 124);
-  RUN_TEST(test_operatorNewByID_should_identify_the_different_symbol, 135);
-  RUN_TEST(test_operatorNewByID_should_identify_the_different_symbol2, 144);
-  RUN_TEST(test_operatorNewByID_should_identify_the_different_symbol3, 153);
-  RUN_TEST(test_operatorNewByID_should_return_NULL_if_input_the_incorrect_symbol, 161);
+  RUN_TEST(test_numberNew_should_get_single_digit_value_and_type, 14);
+  RUN_TEST(test_numberNew_should_get_more_than_single_digit_value_and_type, 24);
+  RUN_TEST(test_numberNew_should_get_negative_value_and_type, 34);
+  RUN_TEST(test_identifierNew_should_identifier_the_content, 44);
+  RUN_TEST(test_identifierNew_should_identifier_the_content2, 55);
+  RUN_TEST(test_identifierNew_should_identifier_the_content_three, 66);
+  RUN_TEST(test_operatorNewBySymbol_should_identify_the_symbol, 78);
+  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol, 88);
+  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol2, 98);
+  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol3, 108);
+  RUN_TEST(test_operatorNewBySymbol_should__retur_NULL_if_input_invalid_symbol, 118);
+  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol4, 128);
+  RUN_TEST(test_operatorNewByID_should_identify_the_different_symbol, 139);
+  RUN_TEST(test_operatorNewByID_should_identify_the_different_symbol2, 148);
+  RUN_TEST(test_operatorNewByID_should_identify_the_different_symbol3, 157);
+  RUN_TEST(test_operatorNewByID_should_return_NULL_if_input_the_incorrect_symbol, 165);
 
   return (UnityEnd());
 }

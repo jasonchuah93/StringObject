@@ -3,8 +3,6 @@
 #include "Text.h"
 #include "CustomTypeAssert.h"
 
-
-
 typedef struct FakeText{
 	uint32 reference;
 	char string[80];

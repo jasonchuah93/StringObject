@@ -1,10 +1,11 @@
 #include <stdio.h>
+#include "unity.h"
 #include <string.h>
 #include <malloc.h>
-#include "unity.h"
 #include "CustomTypeAssert.h"
 
-void assertStringEqual(const char *expected, String *actual, int line, const char *msg) {
+void assertStringEqual(const char *expected, String *actual, int line, const char *msg)
+{
 	int i;
 	const char *str = &actual->text->string[actual->start];
   

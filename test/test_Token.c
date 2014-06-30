@@ -3,9 +3,13 @@
 #include "Text.h"
 #include "StringObject.h"
 #include "CharSet.h"
+#include "CException.h"
+#include "ErrorCode.h"
 
-void setUp(void) {}
-void tearDown(void) {}
+
+void setUp(void){}
+
+void tearDown(void){}
 
 void test_numberNew_should_get_single_digit_value_and_type(void) {
  

@@ -6,7 +6,8 @@
 #include "CharSet.h"
 #include "StringObject.h"
 #include "Text.h"
-
+#include "CException.h"
+#include "ErrorCode.h"
 
 
 #define MAIN_OPERATOR_TABLE_SIZE (sizeof(mainOperatorTable)/(sizeof(OperatorInfo))
@@ -134,56 +135,67 @@ Token *getToken(String *str) {
 	Operator *op;
 	int number;
 	int length;
-		String *alphabet;
+	String *alphabet;
+	String *stringRemoveWordContain;
+	Token *newToken;
+	char opeToken[3];
 	
-	
-	if((stringCharAtInSet(str,str->start,numberSet))||(stringCharAtInSet(str,str->start,octalSet)))
+	//Number Token
+	if(stringCharAtInSet(str,str->start,numberSet))
 	{	
-		number=stringToInteger(str);
+		stringRemoveWordContain = stringRemoveWordContaining(str,numberSet);
 		
-		if(isSpace(stringCharAt(str,0))){
-		
-			Number *newNumber = (Number*)stringToInteger(str);
+		if((isSpace(stringCharAt(str,0)))||(str->length==0)||(str->start!=0))
+		{
+			number = stringToInteger(stringRemoveWordContain);
+			newToken=(Token*)numberNew(number);
 		}
-		
-		return (Token*)numberNew(number);
-		
-		
+		else{
+			Throw(ERR_NUMBER_NOT_WELL_FORMED);
+			free(newToken);
+		}
 	}	
-	
-	else if(stringCharAtInSet(str,str->start,operatorSet))
+	//Operator Token
+	else if(stringCharAtInSet(str,0,operatorSet))
 	{
-		char opeToken[3];
 		opeToken[0]=(char)stringRemoveChar(str);
 		opeToken[1]=0;
-		
-		if(opeToken[0]==stringCharAt(str,0))
+		//This condition need to place before isSpace condition as the opeToken[0] will first look for the opeToken[1] if the user input '&' or '|'
+		if(opeToken[0]!=stringCharAt(str,0))
 		{
-			if(stringCharAt(str,0)=='&')
+			if(opeToken[0] == '&')
 			{
-				opeToken[0]='&';
 				opeToken[1]='&';
 				opeToken[2]=0;
 			}
-			else if(stringCharAt(str,0)=='|')
+			else if(opeToken[0] == '|')
 			{
-				opeToken[0]='|';
 				opeToken[1]='|';
 				opeToken[2]=0;
 			}
 			
 		}
 		
-		
-		return (Token*)operatorNewBySymbol(opeToken);
+		if((isSpace(stringCharAt(str,0)))||(str->length==0)||(str->start!=0))
+		{
+			op = operatorNewBySymbol(opeToken);			
+			newToken = (Token*)op;
+		}
+		else
+		{
+			Throw(ERR_NUMBER_NOT_WELL_FORMED);
+			free(newToken);
+		}
 	}
-
-
+	/*
+	//Identifier Token
 	else if(stringCharAtInSet(str,str->start,alphabetSet))
 	{
 		alphabet=stringRemoveWordContaining(str,alphabetSet);
-		
+		return (Token*)identifierNew(stringSubstringInText(str,0,length));
 	}
-	return (Token*)identifierNew(stringSubstringInText(str,0,length));
+	*/
+	
+	return newToken; 
 	
 }

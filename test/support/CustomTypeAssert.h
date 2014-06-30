@@ -4,6 +4,7 @@
 #include "StringObject.h"
 //#include "Text.h"
 
+
 #define TEST_ASSERT_EQUAL_String(expected, actual)										\
 		UNITY_TEST_ASSERT_EQUAL_String((expected), (actual), __LINE__, NULL)
 

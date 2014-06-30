@@ -4,23 +4,54 @@
   :file: test_getToken.c
 :successes:
 - :test: test_getToken_should_get_number_token_from_string
-  :line: 10
+  :line: 12
   :message: ''
 - :test: test_getToken_should_get_234_from_text_with_space
-  :line: 20
+  :line: 22
   :message: ''
-- :test: test_getToken_should_get_234_from_text_with_space_and_alphabet
-  :line: 30
+- :test: test_getToken_should_get_234_from_text_with_space_and_alphabets
+  :line: 32
   :message: ''
-- :test: test_getToken_should_get_operator_token_from_string
-  :line: 40
+- :test: test_getToken_should_get_234_from_text_with_alphabets
+  :line: 42
+  :message: ''
+- :test: test_getToken_should_get_2_from_text_with_alphabets_and_operators
+  :line: 52
+  :message: ''
+- :test: test_getToken_should_throw_an_error_for_this_expression
+  :line: 63
+  :message: ''
+- :test: test_getToken_should_get_operator_token_and_return_ADD_OP
+  :line: 76
+  :message: ''
+- :test: test_getToken_should_get_operator_token_and_return_MUL_OP
+  :line: 88
+  :message: ''
+- :test: test_getToken_should_get_double_operators_token_and_return_LOGICAL_AND_OP
+  :line: 100
+  :message: ''
+- :test: test_getToken_should_get_double_operators_token_and_return_LOGICAL_OR_OP
+  :line: 113
+  :message: ''
+- :test: test_getToken_should_get_two_different_operators_token_and_throw_an_error
+  :line: 126
+  :message: ''
+- :test: test_getToken_should_get_two_different_operators_token_and_throw_an_error2
+  :line: 139
+  :message: ''
+- :test: test_getToken_should_get_space_between_two_different_operators_token_and_throw_an_error
+  :line: 152
   :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 4
-  :passed: 4
+  :total: 13
+  :passed: 13
   :failed: 0
   :ignored: 0
 :stdout:
 - +
+- '*'
+- '&&'
+- '||'
+- /
