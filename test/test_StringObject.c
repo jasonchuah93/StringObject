@@ -539,8 +539,12 @@ void test_stringRemoveWordNotContaining_should_test_input_and_start_with_alphabe
 	String *string2= stringRemoveWordNotContaining(string1,"gd");
 	stringDump(string1);
 	stringDump(string2);
+	TEST_ASSERT_EQUAL_String("dog",string1);
+	TEST_ASSERT_EQUAL_String("Bull",string2);
+	
 	printf("-                                               -\n");
 	printf("-                                               -\n");
+	
 }
 
 void test_stringRemoveWordNotContaining_should_test_input_and_start_with_alphabet2(void){
@@ -553,7 +557,8 @@ void test_stringRemoveWordNotContaining_should_test_input_and_start_with_alphabe
 	String *string2= stringRemoveWordNotContaining(string1,"onb");
 	stringDump(string2);
 	stringDump(string1);
-	
+	TEST_ASSERT_EQUAL_String("nRobbin",string1);
+	TEST_ASSERT_EQUAL_String("aski",string2);
 	printf("-                                               -\n");
 	printf("-                                               -\n");
 }
@@ -626,12 +631,12 @@ void test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet4(
 	printf("-                                               -\n");
 }
 
-void xtest_stringRemoveWordContaining_should_test_input_and_start_with_alphabet5(void){
+void test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet5(void){
 	
-	Text *name1=textNew("1234ABCD56");
+	Text *name1=textNew("ABCD123456");
 	String *string1=stringNew(name1);
 	
-	String *string2 = stringRemoveWordContaining(string1,"ABCD");
+	String *string2 = stringRemoveWordContaining(string1,"BDCA");
 	stringDump(string2);
 	stringDump(string1);
 	

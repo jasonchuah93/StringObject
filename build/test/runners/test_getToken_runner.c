@@ -34,19 +34,23 @@ char* GlobalOrderError;
 //=======External Functions This Runner Calls=====
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_getToken_should_get_number_token_from_string(void);
-extern void test_getToken_should_get_234_from_text_with_space(void);
-extern void test_getToken_should_get_234_from_text_with_space_and_alphabets(void);
-extern void test_getToken_should_get_234_from_text_with_alphabets(void);
-extern void test_getToken_should_get_2_from_text_with_alphabets_and_operators(void);
-extern void test_getToken_should_throw_an_error_for_this_expression(void);
-extern void test_getToken_should_get_operator_token_and_return_ADD_OP(void);
-extern void test_getToken_should_get_operator_token_and_return_MUL_OP(void);
-extern void test_getToken_should_get_double_operators_token_and_return_LOGICAL_AND_OP(void);
-extern void test_getToken_should_get_double_operators_token_and_return_LOGICAL_OR_OP(void);
+extern void test_getToken_should_get_number_token_from_string_and_left_empty_space(void);
+extern void test_getToken_should_get_234_from_string_with_space_in_between_and_left_space567(void);
+extern void test_getToken_should_get_234_from_string_contain_alphabets_with_space_in_between_and_left_spacejason(void);
+extern void test_getToken_should_get_234_from_string_with_alphabets_and_left_jason(void);
+extern void test_getToken_should_throw_error_from_string_combine_with_alphabets_and_operators(void);
+extern void test_getToken_should_throw_an_error_for_string_start_with_alphabet_first(void);
+extern void test_getToken_should_get_operator_token_and_return_ADD_OP_and_left_empty_space(void);
+extern void test_getToken_should_get_operator_token_and_return_MUL_OP_and_left_empty_space_and_characters_and_numbers(void);
+extern void test_getToken_should_throw_error_for_string_operator_and_characters(void);
+extern void test_getToken_should_get_operators_token_and_return_LOGICAL_AND_OP_and_left_empty_space(void);
+extern void test_getToken_should_get_operators_token_and_return_LOGICAL_AND_OP_and_left_empty_space_and_characters_and_numbers(void);
+extern void test_getToken_should_get_operators_token_and_return_LOGICAL_OR_OP_and_left_empty_space(void);
+extern void test_getToken_should_get_operators_token_and_return_LOGICAL_OR_OP_and_left_empty_space_and_characters(void);
 extern void test_getToken_should_get_two_different_operators_token_and_throw_an_error(void);
 extern void test_getToken_should_get_two_different_operators_token_and_throw_an_error2(void);
 extern void test_getToken_should_get_space_between_two_different_operators_token_and_throw_an_error(void);
+extern void test_getToken_should_get_identifier_token_from_string(void);
 
 
 //=======Test Reset Option=====
@@ -62,19 +66,23 @@ int main(void)
 {
   Unity.TestFile = "test_getToken.c";
   UnityBegin();
-  RUN_TEST(test_getToken_should_get_number_token_from_string, 12);
-  RUN_TEST(test_getToken_should_get_234_from_text_with_space, 22);
-  RUN_TEST(test_getToken_should_get_234_from_text_with_space_and_alphabets, 32);
-  RUN_TEST(test_getToken_should_get_234_from_text_with_alphabets, 42);
-  RUN_TEST(test_getToken_should_get_2_from_text_with_alphabets_and_operators, 52);
-  RUN_TEST(test_getToken_should_throw_an_error_for_this_expression, 63);
-  RUN_TEST(test_getToken_should_get_operator_token_and_return_ADD_OP, 76);
-  RUN_TEST(test_getToken_should_get_operator_token_and_return_MUL_OP, 88);
-  RUN_TEST(test_getToken_should_get_double_operators_token_and_return_LOGICAL_AND_OP, 100);
-  RUN_TEST(test_getToken_should_get_double_operators_token_and_return_LOGICAL_OR_OP, 113);
-  RUN_TEST(test_getToken_should_get_two_different_operators_token_and_throw_an_error, 126);
-  RUN_TEST(test_getToken_should_get_two_different_operators_token_and_throw_an_error2, 139);
-  RUN_TEST(test_getToken_should_get_space_between_two_different_operators_token_and_throw_an_error, 152);
+  RUN_TEST(test_getToken_should_get_number_token_from_string_and_left_empty_space, 13);
+  RUN_TEST(test_getToken_should_get_234_from_string_with_space_in_between_and_left_space567, 24);
+  RUN_TEST(test_getToken_should_get_234_from_string_contain_alphabets_with_space_in_between_and_left_spacejason, 36);
+  RUN_TEST(test_getToken_should_get_234_from_string_with_alphabets_and_left_jason, 47);
+  RUN_TEST(test_getToken_should_throw_error_from_string_combine_with_alphabets_and_operators, 58);
+  RUN_TEST(test_getToken_should_throw_an_error_for_string_start_with_alphabet_first, 69);
+  RUN_TEST(test_getToken_should_get_operator_token_and_return_ADD_OP_and_left_empty_space, 82);
+  RUN_TEST(test_getToken_should_get_operator_token_and_return_MUL_OP_and_left_empty_space_and_characters_and_numbers, 97);
+  RUN_TEST(test_getToken_should_throw_error_for_string_operator_and_characters, 112);
+  RUN_TEST(test_getToken_should_get_operators_token_and_return_LOGICAL_AND_OP_and_left_empty_space, 125);
+  RUN_TEST(test_getToken_should_get_operators_token_and_return_LOGICAL_AND_OP_and_left_empty_space_and_characters_and_numbers, 141);
+  RUN_TEST(test_getToken_should_get_operators_token_and_return_LOGICAL_OR_OP_and_left_empty_space, 157);
+  RUN_TEST(test_getToken_should_get_operators_token_and_return_LOGICAL_OR_OP_and_left_empty_space_and_characters, 173);
+  RUN_TEST(test_getToken_should_get_two_different_operators_token_and_throw_an_error, 189);
+  RUN_TEST(test_getToken_should_get_two_different_operators_token_and_throw_an_error2, 202);
+  RUN_TEST(test_getToken_should_get_space_between_two_different_operators_token_and_throw_an_error, 215);
+  RUN_TEST(test_getToken_should_get_identifier_token_from_string, 231);
 
   return (UnityEnd());
 }

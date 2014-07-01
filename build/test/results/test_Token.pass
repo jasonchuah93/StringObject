@@ -25,31 +25,31 @@
   :line: 78
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_different_symbol
-  :line: 88
+  :line: 90
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_different_symbol2
-  :line: 98
+  :line: 102
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_different_symbol3
-  :line: 108
+  :line: 114
   :message: ''
 - :test: test_operatorNewBySymbol_should__retur_NULL_if_input_invalid_symbol
-  :line: 118
+  :line: 126
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_different_symbol4
-  :line: 128
+  :line: 134
   :message: ''
 - :test: test_operatorNewByID_should_identify_the_different_symbol
-  :line: 139
+  :line: 147
   :message: ''
 - :test: test_operatorNewByID_should_identify_the_different_symbol2
-  :line: 148
-  :message: ''
-- :test: test_operatorNewByID_should_identify_the_different_symbol3
   :line: 157
   :message: ''
+- :test: test_operatorNewByID_should_identify_the_different_symbol3
+  :line: 167
+  :message: ''
 - :test: test_operatorNewByID_should_return_NULL_if_input_the_incorrect_symbol
-  :line: 165
+  :line: 176
   :message: ''
 :failures: []
 :ignores: []

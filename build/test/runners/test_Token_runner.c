@@ -72,15 +72,15 @@ int main(void)
   RUN_TEST(test_identifierNew_should_identifier_the_content2, 55);
   RUN_TEST(test_identifierNew_should_identifier_the_content_three, 66);
   RUN_TEST(test_operatorNewBySymbol_should_identify_the_symbol, 78);
-  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol, 88);
-  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol2, 98);
-  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol3, 108);
-  RUN_TEST(test_operatorNewBySymbol_should__retur_NULL_if_input_invalid_symbol, 118);
-  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol4, 128);
-  RUN_TEST(test_operatorNewByID_should_identify_the_different_symbol, 139);
-  RUN_TEST(test_operatorNewByID_should_identify_the_different_symbol2, 148);
-  RUN_TEST(test_operatorNewByID_should_identify_the_different_symbol3, 157);
-  RUN_TEST(test_operatorNewByID_should_return_NULL_if_input_the_incorrect_symbol, 165);
+  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol, 90);
+  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol2, 102);
+  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol3, 114);
+  RUN_TEST(test_operatorNewBySymbol_should__retur_NULL_if_input_invalid_symbol, 126);
+  RUN_TEST(test_operatorNewBySymbol_should_identify_the_different_symbol4, 134);
+  RUN_TEST(test_operatorNewByID_should_identify_the_different_symbol, 147);
+  RUN_TEST(test_operatorNewByID_should_identify_the_different_symbol2, 157);
+  RUN_TEST(test_operatorNewByID_should_identify_the_different_symbol3, 167);
+  RUN_TEST(test_operatorNewByID_should_return_NULL_if_input_the_incorrect_symbol, 176);
 
   return (UnityEnd());
 }

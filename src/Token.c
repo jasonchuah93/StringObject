@@ -132,13 +132,16 @@ Operator *operatorNewByID(OperatorID id) {
  *    Number, Operator, and Identifier tokens
  */
 Token *getToken(String *str) {
+	Number *num;
 	Operator *op;
+	Identifier *id;
 	int number;
 	int length;
 	String *alphabet;
 	String *stringRemoveWordContain;
 	Token *newToken;
 	char opeToken[3];
+	Text *strSubInText;
 	
 	//Number Token
 	if(stringCharAtInSet(str,str->start,numberSet))
@@ -148,7 +151,8 @@ Token *getToken(String *str) {
 		if((isSpace(stringCharAt(str,0)))||(str->length==0)||(str->start!=0))
 		{
 			number = stringToInteger(stringRemoveWordContain);
-			newToken=(Token*)numberNew(number);
+			num = numberNew(number);
+			newToken = (Token*)num;
 		}
 		else{
 			Throw(ERR_NUMBER_NOT_WELL_FORMED);
@@ -156,29 +160,33 @@ Token *getToken(String *str) {
 		}
 	}	
 	//Operator Token
-	else if(stringCharAtInSet(str,0,operatorSet))
+	else if(stringCharAtInSet(str,str->start,operatorSet))
 	{
 		opeToken[0]=(char)stringRemoveChar(str);
 		opeToken[1]=0;
 		//This condition need to place before isSpace condition as the opeToken[0] will first look for the opeToken[1] if the user input '&' or '|'
-		if(opeToken[0]!=stringCharAt(str,0))
-		{
-			if(opeToken[0] == '&')
-			{
-				opeToken[1]='&';
-				opeToken[2]=0;
-			}
-			else if(opeToken[0] == '|')
-			{
-				opeToken[1]='|';
-				opeToken[2]=0;
-			}
-			
-		}
 		
 		if((isSpace(stringCharAt(str,0)))||(str->length==0)||(str->start!=0))
 		{
-			op = operatorNewBySymbol(opeToken);			
+			if(opeToken[0]!=stringCharAt(str,str->start))
+			{
+				if(opeToken[0]=='&')
+				{
+					opeToken[1]='&';
+					opeToken[2]=0;
+					str->start++;
+					str->length--;
+				}
+				else if(opeToken[0]=='|')
+				{
+					opeToken[1]='|';
+					opeToken[2]=0;
+					str->start++;
+					str->length--;
+				}
+			}
+			
+			op = operatorNewBySymbol(opeToken);	
 			newToken = (Token*)op;
 		}
 		else
@@ -187,15 +195,29 @@ Token *getToken(String *str) {
 			free(newToken);
 		}
 	}
-	/*
 	//Identifier Token
-	else if(stringCharAtInSet(str,str->start,alphabetSet))
+	else if(stringCharAtInSet(str,str->start, alphaNumericSet))
 	{
-		alphabet=stringRemoveWordContaining(str,alphabetSet);
-		return (Token*)identifierNew(stringSubstringInText(str,0,length));
+		
+		alphabet = stringRemoveWordContaining(str,alphaNumericSet);
+		
+		if((isSpace(stringCharAt(str,0)))||(str->length!=0)||(str->start==0))
+		{
+			
+			strSubInText = stringSubstringInText(alphabet,0,alphabet->length);
+			id = identifierNew(strSubInText);
+			newToken = (Token*)id;
+		}
+		else{
+			Throw(ERR_NUMBER_NOT_WELL_FORMED);
+			free(newToken);
+		}
 	}
-	*/
-	
+	else
+	{
+		Throw(ERR_NUMBER_NOT_WELL_FORMED);
+			free(newToken);
+	}
 	return newToken; 
 	
 }

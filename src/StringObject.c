@@ -208,7 +208,15 @@ int stringRemoveChar(String *string){
 	return string->length;
 }
 
-
+/*
+ * This function is to remove the word not contain inside the delimiters
+ *
+ *input ; 
+	string is the string type 
+	delimiters is the characters that do not remove
+ *
+ *	Return back the string with deleted characters
+*/
 String *stringRemoveWordNotContaining(String *string,char *delimiters){
 	
 	int i=0,j=0;
@@ -241,9 +249,18 @@ String *stringRemoveWordNotContaining(String *string,char *delimiters){
 		
 		}
 }
+/*
+ * This function is to remove the word contain inside the containSet
+ *
+ *input ; 
+	string is the string type 
+	containSet is the characters that want to remove
+ *
+ *	Return the string with non-deleted characters
+*/
 
 String *stringRemoveWordContaining(String *string,char containSet[]){
-	int i =0 ,j=0 ,value=0;
+	int i =0 ,j=0 ,value;
 	String *newString = stringNew(string->text);
 	newString->start=string->start;
 	newString->length=0;

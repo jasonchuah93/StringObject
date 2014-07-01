@@ -1,0 +1,71 @@
+---
+:source:
+  :path: test
+  :file: test_getToken.c
+:successes:
+- :test: test_getToken_should_get_number_token_from_string_and_left_empty_space
+  :line: 13
+  :message: ''
+- :test: test_getToken_should_get_234_from_string_with_space_in_between_and_left_space567
+  :line: 24
+  :message: ''
+- :test: test_getToken_should_get_234_from_string_contain_alphabets_with_space_in_between_and_left_spacejason
+  :line: 36
+  :message: ''
+- :test: test_getToken_should_get_234_from_string_with_alphabets_and_left_jason
+  :line: 47
+  :message: ''
+- :test: test_getToken_should_throw_error_from_string_combine_with_alphabets_and_operators
+  :line: 58
+  :message: ''
+- :test: test_getToken_should_throw_an_error_for_string_start_with_alphabet_first
+  :line: 69
+  :message: ''
+- :test: test_getToken_should_get_operator_token_and_return_ADD_OP_and_left_empty_space
+  :line: 82
+  :message: ''
+- :test: test_getToken_should_get_operator_token_and_return_MUL_OP_and_left_empty_space_and_characters_and_numbers
+  :line: 97
+  :message: ''
+- :test: test_getToken_should_throw_error_for_string_operator_and_characters
+  :line: 112
+  :message: ''
+- :test: test_getToken_should_get_operators_token_and_return_LOGICAL_AND_OP_and_left_empty_space
+  :line: 125
+  :message: ''
+- :test: test_getToken_should_get_operators_token_and_return_LOGICAL_AND_OP_and_left_empty_space_and_characters_and_numbers
+  :line: 141
+  :message: ''
+- :test: test_getToken_should_get_operators_token_and_return_LOGICAL_OR_OP_and_left_empty_space
+  :line: 157
+  :message: ''
+- :test: test_getToken_should_get_operators_token_and_return_LOGICAL_OR_OP_and_left_empty_space_and_characters
+  :line: 173
+  :message: ''
+- :test: test_getToken_should_get_two_different_operators_token_and_throw_an_error
+  :line: 189
+  :message: ''
+- :test: test_getToken_should_get_two_different_operators_token_and_throw_an_error2
+  :line: 202
+  :message: ''
+- :test: test_getToken_should_get_space_between_two_different_operators_token_and_throw_an_error
+  :line: 215
+  :message: ''
+:failures:
+- :test: test_getToken_should_get_identifier_token_from_string
+  :line: 85
+  :message: Expected 0x5A5A5A5A Was 0x00000001. Unhandled Exception!
+:ignores: []
+:counts:
+  :total: 17
+  :passed: 16
+  :failed: 1
+  :ignored: 0
+:stdout:
+- +
+- '*'
+- '&&'
+- '&&'
+- '||'
+- '||'
+- /

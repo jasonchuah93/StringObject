@@ -85,88 +85,91 @@
   :line: 535
   :message: ''
 - :test: test_stringRemoveWordNotContaining_should_test_input_and_start_with_alphabet2
-  :line: 546
+  :line: 550
   :message: ''
 - :test: test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet1
-  :line: 561
+  :line: 566
   :message: ''
 - :test: test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet2
-  :line: 578
+  :line: 583
   :message: ''
 - :test: test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet3
-  :line: 595
+  :line: 600
   :message: ''
 - :test: test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet4
-  :line: 612
+  :line: 617
+  :message: ''
+- :test: test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet5
+  :line: 634
   :message: ''
 - :test: test_stringIsEqual_should_return_one_if_both_string_is_same
-  :line: 647
+  :line: 652
   :message: ''
 - :test: test_stringIsEqual_should_return_one_if_both_string_is_same01
-  :line: 668
+  :line: 673
   :message: ''
 - :test: test_stringIsEqual_should_return_zero_if_both_string_is_same02
-  :line: 689
+  :line: 694
   :message: ''
 - :test: test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case
-  :line: 710
+  :line: 715
   :message: ''
 - :test: test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case2
-  :line: 731
+  :line: 736
   :message: ''
 - :test: test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case01
-  :line: 752
+  :line: 757
   :message: ''
 - :test: test_stringCharAt_should_return_negative_one_if_startIndex_is_more_than_lenght
-  :line: 773
+  :line: 778
   :message: ''
 - :test: test_stringCharAt_should_return_relative_character
-  :line: 782
+  :line: 787
   :message: ''
 - :test: test_stringCharAt_should_return_relative_character2
-  :line: 794
+  :line: 799
   :message: ''
 - :test: test_stringCharAtInSet_should_return_negative_one
-  :line: 806
+  :line: 811
   :message: ''
 - :test: test_stringCharAtInSet_should_return_relative_character2
-  :line: 817
+  :line: 822
   :message: ''
 - :test: test_stringCharAtInSet_should_return_relative_character3
-  :line: 828
+  :line: 833
   :message: ''
 - :test: test_stringSubstringInChar_Phone016_should_return_016
-  :line: 839
+  :line: 844
   :message: ''
 - :test: test_stringSubstringInChar2_HandPhone016123_should_return_Phone016123
-  :line: 851
+  :line: 856
   :message: ''
 - :test: test_stringSubstringInChar_Phone016_should_return_NULL_if_length_of_string_exceeded
-  :line: 863
+  :line: 868
   :message: ''
 - :test: test_stringSubstringInText_Phone016_should_return_016
-  :line: 875
+  :line: 880
   :message: ''
 - :test: test_stringSubstringInText_should_get_substring
-  :line: 888
+  :line: 893
   :message: ''
 - :test: test_stringSubstringInText_should_return_empty_string
-  :line: 901
+  :line: 906
   :message: ''
 - :test: test_stringToInteger_should_return_integer_type
-  :line: 914
+  :line: 919
   :message: ''
 - :test: test_stringToInteger_should_return_integer_type2
-  :line: 926
+  :line: 931
   :message: ''
 - :test: test_stringToInteger_should_return_integer_type3
-  :line: 938
+  :line: 943
   :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 53
-  :passed: 53
+  :total: 54
+  :passed: 54
   :failed: 0
   :ignored: 0
 :stdout:
@@ -195,6 +198,9 @@
 - '-                                               -'
 - '[0x1] f_str:[3]:1234ABCD56, start:0, len:4, str:1234'
 - '[0x1] f_str:[3]:1234ABCD56, start:4, len:6, str:ABCD56'
+- '-                                               -'
+- '[0x1] f_str:[3]:ABCD123456, start:0, len:4, str:ABCD'
+- '[0x1] f_str:[3]:ABCD123456, start:4, len:6, str:123456'
 - '-                                               -'
 - '-----Test for stringIsEqual -----'
 - '[0x1] f_str:[2]:pineapple, start:4, len:5, str:apple'

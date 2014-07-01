@@ -83,6 +83,8 @@ void test_operatorNewBySymbol_should_identify_the_symbol(void){
 	TEST_ASSERT_NOT_NULL(operator1);
 	TEST_ASSERT_EQUAL(OPERATOR_TOKEN,operator1->type);
 	TEST_ASSERT_EQUAL_STRING("+",operator1->info->symbol);
+	TEST_ASSERT_EQUAL(ADD_OP,operator1->info->id);
+	TEST_ASSERT_EQUAL(80,operator1->info->precedence);
 }
 
 void test_operatorNewBySymbol_should_identify_the_different_symbol(void){
@@ -93,6 +95,8 @@ void test_operatorNewBySymbol_should_identify_the_different_symbol(void){
 	TEST_ASSERT_NOT_NULL(operator1);
 	TEST_ASSERT_EQUAL(OPERATOR_TOKEN,operator1->type);
 	TEST_ASSERT_EQUAL_STRING("-",operator1->info->symbol);
+	TEST_ASSERT_EQUAL(SUB_OP,operator1->info->id);
+	TEST_ASSERT_EQUAL(80,operator1->info->precedence);
 }
 
 void test_operatorNewBySymbol_should_identify_the_different_symbol2(void){
@@ -103,6 +107,8 @@ void test_operatorNewBySymbol_should_identify_the_different_symbol2(void){
 	TEST_ASSERT_NOT_NULL(operator1);
 	TEST_ASSERT_EQUAL(OPERATOR_TOKEN,operator1->type);
 	TEST_ASSERT_EQUAL_STRING("*",operator1->info->symbol);
+	TEST_ASSERT_EQUAL(MUL_OP,operator1->info->id);
+	TEST_ASSERT_EQUAL(100,operator1->info->precedence);
 }
 
 void test_operatorNewBySymbol_should_identify_the_different_symbol3(void){
@@ -113,6 +119,8 @@ void test_operatorNewBySymbol_should_identify_the_different_symbol3(void){
 	TEST_ASSERT_NOT_NULL(operator1);
 	TEST_ASSERT_EQUAL(OPERATOR_TOKEN,operator1->type);
 	TEST_ASSERT_EQUAL_STRING("/",operator1->info->symbol);
+	TEST_ASSERT_EQUAL(DIV_OP,operator1->info->id);
+	TEST_ASSERT_EQUAL(100,operator1->info->precedence);
 }
 
 void test_operatorNewBySymbol_should__retur_NULL_if_input_invalid_symbol(void){
@@ -121,8 +129,6 @@ void test_operatorNewBySymbol_should__retur_NULL_if_input_invalid_symbol(void){
 	Operator *operator1 = operatorNewBySymbol("@");
 	
 	TEST_ASSERT_EQUAL(NULL,operator1);
-	
-	
 }
 
 void test_operatorNewBySymbol_should_identify_the_different_symbol4(void){
@@ -133,6 +139,8 @@ void test_operatorNewBySymbol_should_identify_the_different_symbol4(void){
 	TEST_ASSERT_NOT_NULL(operator1);
 	TEST_ASSERT_EQUAL_STRING("~",operator1->info->symbol);
 	TEST_ASSERT_EQUAL(OPERATOR_TOKEN,operator1->type);
+	TEST_ASSERT_EQUAL(BITWISE_NOT_OP,operator1->info->id);
+	TEST_ASSERT_EQUAL(150,operator1->info->precedence);
 	
 }
 
@@ -142,6 +150,7 @@ void test_operatorNewByID_should_identify_the_different_symbol(void){
 	TEST_ASSERT_NOT_NULL(operator1);
 	TEST_ASSERT_EQUAL(ADD_OP,operator1->info->id);
 	TEST_ASSERT_EQUAL(OPERATOR_TOKEN,operator1->type);
+	TEST_ASSERT_EQUAL_STRING("+",operator1->info->symbol);
 	
 }
 
@@ -151,6 +160,7 @@ void test_operatorNewByID_should_identify_the_different_symbol2(void){
 	TEST_ASSERT_NOT_NULL(operator1);
 	TEST_ASSERT_EQUAL(BITWISE_AND_OP,operator1->info->id);
 	TEST_ASSERT_EQUAL(OPERATOR_TOKEN,operator1->type);
+	TEST_ASSERT_EQUAL_STRING("&",operator1->info->symbol);
 	
 }
 
@@ -160,6 +170,7 @@ void test_operatorNewByID_should_identify_the_different_symbol3(void){
 	TEST_ASSERT_NOT_NULL(operator1);
 	TEST_ASSERT_EQUAL(MUL_OP,operator1->info->id);
 	TEST_ASSERT_EQUAL(OPERATOR_TOKEN,operator1->type);
+	TEST_ASSERT_EQUAL_STRING("*",operator1->info->symbol);
 }
 
 void test_operatorNewByID_should_return_NULL_if_input_the_incorrect_symbol(void){
