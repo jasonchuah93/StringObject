@@ -73,7 +73,7 @@ extern void test_stringIsEqual_should_return_zero_if_both_string_is_same02(void)
 extern void test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case(void);
 extern void test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case2(void);
 extern void test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case01(void);
-extern void test_stringCharAt_should_return_negative_one_if_startIndex_is_more_than_lenght(void);
+extern void test_stringCharAt_should_return_zero_if_startIndex_is_more_than_lenght(void);
 extern void test_stringCharAt_should_return_relative_character(void);
 extern void test_stringCharAt_should_return_relative_character2(void);
 extern void test_stringCharAtInSet_should_return_negative_one(void);
@@ -142,7 +142,7 @@ int main(void)
   RUN_TEST(test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case, 715);
   RUN_TEST(test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case2, 736);
   RUN_TEST(test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case01, 757);
-  RUN_TEST(test_stringCharAt_should_return_negative_one_if_startIndex_is_more_than_lenght, 778);
+  RUN_TEST(test_stringCharAt_should_return_zero_if_startIndex_is_more_than_lenght, 778);
   RUN_TEST(test_stringCharAt_should_return_relative_character, 787);
   RUN_TEST(test_stringCharAt_should_return_relative_character2, 799);
   RUN_TEST(test_stringCharAtInSet_should_return_negative_one, 811);

@@ -1548,7 +1548,7 @@ void test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case01(v
 
 
 
-void test_stringCharAt_should_return_negative_one_if_startIndex_is_more_than_lenght(void)
+void test_stringCharAt_should_return_zero_if_startIndex_is_more_than_lenght(void)
 
 {
 
@@ -1560,7 +1560,7 @@ void test_stringCharAt_should_return_negative_one_if_startIndex_is_more_than_len
 
 
 
- UnityAssertEqualNumber((_U_SINT)((-1)), (_U_SINT)((stringCharAt(string1,0))), (((void *)0)), (_U_UINT)784, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((0)), (_U_SINT)((stringCharAt(string1,0))), (((void *)0)), (_U_UINT)784, UNITY_DISPLAY_STYLE_INT);
 
 }
 

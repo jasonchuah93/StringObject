@@ -775,13 +775,13 @@ void test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case01(v
 	printf("-                                               -\n");
 }
 
-void test_stringCharAt_should_return_negative_one_if_startIndex_is_more_than_lenght(void)
+void test_stringCharAt_should_return_zero_if_startIndex_is_more_than_lenght(void)
 {
 	Text *name1=textNew("Hello");
 	String *string1=stringNew(name1);
 	string1->start=5;
 	
-	TEST_ASSERT_EQUAL(-1,stringCharAt(string1,0));
+	TEST_ASSERT_EQUAL(0,stringCharAt(string1,0));
 }
 
 void test_stringCharAt_should_return_relative_character(void)

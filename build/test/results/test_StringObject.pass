@@ -120,7 +120,7 @@
 - :test: test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case01
   :line: 757
   :message: ''
-- :test: test_stringCharAt_should_return_negative_one_if_startIndex_is_more_than_lenght
+- :test: test_stringCharAt_should_return_zero_if_startIndex_is_more_than_lenght
   :line: 778
   :message: ''
 - :test: test_stringCharAt_should_return_relative_character

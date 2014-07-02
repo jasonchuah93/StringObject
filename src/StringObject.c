@@ -249,7 +249,7 @@ String *stringRemoveWordNotContaining(String *string,char *delimiters){
 		
 		}
 }
-/*
+/**
  * This function is to remove the word contain inside the containSet
  *
  *input ; 
@@ -257,28 +257,33 @@ String *stringRemoveWordNotContaining(String *string,char *delimiters){
 	containSet is the characters that want to remove
  *
  *	Return the string with non-deleted characters
-*/
+**/
 
 String *stringRemoveWordContaining(String *string,char containSet[]){
-	int i =0 ,j=0 ,value;
+	int a=0,i =string->start ,j=0 ,newValue=0,oldValue=0;
 	String *newString = stringNew(string->text);
-	newString->start=string->start;
 	newString->length=0;
+	newString->start=string->start;
 	
+	
+	for(a = 0; containSet[a] > string->length ; a++){
+		newValue++;
+	}
+
 	while(string->text->string[i] != 0){
 	while(containSet[j]!=0){
-		if((string->text->string[i]==containSet[j])){
+		if(string->text->string[i]==containSet[j]){
 			string->start++;
 			string->length--;
 			newString->length++;
 			goto here;
 		}
 		else{
-			value++;
+			oldValue++;
 		}
 		j++;
 	}
-	if(value>=newString->length)
+	if(oldValue>=newValue)
 	{
 		goto come;
 	}
@@ -289,6 +294,17 @@ String *stringRemoveWordContaining(String *string,char containSet[]){
 	come:
 	return newString;
 }
+
+/**
+ * This function is to compare the data of the 2 strings
+ *
+ *input ; 
+	string is the string type 
+	
+ *
+ *	Return 1 if both string start and length is the same
+ *	Return 0 if both start and length of the string is different
+**/
 
 int stringIsEqual(String *string1,String *string2){
 	int i,input;
@@ -314,10 +330,18 @@ int stringIsEqual(String *string1,String *string2){
 		}
 		
 	}
-
-	
-	
 }
+
+/**
+ * This function is to convert all the character of the upper case to lower case
+ *
+ *input ; 
+	string is the string type 
+	
+ *
+ *	Return the string with lower case 
+**/
+
 int stringIsEqualCaseInsensitive(String *string1,String *string2){
 	int i;
 	for(i=0;string1->text->string[i];i++)
@@ -349,15 +373,16 @@ input :
 **/
 
 int stringCharAt(String *str,int relativeIndex){
-	char finalIndex;
-	if(relativeIndex < 0 || str->start+relativeIndex >= str->length){
+	
+	if(relativeIndex < 0 || relativeIndex >= str->length){
 		return -1;
 	}
 	else{
 		
-		finalIndex=str->text->string[str->start+relativeIndex];
+		return str->text->string[str->start+relativeIndex];
+		
 	}
-		return finalIndex;
+		
 }
 /**
 *Determine if the character specified by the relative index in the
@@ -423,8 +448,7 @@ int stringToInteger(String *str){
 char *stringSubstringInChar(String *str,int relativePosition,int length){
 	
 	char *subString = malloc(sizeof(char)*(length+1));
-	int i=0,j=0;
-	
+	int i=relativePosition,j=0;
 	
 	if(length <= str->length){
 	for(i=0,j = relativePosition;j <= relativePosition+length-1;i++,j++)
