@@ -266,10 +266,6 @@ String *stringRemoveWordContaining(String *string,char containSet[]){
 	newString->start=string->start;
 	
 	
-	for(a = 0; containSet[a] > string->length ; a++){
-		newValue++;
-	}
-
 	while(string->text->string[i] != 0){
 	while(containSet[j]!=0){
 		if(string->text->string[i]==containSet[j]){
