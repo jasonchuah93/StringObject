@@ -361,16 +361,35 @@ void test_tokenDel_should_delete_Operator_token_and_return_empty_string(void){
 	TEST_ASSERT_EQUAL(NULL,((Operator*)testToken)->type);
 }
 
-void test_tokenDel_should_delete_All_token_and_return_empty_string(void){
-	Text *text1 = textNew("123 Jason &&");
+void test_tokenDel_should_getToken_for_left_parenthesis(void){
+	Text *text1 = textNew("(16)");
 	String *string1 = stringNew(text1);
 	Token *testToken;
-	testToken = getToken(string1);
 	
-	tokenDel(testToken);
+	// (
+	testToken = getToken(string1);
+	TEST_ASSERT_EQUAL(OPERATOR_TOKEN,testToken->type);
+	TEST_ASSERT_EQUAL_STRING("(",((Operator*)testToken)->info->symbol);
+	TEST_ASSERT_EQUAL(OPENING_BRACKET_OP,((Operator*)testToken)->info->id);
+	TEST_ASSERT_EQUAL(10,((Operator*)testToken)->info->precedence);
+	TEST_ASSERT_EQUAL_String("16)",string1);
 	stringDump(string1);
 	
-	TEST_ASSERT_EQUAL(NULL,((Number*)testToken)->type);
-	TEST_ASSERT_EQUAL(NULL,((Identifier*)testToken)->type);
-	TEST_ASSERT_EQUAL(NULL,((Operator*)testToken)->type);
+	//16
+	testToken = getToken(string1);
+	TEST_ASSERT_NOT_NULL(testToken);
+	TEST_ASSERT_EQUAL(16,((Number*)testToken)->value);
+	TEST_ASSERT_EQUAL(NUMBER_TOKEN,(Number*)testToken->type);
+	TEST_ASSERT_EQUAL_String(")",string1);
+	stringDump(string1);
+	
+	//)
+	testToken = getToken(string1);
+	TEST_ASSERT_EQUAL(OPERATOR_TOKEN,testToken->type);
+	TEST_ASSERT_EQUAL_STRING(")",((Operator*)testToken)->info->symbol);
+	TEST_ASSERT_EQUAL(CLOSING_BRACKET_OP,((Operator*)testToken)->info->id);
+	TEST_ASSERT_EQUAL(9,((Operator*)testToken)->info->precedence);
+	TEST_ASSERT_EQUAL_String("",string1);
+	stringDump(string1);
+	
 }

@@ -242,7 +242,7 @@ void tokenDel(Token *token)
 	{	
 		if(((Number*)token)->value)
 		{
-			((Number *)token)->value==0;
+			((Number *)token)->value=0;
 		}
 	}
 	

@@ -57,7 +57,7 @@ extern void test_getToken_should_get_identifier_token_from_string(void);
 extern void test_tokenDel_should_delete_Number_token_and_return_empty_string(void);
 extern void test_tokenDel_should_delete_Identifier_token_and_return_empty_string(void);
 extern void test_tokenDel_should_delete_Operator_token_and_return_empty_string(void);
-extern void test_tokenDel_should_delete_All_token_and_return_empty_string(void);
+extern void test_tokenDel_should_getToken_for_left_parenthesis(void);
 
 
 //=======Test Reset Option=====
@@ -96,7 +96,7 @@ int main(void)
   RUN_TEST(test_tokenDel_should_delete_Number_token_and_return_empty_string, 328);
   RUN_TEST(test_tokenDel_should_delete_Identifier_token_and_return_empty_string, 340);
   RUN_TEST(test_tokenDel_should_delete_Operator_token_and_return_empty_string, 352);
-  RUN_TEST(test_tokenDel_should_delete_All_token_and_return_empty_string, 364);
+  RUN_TEST(test_tokenDel_should_getToken_for_left_parenthesis, 364);
 
   return (UnityEnd());
 }
