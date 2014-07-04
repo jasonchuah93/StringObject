@@ -641,3 +641,31 @@ void test_getToken_should_get_identifier_token_from_string(void){
  assertStringEqual((" 016"), (strTokenizer), 325, ((void *)0));
 
 }
+
+
+
+void test_tokenDel_should_delete_Identifier_token_and_return_empty_string(void){
+
+ Text *text1 = textNew("123");
+
+ String *string1 = stringNew(text1);
+
+ Token *testToken;
+
+ testToken = getToken(string1);
+
+
+
+ tokenDel(testToken);
+
+ stringDump(string1);
+
+
+
+ UnityAssertEqualNumber((_U_SINT)((((void *)0))), (_U_SINT)((((Number*)testToken)->type)), (((void *)0)), (_U_UINT)337, UNITY_DISPLAY_STYLE_INT);
+
+
+
+
+
+}

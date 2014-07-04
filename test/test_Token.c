@@ -5,8 +5,7 @@
 #include "CharSet.h"
 #include "CException.h"
 #include "ErrorCode.h"
-
-
+#include "CustomTypeAssert.h"
 
 void setUp(void){}
 

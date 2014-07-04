@@ -232,7 +232,48 @@ Token *getToken(String *str) {
 		Throw(ERR_NUMBER_NOT_WELL_FORMED);
 	
 	
-	//return newToken;
-
 	
+}
+
+/*
+void *tokenDel(Token *token)
+{
+	if(token->type == IDENTIFIER_TOKEN)
+	{	
+		textDel(((Identifier*)token)->name);
+		if(((Identifier*)token)->number)
+		{
+			free(((Identifier*)token)->number);
+		}
+	}
+		free(token);
+}
+*/
+
+void tokenDel(Token *token)
+{
+	
+	if(token->type == NUMBER_TOKEN)
+	{	
+		if(((Number*)token)->value)
+		{
+			((Number *)token)->value==0;
+		}
+	}
+	
+	else if(token->type == IDENTIFIER_TOKEN)
+	{	
+		textDel(((Identifier*)token)->name);
+		if(((Identifier*)token)->number)
+		{
+			free(((Identifier*)token)->number);
+		}
+	}
+	
+	else if(token->type == OPERATOR_TOKEN)
+	{
+		free(((Operator*)token)->info->symbol);
+	}
+
+	free(token);
 }

@@ -63,11 +63,14 @@
 - :test: test_getToken_should_get_identifier_token_from_string
   :line: 315
   :message: ''
+- :test: test_tokenDel_should_delete_Identifier_token_and_return_empty_string
+  :line: 328
+  :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 20
-  :passed: 20
+  :total: 21
+  :passed: 21
   :failed: 0
   :ignored: 0
 :stdout:
@@ -79,3 +82,4 @@
 - '||'
 - /
 - '[0x1] f_str:[3]:Jason 016, start:5, len:4, str: 016'
+- '[0x1] f_str:[3]:123, start:3, len:0, str:'

@@ -4,52 +4,52 @@
   :file: test_Token.c
 :successes:
 - :test: test_numberNew_should_get_single_digit_value_and_type
-  :line: 15
+  :line: 14
   :message: ''
 - :test: test_numberNew_should_get_more_than_single_digit_value_and_type
-  :line: 25
+  :line: 24
   :message: ''
 - :test: test_numberNew_should_get_negative_value_and_type
-  :line: 35
+  :line: 34
   :message: ''
 - :test: test_identifierNew_should_identifier_the_content
-  :line: 45
+  :line: 44
   :message: ''
 - :test: test_identifierNew_should_identifier_the_content2
-  :line: 56
+  :line: 55
   :message: ''
 - :test: test_identifierNew_should_identifier_the_content_three
-  :line: 67
+  :line: 66
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_symbol
-  :line: 79
+  :line: 78
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_different_symbol
-  :line: 91
+  :line: 90
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_different_symbol2
-  :line: 103
+  :line: 102
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_different_symbol3
-  :line: 115
+  :line: 114
   :message: ''
 - :test: test_operatorNewBySymbol_should__retur_NULL_if_input_invalid_symbol
-  :line: 127
+  :line: 126
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_different_symbol4
-  :line: 135
+  :line: 134
   :message: ''
 - :test: test_operatorNewByID_should_identify_the_different_symbol
-  :line: 148
+  :line: 147
   :message: ''
 - :test: test_operatorNewByID_should_identify_the_different_symbol2
-  :line: 158
+  :line: 157
   :message: ''
 - :test: test_operatorNewByID_should_identify_the_different_symbol3
-  :line: 168
+  :line: 167
   :message: ''
 - :test: test_operatorNewByID_should_return_NULL_if_input_the_incorrect_symbol
-  :line: 177
+  :line: 176
   :message: ''
 :failures: []
 :ignores: []

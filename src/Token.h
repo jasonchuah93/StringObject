@@ -78,6 +78,7 @@ Operator *operatorNewBySymbol(char *symbol);
 Operator *operatorNewByID(OperatorID id);
 Identifier *identifierNew(Text *name);
 Token *getToken(String *str);
+void tokenDel(Token *token);
 
 
 

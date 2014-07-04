@@ -325,5 +325,19 @@ void test_getToken_should_get_identifier_token_from_string(void){
 	TEST_ASSERT_EQUAL_String(" 016",strTokenizer);
 }
 
+void test_tokenDel_should_delete_Identifier_token_and_return_empty_string(void){
+	Text *text1 = textNew("123");
+	String *string1 = stringNew(text1);
+	Token *testToken;
+	testToken = getToken(string1);
+	
+	tokenDel(testToken);
+	stringDump(string1);
+	
+	TEST_ASSERT_EQUAL(NULL,((Number*)testToken)->type);
+	
+
+}
+
 
 
