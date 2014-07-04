@@ -235,21 +235,6 @@ Token *getToken(String *str) {
 	
 }
 
-/*
-void *tokenDel(Token *token)
-{
-	if(token->type == IDENTIFIER_TOKEN)
-	{	
-		textDel(((Identifier*)token)->name);
-		if(((Identifier*)token)->number)
-		{
-			free(((Identifier*)token)->number);
-		}
-	}
-		free(token);
-}
-*/
-
 void tokenDel(Token *token)
 {
 	

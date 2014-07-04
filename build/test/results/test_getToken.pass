@@ -63,14 +63,23 @@
 - :test: test_getToken_should_get_identifier_token_from_string
   :line: 315
   :message: ''
-- :test: test_tokenDel_should_delete_Identifier_token_and_return_empty_string
+- :test: test_tokenDel_should_delete_Number_token_and_return_empty_string
   :line: 328
+  :message: ''
+- :test: test_tokenDel_should_delete_Identifier_token_and_return_empty_string
+  :line: 340
+  :message: ''
+- :test: test_tokenDel_should_delete_Operator_token_and_return_empty_string
+  :line: 352
+  :message: ''
+- :test: test_tokenDel_should_delete_All_token_and_return_empty_string
+  :line: 364
   :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 21
-  :passed: 21
+  :total: 24
+  :passed: 24
   :failed: 0
   :ignored: 0
 :stdout:
@@ -83,3 +92,6 @@
 - /
 - '[0x1] f_str:[3]:Jason 016, start:5, len:4, str: 016'
 - '[0x1] f_str:[3]:123, start:3, len:0, str:'
+- '[0x1] f_str:[3]:Jason, start:5, len:0, str:'
+- '[0x1] f_str:[2]:&&, start:2, len:0, str:'
+- '[0x1] f_str:[3]:123 Jason &&, start:3, len:9, str: Jason &&'

@@ -54,7 +54,10 @@ extern void test_getToken_should_get_two_different_operators_token_and_throw_an_
 extern void test_getToken_should_get_two_different_operators_token_and_throw_an_error2(void);
 extern void test_getToken_should_get_space_between_two_different_operators_token_and_throw_an_error(void);
 extern void test_getToken_should_get_identifier_token_from_string(void);
+extern void test_tokenDel_should_delete_Number_token_and_return_empty_string(void);
 extern void test_tokenDel_should_delete_Identifier_token_and_return_empty_string(void);
+extern void test_tokenDel_should_delete_Operator_token_and_return_empty_string(void);
+extern void test_tokenDel_should_delete_All_token_and_return_empty_string(void);
 
 
 //=======Test Reset Option=====
@@ -90,7 +93,10 @@ int main(void)
   RUN_TEST(test_getToken_should_get_two_different_operators_token_and_throw_an_error2, 285);
   RUN_TEST(test_getToken_should_get_space_between_two_different_operators_token_and_throw_an_error, 298);
   RUN_TEST(test_getToken_should_get_identifier_token_from_string, 315);
-  RUN_TEST(test_tokenDel_should_delete_Identifier_token_and_return_empty_string, 328);
+  RUN_TEST(test_tokenDel_should_delete_Number_token_and_return_empty_string, 328);
+  RUN_TEST(test_tokenDel_should_delete_Identifier_token_and_return_empty_string, 340);
+  RUN_TEST(test_tokenDel_should_delete_Operator_token_and_return_empty_string, 352);
+  RUN_TEST(test_tokenDel_should_delete_All_token_and_return_empty_string, 364);
 
   return (UnityEnd());
 }

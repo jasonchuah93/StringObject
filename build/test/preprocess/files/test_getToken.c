@@ -644,7 +644,7 @@ void test_getToken_should_get_identifier_token_from_string(void){
 
 
 
-void test_tokenDel_should_delete_Identifier_token_and_return_empty_string(void){
+void test_tokenDel_should_delete_Number_token_and_return_empty_string(void){
 
  Text *text1 = textNew("123");
 
@@ -664,8 +664,80 @@ void test_tokenDel_should_delete_Identifier_token_and_return_empty_string(void){
 
  UnityAssertEqualNumber((_U_SINT)((((void *)0))), (_U_SINT)((((Number*)testToken)->type)), (((void *)0)), (_U_UINT)337, UNITY_DISPLAY_STYLE_INT);
 
+}
 
 
 
+void test_tokenDel_should_delete_Identifier_token_and_return_empty_string(void){
+
+ Text *text1 = textNew("Jason");
+
+ String *string1 = stringNew(text1);
+
+ Token *testToken;
+
+ testToken = getToken(string1);
+
+
+
+ tokenDel(testToken);
+
+ stringDump(string1);
+
+
+
+ UnityAssertEqualNumber((_U_SINT)((((void *)0))), (_U_SINT)((((Identifier*)testToken)->type)), (((void *)0)), (_U_UINT)349, UNITY_DISPLAY_STYLE_INT);
+
+}
+
+
+
+void test_tokenDel_should_delete_Operator_token_and_return_empty_string(void){
+
+ Text *text1 = textNew("&&");
+
+ String *string1 = stringNew(text1);
+
+ Token *testToken;
+
+ testToken = getToken(string1);
+
+
+
+ tokenDel(testToken);
+
+ stringDump(string1);
+
+
+
+ UnityAssertEqualNumber((_U_SINT)((((void *)0))), (_U_SINT)((((Operator*)testToken)->type)), (((void *)0)), (_U_UINT)361, UNITY_DISPLAY_STYLE_INT);
+
+}
+
+
+
+void test_tokenDel_should_delete_All_token_and_return_empty_string(void){
+
+ Text *text1 = textNew("123 Jason &&");
+
+ String *string1 = stringNew(text1);
+
+ Token *testToken;
+
+ testToken = getToken(string1);
+
+
+
+ tokenDel(testToken);
+
+ stringDump(string1);
+
+
+
+ UnityAssertEqualNumber((_U_SINT)((((void *)0))), (_U_SINT)((((Number*)testToken)->type)), (((void *)0)), (_U_UINT)373, UNITY_DISPLAY_STYLE_INT);
+
+ UnityAssertEqualNumber((_U_SINT)((((void *)0))), (_U_SINT)((((Identifier*)testToken)->type)), (((void *)0)), (_U_UINT)374, UNITY_DISPLAY_STYLE_INT);
+
+ UnityAssertEqualNumber((_U_SINT)((((void *)0))), (_U_SINT)((((Operator*)testToken)->type)), (((void *)0)), (_U_UINT)375, UNITY_DISPLAY_STYLE_INT);
 
 }
