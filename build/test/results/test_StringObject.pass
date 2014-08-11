@@ -10,160 +10,160 @@
   :line: 37
   :message: ''
 - :test: test_stringNew_should_create_string_with_dynamic_text
-  :line: 53
+  :line: 45
   :message: ''
 - :test: test_stringAssign_should_increase_reference
-  :line: 71
+  :line: 55
   :message: ''
 - :test: test_stringAssign_should_not_increase_reference
-  :line: 98
+  :line: 71
   :message: ''
 - :test: test_stringDelete_should_delete_reference
-  :line: 119
+  :line: 85
   :message: ''
 - :test: test_stringDelete_should_not_delete_reference_for_text
-  :line: 152
+  :line: 99
   :message: ''
 - :test: test_stringDelete_should_delete_all_reference_and_return_null
-  :line: 186
+  :line: 113
   :message: ''
 - :test: test_stringSkip_given_Hello_and_skip_2_should_become_llo
-  :line: 230
+  :line: 130
   :message: ''
 - :test: test_stringSkip_given_gundam_and_skip_4_should_become_am
-  :line: 244
+  :line: 142
   :message: ''
 - :test: test_stringSkip_given_gundam_and_skip_6_should_return_null
-  :line: 258
+  :line: 153
   :message: ''
 - :test: test_stringSkip_given_beyond_ra_and_skip_2_should_make_start_equals_2_length_equals_0
-  :line: 272
+  :line: 164
   :message: ''
 - :test: test_stringTrimLeft_given_Amazing_prefixed_with_2_space_should_remove_the_spaces
-  :line: 286
+  :line: 176
   :message: ''
 - :test: test_stringTrimLeft_given_Saviour_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab
-  :line: 300
+  :line: 188
   :message: ''
 - :test: test_stringTrimRight_given_Comet_postfixed_with_3_space_should_remove_the_spaces
-  :line: 314
+  :line: 200
   :message: ''
 - :test: test_stringTrimRight_given_hello_prefixed_with_space_and_tab_should_remove_the_spaces_and_tab
-  :line: 328
+  :line: 212
   :message: ''
 - :test: test_stringTrim_given_hello_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab
-  :line: 343
+  :line: 225
   :message: ''
 - :test: test_stringTrim_given_Kamaguchi_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab
-  :line: 356
+  :line: 236
   :message: ''
 - :test: test_stringTrim_given_Ferraro_suffixed_with_space_and_tab_should_remove_all_spaces_and_tab
-  :line: 369
+  :line: 247
   :message: ''
 - :test: test_stringRemove_should_remove_first_char_within_a_string
-  :line: 384
+  :line: 257
   :message: ''
 - :test: test_stringRemove_should_remove_three_char_within_a_string
-  :line: 400
+  :line: 265
   :message: ''
 - :test: test_stringRemove_should_remove_five_char_within_a_string
-  :line: 422
+  :line: 277
   :message: ''
 - :test: test_stringRemove_should_remove_all_char_within_a_string
-  :line: 451
+  :line: 294
   :message: ''
 - :test: test_stringLength_should_get_the_correct_length
-  :line: 487
+  :line: 318
   :message: ''
 - :test: test_stringLength_should_get_the_correct_length2
-  :line: 503
+  :line: 327
   :message: ''
 - :test: test_stringLength_should_get_the_correct_length3
-  :line: 519
+  :line: 335
   :message: ''
 - :test: test_stringRemoveWordNotContaining_should_test_input_and_start_with_alphabet
-  :line: 535
+  :line: 343
   :message: ''
 - :test: test_stringRemoveWordNotContaining_should_test_input_and_start_with_alphabet2
-  :line: 550
+  :line: 351
   :message: ''
 - :test: test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet1
-  :line: 566
+  :line: 362
   :message: ''
 - :test: test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet2
-  :line: 583
+  :line: 379
   :message: ''
 - :test: test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet3
-  :line: 600
+  :line: 396
   :message: ''
 - :test: test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet4
-  :line: 617
+  :line: 413
   :message: ''
 - :test: test_stringRemoveWordContaining_should_test_input_and_start_with_alphabet5
-  :line: 634
+  :line: 430
   :message: ''
 - :test: test_stringIsEqual_should_return_one_if_both_string_is_same
-  :line: 652
+  :line: 448
   :message: ''
 - :test: test_stringIsEqual_should_return_one_if_both_string_is_same01
-  :line: 673
+  :line: 469
   :message: ''
 - :test: test_stringIsEqual_should_return_zero_if_both_string_is_same02
-  :line: 694
+  :line: 490
   :message: ''
 - :test: test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case
-  :line: 715
+  :line: 511
   :message: ''
 - :test: test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case2
-  :line: 736
+  :line: 532
   :message: ''
 - :test: test_stringIsEqualCaseInsensitive_should_set_all_alphabet_to_lower_case01
-  :line: 757
+  :line: 553
   :message: ''
 - :test: test_stringCharAt_should_return_zero_if_startIndex_is_more_than_lenght
-  :line: 778
+  :line: 574
   :message: ''
 - :test: test_stringCharAt_should_return_relative_character
-  :line: 787
+  :line: 583
   :message: ''
 - :test: test_stringCharAt_should_return_relative_character2
-  :line: 799
+  :line: 595
   :message: ''
 - :test: test_stringCharAtInSet_should_return_negative_one
-  :line: 811
+  :line: 607
   :message: ''
 - :test: test_stringCharAtInSet_should_return_relative_character2
-  :line: 822
+  :line: 618
   :message: ''
 - :test: test_stringCharAtInSet_should_return_relative_character3
-  :line: 833
+  :line: 629
   :message: ''
 - :test: test_stringSubstringInChar_Phone016_should_return_016
-  :line: 844
+  :line: 640
   :message: ''
 - :test: test_stringSubstringInChar2_HandPhone016123_should_return_Phone016123
-  :line: 856
+  :line: 652
   :message: ''
 - :test: test_stringSubstringInChar_Phone016_should_return_NULL_if_length_of_string_exceeded
-  :line: 868
+  :line: 664
   :message: ''
 - :test: test_stringSubstringInText_Phone016_should_return_016
-  :line: 880
+  :line: 676
   :message: ''
 - :test: test_stringSubstringInText_should_get_substring
-  :line: 893
+  :line: 689
   :message: ''
 - :test: test_stringSubstringInText_should_return_empty_string
-  :line: 906
+  :line: 702
   :message: ''
 - :test: test_stringToInteger_should_return_integer_type
-  :line: 919
+  :line: 715
   :message: ''
 - :test: test_stringToInteger_should_return_integer_type2
-  :line: 931
+  :line: 727
   :message: ''
 - :test: test_stringToInteger_should_return_integer_type3
-  :line: 943
+  :line: 739
   :message: ''
 :failures: []
 :ignores: []
@@ -174,19 +174,6 @@
   :ignored: 0
 :stdout:
 - '[0x14] f_str:[a]:hello world!, start:11, len:100, str:!'
-- '[0x5] f_str:[2]:Strike, start:0, len:6, str:Strike'
-- '-----Test for stringDelete should not delete reference for text-----'
-- text[1]:Infinite
-- '-----Test for stringRemoveWordNotContaining -----'
-- '[0x1] f_str:[80000000]:Bulldog, start:4, len:3, str:dog'
-- '[0x1] f_str:[80000000]:Bulldog, start:0, len:4, str:Bull'
-- '-                                               -'
-- '-                                               -'
-- '-----Test for stringRemoveWordNotContaining -----'
-- '[0x1] f_str:[4]:BaskinRobbin, start:1, len:4, str:aski'
-- '[0x1] f_str:[4]:BaskinRobbin, start:5, len:7, str:nRobbin'
-- '-                                               -'
-- '-                                               -'
 - '[0x1] f_str:[3]:apple, start:3, len:2, str:le'
 - '[0x1] f_str:[3]:apple, start:0, len:3, str:app'
 - '-                                               -'

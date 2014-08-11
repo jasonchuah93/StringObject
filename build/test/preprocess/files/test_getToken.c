@@ -36,7 +36,7 @@ void test_getToken_should_get_number_token_from_string_and_left_empty_space(void
 
 
 
-void xtest_getToken_should_get_number_token_from_string_with_space_infront_and_left_empty_space(void){
+void test_getToken_should_get_number_token_from_string_with_space_infront_and_left_empty_space(void){
 
 
 
@@ -80,10 +80,6 @@ void test_getToken_should_get_234_from_string_with_space_in_between_and_left_spa
 
  assertStringEqual((" 567"), (strTokenizer), 45, ((void *)0));
 
-
-
- stringDump(strTokenizer);
-
 }
 
 
@@ -98,13 +94,11 @@ void test_getToken_should_get_234_from_string_contain_alphabets_with_space_in_be
 
  Token *testToken = getToken(strTokenizer);
 
- if ((((testToken)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)55);;};
+ if ((((testToken)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)53);;};
 
- UnityAssertEqualNumber((_U_SINT)((234)), (_U_SINT)((((Number*)testToken)->value)), (((void *)0)), (_U_UINT)56, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((234)), (_U_SINT)((((Number*)testToken)->value)), (((void *)0)), (_U_UINT)54, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((NUMBER_TOKEN)), (_U_SINT)((testToken->type)), (((void *)0)), (_U_UINT)57, UNITY_DISPLAY_STYLE_INT);
-
-
+ UnityAssertEqualNumber((_U_SINT)((NUMBER_TOKEN)), (_U_SINT)((testToken->type)), (((void *)0)), (_U_UINT)55, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -126,7 +120,7 @@ void test_getToken_should_throw_error_when_characters_is_behind(void){
 
  {
 
-  UnityAssertEqualNumber((_U_SINT)((ERR_NUMBER_NOT_WELL_FORMED)), (_U_SINT)((e)), (((void *)0)), (_U_UINT)69, UNITY_DISPLAY_STYLE_INT);
+  UnityAssertEqualNumber((_U_SINT)((ERR_NUMBER_NOT_WELL_FORMED)), (_U_SINT)((e)), (((void *)0)), (_U_UINT)66, UNITY_DISPLAY_STYLE_INT);
 
   return;
 
@@ -144,15 +138,19 @@ void test_getToken_should_throw_error_from_string_combine_with_alphabets_and_ope
 
  String *strTokenizer = stringNew(testTokenizer);
 
- Token *testToken = getToken(strTokenizer);
+ { jmp_buf *PrevFrame, NewFrame; unsigned int MY_ID = (0); PrevFrame = CExceptionFrames[(0)].pFrame; CExceptionFrames[MY_ID].pFrame = (jmp_buf*)(&NewFrame); CExceptionFrames[MY_ID].Exception = (0x5A5A5A5A); if (_setjmp(NewFrame) == 0) { if (&PrevFrame){
 
- if ((((testToken)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)79);;};
+  Token *testToken = getToken(strTokenizer);
 
- UnityAssertEqualNumber((_U_SINT)((2)), (_U_SINT)((((Number*)testToken)->value)), (((void *)0)), (_U_UINT)80, UNITY_DISPLAY_STYLE_INT);
+ }else { } CExceptionFrames[MY_ID].Exception = (0x5A5A5A5A); } else { e = CExceptionFrames[MY_ID].Exception; e=e; } CExceptionFrames[MY_ID].pFrame = PrevFrame; } if (CExceptionFrames[(0)].Exception != (0x5A5A5A5A))
 
- UnityAssertEqualNumber((_U_SINT)((NUMBER_TOKEN)), (_U_SINT)(((Number*)testToken->type)), (((void *)0)), (_U_UINT)81, UNITY_DISPLAY_STYLE_INT);
+ {
 
- assertStringEqual(("!3+4-jason"), (strTokenizer), 82, ((void *)0));
+  UnityAssertEqualNumber((_U_SINT)((ERR_NUMBER_NOT_WELL_FORMED)), (_U_SINT)((e)), (((void *)0)), (_U_UINT)79, UNITY_DISPLAY_STYLE_INT);
+
+  return;
+
+ }
 
 }
 
@@ -172,13 +170,11 @@ void test_getToken_should_throw_an_error_for_string_start_with_alphabet_first(vo
 
  }else { } CExceptionFrames[MY_ID].Exception = (0x5A5A5A5A); } else { e = CExceptionFrames[MY_ID].Exception; e=e; } CExceptionFrames[MY_ID].pFrame = PrevFrame; } if (CExceptionFrames[(0)].Exception != (0x5A5A5A5A)){
 
-  UnityAssertEqualNumber((_U_SINT)((ERR_NUMBER_NOT_WELL_FORMED)), (_U_SINT)((e)), (((void *)0)), (_U_UINT)92, UNITY_DISPLAY_STYLE_INT);
+  UnityAssertEqualNumber((_U_SINT)((ERR_NUMBER_NOT_WELL_FORMED)), (_U_SINT)((e)), (((void *)0)), (_U_UINT)91, UNITY_DISPLAY_STYLE_INT);
 
   return;
 
  }
-
-
 
 }
 
@@ -196,15 +192,15 @@ void test_getToken_should_get_operator_token_and_return_ADD_OP_and_left_empty_sp
 
 
 
- UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((opeToken->type)), (((void *)0)), (_U_UINT)104, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((opeToken->type)), (((void *)0)), (_U_UINT)102, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualString((const char*)("+"), (const char*)(((Operator*)opeToken)->info->symbol), (((void *)0)), (_U_UINT)105);
+ UnityAssertEqualString((const char*)("+"), (const char*)(((Operator*)opeToken)->info->symbol), (((void *)0)), (_U_UINT)103);
 
- UnityAssertEqualNumber((_U_SINT)((ADD_OP)), (_U_SINT)((((Operator*)opeToken)->info->id)), (((void *)0)), (_U_UINT)106, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((ADD_OP)), (_U_SINT)((((Operator*)opeToken)->info->id)), (((void *)0)), (_U_UINT)104, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((80)), (_U_SINT)((((Operator*)opeToken)->info->precedence)), (((void *)0)), (_U_UINT)107, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((80)), (_U_SINT)((((Operator*)opeToken)->info->precedence)), (((void *)0)), (_U_UINT)105, UNITY_DISPLAY_STYLE_INT);
 
- assertStringEqual((""), (strToken), 108, ((void *)0));
+ assertStringEqual((""), (strToken), 106, ((void *)0));
 
 }
 
@@ -222,13 +218,13 @@ void test_getToken_should_get_operator_token_with_space_at_front_and_return_ADD_
 
 
 
- UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((opeToken->type)), (((void *)0)), (_U_UINT)117, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((opeToken->type)), (((void *)0)), (_U_UINT)115, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualString((const char*)("+"), (const char*)(((Operator*)opeToken)->info->symbol), (((void *)0)), (_U_UINT)118);
+ UnityAssertEqualString((const char*)("+"), (const char*)(((Operator*)opeToken)->info->symbol), (((void *)0)), (_U_UINT)116);
 
- UnityAssertEqualNumber((_U_SINT)((ADD_OP)), (_U_SINT)((((Operator*)opeToken)->info->id)), (((void *)0)), (_U_UINT)119, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((ADD_OP)), (_U_SINT)((((Operator*)opeToken)->info->id)), (((void *)0)), (_U_UINT)117, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((80)), (_U_SINT)((((Operator*)opeToken)->info->precedence)), (((void *)0)), (_U_UINT)120, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((80)), (_U_SINT)((((Operator*)opeToken)->info->precedence)), (((void *)0)), (_U_UINT)118, UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -250,41 +246,41 @@ void test_getToken_should_get_operator_token_and_number_token(void){
 
  testToken = getToken(strToken);
 
- if ((((testToken)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)131);;};
+ if ((((testToken)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)129);;};
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((((Number*)testToken)->value)), (((void *)0)), (_U_UINT)132, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((((Number*)testToken)->value)), (((void *)0)), (_U_UINT)130, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((NUMBER_TOKEN)), (_U_SINT)(((Number*)testToken->type)), (((void *)0)), (_U_UINT)133, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((NUMBER_TOKEN)), (_U_SINT)(((Number*)testToken->type)), (((void *)0)), (_U_UINT)131, UNITY_DISPLAY_STYLE_INT);
 
- assertStringEqual(("+2"), (strToken), 134, ((void *)0));
-
-
-
- testToken = getToken(strToken);
-
- if ((((testToken)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)137);;};
-
- UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((testToken->type)), (((void *)0)), (_U_UINT)138, UNITY_DISPLAY_STYLE_INT);
-
- UnityAssertEqualString((const char*)("+"), (const char*)(((Operator*)testToken)->info->symbol), (((void *)0)), (_U_UINT)139);
-
- UnityAssertEqualNumber((_U_SINT)((ADD_OP)), (_U_SINT)((((Operator*)testToken)->info->id)), (((void *)0)), (_U_UINT)140, UNITY_DISPLAY_STYLE_INT);
-
- UnityAssertEqualNumber((_U_SINT)((80)), (_U_SINT)((((Operator*)testToken)->info->precedence)), (((void *)0)), (_U_UINT)141, UNITY_DISPLAY_STYLE_INT);
-
- assertStringEqual(("2"), (strToken), 142, ((void *)0));
+ assertStringEqual(("+2"), (strToken), 132, ((void *)0));
 
 
 
  testToken = getToken(strToken);
 
- if ((((testToken)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)145);;};
+ if ((((testToken)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)135);;};
 
- UnityAssertEqualNumber((_U_SINT)((2)), (_U_SINT)((((Number*)testToken)->value)), (((void *)0)), (_U_UINT)146, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((testToken->type)), (((void *)0)), (_U_UINT)136, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((NUMBER_TOKEN)), (_U_SINT)(((Number*)testToken->type)), (((void *)0)), (_U_UINT)147, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualString((const char*)("+"), (const char*)(((Operator*)testToken)->info->symbol), (((void *)0)), (_U_UINT)137);
 
- assertStringEqual((""), (strToken), 148, ((void *)0));
+ UnityAssertEqualNumber((_U_SINT)((ADD_OP)), (_U_SINT)((((Operator*)testToken)->info->id)), (((void *)0)), (_U_UINT)138, UNITY_DISPLAY_STYLE_INT);
+
+ UnityAssertEqualNumber((_U_SINT)((80)), (_U_SINT)((((Operator*)testToken)->info->precedence)), (((void *)0)), (_U_UINT)139, UNITY_DISPLAY_STYLE_INT);
+
+ assertStringEqual(("2"), (strToken), 140, ((void *)0));
+
+
+
+ testToken = getToken(strToken);
+
+ if ((((testToken)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)143);;};
+
+ UnityAssertEqualNumber((_U_SINT)((2)), (_U_SINT)((((Number*)testToken)->value)), (((void *)0)), (_U_UINT)144, UNITY_DISPLAY_STYLE_INT);
+
+ UnityAssertEqualNumber((_U_SINT)((NUMBER_TOKEN)), (_U_SINT)(((Number*)testToken->type)), (((void *)0)), (_U_UINT)145, UNITY_DISPLAY_STYLE_INT);
+
+ assertStringEqual((""), (strToken), 146, ((void *)0));
 
 }
 
@@ -304,29 +300,29 @@ void test_getToken_should_get_operator_token_number_token_and_identieifer_token(
 
  testToken = getToken(strToken);
 
- if ((((testToken)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)158);;};
+ if ((((testToken)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)156);;};
 
- UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((((Number*)testToken)->value)), (((void *)0)), (_U_UINT)159, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((1)), (_U_SINT)((((Number*)testToken)->value)), (((void *)0)), (_U_UINT)157, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((NUMBER_TOKEN)), (_U_SINT)(((Number*)testToken->type)), (((void *)0)), (_U_UINT)160, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((NUMBER_TOKEN)), (_U_SINT)(((Number*)testToken->type)), (((void *)0)), (_U_UINT)158, UNITY_DISPLAY_STYLE_INT);
 
- assertStringEqual(("+jason"), (strToken), 161, ((void *)0));
+ assertStringEqual(("+jason"), (strToken), 159, ((void *)0));
 
 
 
  testToken = getToken(strToken);
 
- if ((((testToken)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)164);;};
+ if ((((testToken)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)162);;};
 
- UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((testToken->type)), (((void *)0)), (_U_UINT)165, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((testToken->type)), (((void *)0)), (_U_UINT)163, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualString((const char*)("+"), (const char*)(((Operator*)testToken)->info->symbol), (((void *)0)), (_U_UINT)166);
+ UnityAssertEqualString((const char*)("+"), (const char*)(((Operator*)testToken)->info->symbol), (((void *)0)), (_U_UINT)164);
 
- UnityAssertEqualNumber((_U_SINT)((ADD_OP)), (_U_SINT)((((Operator*)testToken)->info->id)), (((void *)0)), (_U_UINT)167, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((ADD_OP)), (_U_SINT)((((Operator*)testToken)->info->id)), (((void *)0)), (_U_UINT)165, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((80)), (_U_SINT)((((Operator*)testToken)->info->precedence)), (((void *)0)), (_U_UINT)168, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((80)), (_U_SINT)((((Operator*)testToken)->info->precedence)), (((void *)0)), (_U_UINT)166, UNITY_DISPLAY_STYLE_INT);
 
- assertStringEqual(("jason"), (strToken), 169, ((void *)0));
+ assertStringEqual(("jason"), (strToken), 167, ((void *)0));
 
 
 
@@ -334,19 +330,15 @@ void test_getToken_should_get_operator_token_number_token_and_identieifer_token(
 
  testToken= getToken(strToken);
 
- if ((((testToken)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)173);;};
+ if ((((testToken)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)171);;};
 
- UnityAssertEqualNumber((_U_SINT)((IDENTIFIER_TOKEN)), (_U_SINT)((((Identifier*)testToken)->type)), (((void *)0)), (_U_UINT)174, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((IDENTIFIER_TOKEN)), (_U_SINT)((((Identifier*)testToken)->type)), (((void *)0)), (_U_UINT)172, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualString((const char*)("jason"), (const char*)(((Identifier*)testToken)->name->string), (((void *)0)), (_U_UINT)175);
+ UnityAssertEqualString((const char*)("jason"), (const char*)(((Identifier*)testToken)->name->string), (((void *)0)), (_U_UINT)173);
 
- assertStringEqual((""), (strToken), 176, ((void *)0));
+ assertStringEqual((""), (strToken), 174, ((void *)0));
 
 }
-
-
-
-
 
 
 
@@ -366,7 +358,7 @@ void test_getToken_should_throw_error_for_string_operator_and_characters(void){
 
  {
 
-  UnityAssertEqualNumber((_U_SINT)((ERR_NUMBER_NOT_WELL_FORMED)), (_U_SINT)((e)), (((void *)0)), (_U_UINT)189, UNITY_DISPLAY_STYLE_INT);
+  UnityAssertEqualNumber((_U_SINT)((ERR_NUMBER_NOT_WELL_FORMED)), (_U_SINT)((e)), (((void *)0)), (_U_UINT)185, UNITY_DISPLAY_STYLE_INT);
 
   return;
 
@@ -388,19 +380,15 @@ void test_getToken_should_get_operators_token_and_return_LOGICAL_AND_OP_and_left
 
 
 
- printf("%s\n",((Operator *)opeToken)->info->symbol);
+ UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((opeToken->type)), (((void *)0)), (_U_UINT)196, UNITY_DISPLAY_STYLE_INT);
 
+ UnityAssertEqualString((const char*)("&&"), (const char*)(((Operator*)opeToken)->info->symbol), (((void *)0)), (_U_UINT)197);
 
+ UnityAssertEqualNumber((_U_SINT)((LOGICAL_AND_OP)), (_U_SINT)((((Operator*)opeToken)->info->id)), (((void *)0)), (_U_UINT)198, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((opeToken->type)), (((void *)0)), (_U_UINT)202, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((30)), (_U_SINT)((((Operator*)opeToken)->info->precedence)), (((void *)0)), (_U_UINT)199, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualString((const char*)("&&"), (const char*)(((Operator*)opeToken)->info->symbol), (((void *)0)), (_U_UINT)203);
-
- UnityAssertEqualNumber((_U_SINT)((LOGICAL_AND_OP)), (_U_SINT)((((Operator*)opeToken)->info->id)), (((void *)0)), (_U_UINT)204, UNITY_DISPLAY_STYLE_INT);
-
- UnityAssertEqualNumber((_U_SINT)((30)), (_U_SINT)((((Operator*)opeToken)->info->precedence)), (((void *)0)), (_U_UINT)205, UNITY_DISPLAY_STYLE_INT);
-
- assertStringEqual((""), (strToken), 206, ((void *)0));
+ assertStringEqual((""), (strToken), 200, ((void *)0));
 
 
 
@@ -420,19 +408,15 @@ void test_getToken_should_get_operators_token_and_return_LOGICAL_AND_OP_and_left
 
 
 
- printf("%s\n",((Operator *)opeToken)->info->symbol);
+ UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((opeToken->type)), (((void *)0)), (_U_UINT)210, UNITY_DISPLAY_STYLE_INT);
 
+ UnityAssertEqualString((const char*)("&&"), (const char*)(((Operator*)opeToken)->info->symbol), (((void *)0)), (_U_UINT)211);
 
+ UnityAssertEqualNumber((_U_SINT)((LOGICAL_AND_OP)), (_U_SINT)((((Operator*)opeToken)->info->id)), (((void *)0)), (_U_UINT)212, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((opeToken->type)), (((void *)0)), (_U_UINT)218, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((30)), (_U_SINT)((((Operator*)opeToken)->info->precedence)), (((void *)0)), (_U_UINT)213, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualString((const char*)("&&"), (const char*)(((Operator*)opeToken)->info->symbol), (((void *)0)), (_U_UINT)219);
-
- UnityAssertEqualNumber((_U_SINT)((LOGICAL_AND_OP)), (_U_SINT)((((Operator*)opeToken)->info->id)), (((void *)0)), (_U_UINT)220, UNITY_DISPLAY_STYLE_INT);
-
- UnityAssertEqualNumber((_U_SINT)((30)), (_U_SINT)((((Operator*)opeToken)->info->precedence)), (((void *)0)), (_U_UINT)221, UNITY_DISPLAY_STYLE_INT);
-
- assertStringEqual((" orange  777"), (strToken), 222, ((void *)0));
+ assertStringEqual((" orange  777"), (strToken), 214, ((void *)0));
 
 
 
@@ -452,17 +436,13 @@ void test_getToken_should_get_operators_token_with_space_at_front_and_return_LOG
 
 
 
- printf("%s\n",((Operator *)opeToken)->info->symbol);
+ UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((opeToken->type)), (((void *)0)), (_U_UINT)224, UNITY_DISPLAY_STYLE_INT);
 
+ UnityAssertEqualString((const char*)("&&"), (const char*)(((Operator*)opeToken)->info->symbol), (((void *)0)), (_U_UINT)225);
 
+ UnityAssertEqualNumber((_U_SINT)((LOGICAL_AND_OP)), (_U_SINT)((((Operator*)opeToken)->info->id)), (((void *)0)), (_U_UINT)226, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((opeToken->type)), (((void *)0)), (_U_UINT)234, UNITY_DISPLAY_STYLE_INT);
-
- UnityAssertEqualString((const char*)("&&"), (const char*)(((Operator*)opeToken)->info->symbol), (((void *)0)), (_U_UINT)235);
-
- UnityAssertEqualNumber((_U_SINT)((LOGICAL_AND_OP)), (_U_SINT)((((Operator*)opeToken)->info->id)), (((void *)0)), (_U_UINT)236, UNITY_DISPLAY_STYLE_INT);
-
- UnityAssertEqualNumber((_U_SINT)((30)), (_U_SINT)((((Operator*)opeToken)->info->precedence)), (((void *)0)), (_U_UINT)237, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((30)), (_U_SINT)((((Operator*)opeToken)->info->precedence)), (((void *)0)), (_U_UINT)227, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -480,21 +460,15 @@ void test_getToken_should_get_operators_token_and_return_LOGICAL_OR_OP_and_left_
 
 
 
- printf("%s\n",((Operator *)opeToken)->info->symbol);
+ UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((opeToken->type)), (((void *)0)), (_U_UINT)236, UNITY_DISPLAY_STYLE_INT);
 
+ UnityAssertEqualString((const char*)("||"), (const char*)(((Operator*)opeToken)->info->symbol), (((void *)0)), (_U_UINT)237);
 
+ UnityAssertEqualNumber((_U_SINT)((LOGICAL_OR_OP)), (_U_SINT)((((Operator*)opeToken)->info->id)), (((void *)0)), (_U_UINT)238, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((opeToken->type)), (((void *)0)), (_U_UINT)248, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((20)), (_U_SINT)((((Operator*)opeToken)->info->precedence)), (((void *)0)), (_U_UINT)239, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualString((const char*)("||"), (const char*)(((Operator*)opeToken)->info->symbol), (((void *)0)), (_U_UINT)249);
-
- UnityAssertEqualNumber((_U_SINT)((LOGICAL_OR_OP)), (_U_SINT)((((Operator*)opeToken)->info->id)), (((void *)0)), (_U_UINT)250, UNITY_DISPLAY_STYLE_INT);
-
- UnityAssertEqualNumber((_U_SINT)((20)), (_U_SINT)((((Operator*)opeToken)->info->precedence)), (((void *)0)), (_U_UINT)251, UNITY_DISPLAY_STYLE_INT);
-
- assertStringEqual((""), (strToken), 252, ((void *)0));
-
-
+ assertStringEqual((""), (strToken), 240, ((void *)0));
 
 }
 
@@ -512,19 +486,15 @@ void test_getToken_should_get_operators_token_and_return_LOGICAL_OR_OP_and_left_
 
 
 
- printf("%s\n",((Operator *)opeToken)->info->symbol);
+ UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((opeToken->type)), (((void *)0)), (_U_UINT)249, UNITY_DISPLAY_STYLE_INT);
 
+ UnityAssertEqualString((const char*)("||"), (const char*)(((Operator*)opeToken)->info->symbol), (((void *)0)), (_U_UINT)250);
 
+ UnityAssertEqualNumber((_U_SINT)((LOGICAL_OR_OP)), (_U_SINT)((((Operator*)opeToken)->info->id)), (((void *)0)), (_U_UINT)251, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((opeToken->type)), (((void *)0)), (_U_UINT)264, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((20)), (_U_SINT)((((Operator*)opeToken)->info->precedence)), (((void *)0)), (_U_UINT)252, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualString((const char*)("||"), (const char*)(((Operator*)opeToken)->info->symbol), (((void *)0)), (_U_UINT)265);
-
- UnityAssertEqualNumber((_U_SINT)((LOGICAL_OR_OP)), (_U_SINT)((((Operator*)opeToken)->info->id)), (((void *)0)), (_U_UINT)266, UNITY_DISPLAY_STYLE_INT);
-
- UnityAssertEqualNumber((_U_SINT)((20)), (_U_SINT)((((Operator*)opeToken)->info->precedence)), (((void *)0)), (_U_UINT)267, UNITY_DISPLAY_STYLE_INT);
-
- assertStringEqual((" orange guava"), (strToken), 268, ((void *)0));
+ assertStringEqual((" orange guava"), (strToken), 253, ((void *)0));
 
 
 
@@ -548,7 +518,7 @@ void test_getToken_should_get_two_different_operators_token_and_throw_an_error(v
 
  }else { } CExceptionFrames[MY_ID].Exception = (0x5A5A5A5A); } else { e = CExceptionFrames[MY_ID].Exception; e=e; } CExceptionFrames[MY_ID].pFrame = PrevFrame; } if (CExceptionFrames[(0)].Exception != (0x5A5A5A5A)){
 
-  UnityAssertEqualNumber((_U_SINT)((ERR_NUMBER_NOT_WELL_FORMED)), (_U_SINT)((e)), (((void *)0)), (_U_UINT)280, UNITY_DISPLAY_STYLE_INT);
+  UnityAssertEqualNumber((_U_SINT)((ERR_NUMBER_NOT_WELL_FORMED)), (_U_SINT)((e)), (((void *)0)), (_U_UINT)265, UNITY_DISPLAY_STYLE_INT);
 
   return;
 
@@ -574,7 +544,7 @@ void test_getToken_should_get_two_different_operators_token_and_throw_an_error2(
 
  }else { } CExceptionFrames[MY_ID].Exception = (0x5A5A5A5A); } else { e = CExceptionFrames[MY_ID].Exception; e=e; } CExceptionFrames[MY_ID].pFrame = PrevFrame; } if (CExceptionFrames[(0)].Exception != (0x5A5A5A5A)){
 
-  UnityAssertEqualNumber((_U_SINT)((ERR_NUMBER_NOT_WELL_FORMED)), (_U_SINT)((e)), (((void *)0)), (_U_UINT)293, UNITY_DISPLAY_STYLE_INT);
+  UnityAssertEqualNumber((_U_SINT)((ERR_NUMBER_NOT_WELL_FORMED)), (_U_SINT)((e)), (((void *)0)), (_U_UINT)278, UNITY_DISPLAY_STYLE_INT);
 
   return;
 
@@ -596,21 +566,17 @@ void test_getToken_should_get_space_between_two_different_operators_token_and_th
 
 
 
- printf("%s\n",((Operator *)opeToken)->info->symbol);
+ if ((((opeToken)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)289);;};
 
+ UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((opeToken->type)), (((void *)0)), (_U_UINT)290, UNITY_DISPLAY_STYLE_INT);
 
+ UnityAssertEqualString((const char*)("/"), (const char*)(((Operator*)opeToken)->info->symbol), (((void *)0)), (_U_UINT)291);
 
- if ((((opeToken)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)306);;};
+ UnityAssertEqualNumber((_U_SINT)((DIV_OP)), (_U_SINT)((((Operator*)opeToken)->info->id)), (((void *)0)), (_U_UINT)292, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((opeToken->type)), (((void *)0)), (_U_UINT)307, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((100)), (_U_SINT)((((Operator*)opeToken)->info->precedence)), (((void *)0)), (_U_UINT)293, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualString((const char*)("/"), (const char*)(((Operator*)opeToken)->info->symbol), (((void *)0)), (_U_UINT)308);
-
- UnityAssertEqualNumber((_U_SINT)((DIV_OP)), (_U_SINT)((((Operator*)opeToken)->info->id)), (((void *)0)), (_U_UINT)309, UNITY_DISPLAY_STYLE_INT);
-
- UnityAssertEqualNumber((_U_SINT)((100)), (_U_SINT)((((Operator*)opeToken)->info->precedence)), (((void *)0)), (_U_UINT)310, UNITY_DISPLAY_STYLE_INT);
-
- assertStringEqual((" ^"), (strToken), 311, ((void *)0));
+ assertStringEqual((" ^"), (strToken), 294, ((void *)0));
 
 
 
@@ -628,17 +594,13 @@ void test_getToken_should_get_identifier_token_from_string(void){
 
 
 
- stringDump(strTokenizer);
+ if ((((testToken)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)303);;};
 
+ UnityAssertEqualNumber((_U_SINT)((IDENTIFIER_TOKEN)), (_U_SINT)((((Identifier*)testToken)->type)), (((void *)0)), (_U_UINT)304, UNITY_DISPLAY_STYLE_INT);
 
+ UnityAssertEqualString((const char*)("Jason"), (const char*)(((Identifier*)testToken)->name->string), (((void *)0)), (_U_UINT)305);
 
- if ((((testToken)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)322);;};
-
- UnityAssertEqualNumber((_U_SINT)((IDENTIFIER_TOKEN)), (_U_SINT)((((Identifier*)testToken)->type)), (((void *)0)), (_U_UINT)323, UNITY_DISPLAY_STYLE_INT);
-
- UnityAssertEqualString((const char*)("Jason"), (const char*)(((Identifier*)testToken)->name->string), (((void *)0)), (_U_UINT)324);
-
- assertStringEqual((" 016"), (strTokenizer), 325, ((void *)0));
+ assertStringEqual((" 016"), (strTokenizer), 306, ((void *)0));
 
 }
 
@@ -650,19 +612,15 @@ void test_tokenDel_should_delete_Number_token_and_return_empty_string(void){
 
  String *string1 = stringNew(text1);
 
- Token *testToken;
-
- testToken = getToken(string1);
+ Token *testToken = getToken(string1);
 
 
 
  tokenDel(testToken);
 
- stringDump(string1);
 
 
-
- UnityAssertEqualNumber((_U_SINT)((((void *)0))), (_U_SINT)((((Number*)testToken)->type)), (((void *)0)), (_U_UINT)337, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((((void *)0))), (_U_SINT)((((Number*)testToken)->value)), (((void *)0)), (_U_UINT)316, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -674,19 +632,13 @@ void test_tokenDel_should_delete_Identifier_token_and_return_empty_string(void){
 
  String *string1 = stringNew(text1);
 
- Token *testToken;
-
- testToken = getToken(string1);
+ Token *testToken = getToken(string1);
 
 
 
  tokenDel(testToken);
 
- stringDump(string1);
-
-
-
- UnityAssertEqualNumber((_U_SINT)((((void *)0))), (_U_SINT)((((Identifier*)testToken)->type)), (((void *)0)), (_U_UINT)349, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualString((const char*)("b"), (const char*)(((Identifier*)testToken)->name), (((void *)0)), (_U_UINT)325);
 
 }
 
@@ -694,23 +646,19 @@ void test_tokenDel_should_delete_Identifier_token_and_return_empty_string(void){
 
 void test_tokenDel_should_delete_Operator_token_and_return_empty_string(void){
 
- Text *text1 = textNew("&&");
+ Text *text = textNew("&&");
 
- String *string1 = stringNew(text1);
+ String *string = stringNew(text);
 
- Token *testToken;
-
- testToken = getToken(string1);
+ Token *testToken = getToken(string);
 
 
 
  tokenDel(testToken);
 
- stringDump(string1);
 
 
-
- UnityAssertEqualNumber((_U_SINT)((((void *)0))), (_U_SINT)((((Operator*)testToken)->type)), (((void *)0)), (_U_UINT)361, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((EMPTY_OP)), (_U_SINT)((((Operator*)testToken)->info->id)), (((void *)0)), (_U_UINT)335, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -718,9 +666,9 @@ void test_tokenDel_should_delete_Operator_token_and_return_empty_string(void){
 
 void test_tokenDel_should_getToken_for_left_parenthesis(void){
 
- Text *text1 = textNew("(16)");
+ Text *text = textNew("(16)");
 
- String *string1 = stringNew(text1);
+ String *string = stringNew(text);
 
  Token *testToken;
 
@@ -728,54 +676,46 @@ void test_tokenDel_should_getToken_for_left_parenthesis(void){
 
 
 
- testToken = getToken(string1);
+ testToken = getToken(string);
 
- UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((testToken->type)), (((void *)0)), (_U_UINT)371, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((testToken->type)), (((void *)0)), (_U_UINT)345, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualString((const char*)("("), (const char*)(((Operator*)testToken)->info->symbol), (((void *)0)), (_U_UINT)372);
+ UnityAssertEqualString((const char*)("("), (const char*)(((Operator*)testToken)->info->symbol), (((void *)0)), (_U_UINT)346);
 
- UnityAssertEqualNumber((_U_SINT)((OPENING_BRACKET_OP)), (_U_SINT)((((Operator*)testToken)->info->id)), (((void *)0)), (_U_UINT)373, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((OPENING_BRACKET_OP)), (_U_SINT)((((Operator*)testToken)->info->id)), (((void *)0)), (_U_UINT)347, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((10)), (_U_SINT)((((Operator*)testToken)->info->precedence)), (((void *)0)), (_U_UINT)374, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((10)), (_U_SINT)((((Operator*)testToken)->info->precedence)), (((void *)0)), (_U_UINT)348, UNITY_DISPLAY_STYLE_INT);
 
- assertStringEqual(("16)"), (string1), 375, ((void *)0));
-
- stringDump(string1);
+ assertStringEqual(("16)"), (string), 349, ((void *)0));
 
 
 
 
 
- testToken = getToken(string1);
+ testToken = getToken(string);
 
- if ((((testToken)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)380);;};
+ if ((((testToken)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)353);;};
 
- UnityAssertEqualNumber((_U_SINT)((16)), (_U_SINT)((((Number*)testToken)->value)), (((void *)0)), (_U_UINT)381, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((16)), (_U_SINT)((((Number*)testToken)->value)), (((void *)0)), (_U_UINT)354, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((NUMBER_TOKEN)), (_U_SINT)(((Number*)testToken->type)), (((void *)0)), (_U_UINT)382, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((NUMBER_TOKEN)), (_U_SINT)(((Number*)testToken->type)), (((void *)0)), (_U_UINT)355, UNITY_DISPLAY_STYLE_INT);
 
- assertStringEqual((")"), (string1), 383, ((void *)0));
-
- stringDump(string1);
+ assertStringEqual((")"), (string), 356, ((void *)0));
 
 
 
 
 
- testToken = getToken(string1);
+ testToken = getToken(string);
 
- UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((testToken->type)), (((void *)0)), (_U_UINT)388, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((testToken->type)), (((void *)0)), (_U_UINT)360, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualString((const char*)(")"), (const char*)(((Operator*)testToken)->info->symbol), (((void *)0)), (_U_UINT)389);
+ UnityAssertEqualString((const char*)(")"), (const char*)(((Operator*)testToken)->info->symbol), (((void *)0)), (_U_UINT)361);
 
- UnityAssertEqualNumber((_U_SINT)((CLOSING_BRACKET_OP)), (_U_SINT)((((Operator*)testToken)->info->id)), (((void *)0)), (_U_UINT)390, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((CLOSING_BRACKET_OP)), (_U_SINT)((((Operator*)testToken)->info->id)), (((void *)0)), (_U_UINT)362, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((9)), (_U_SINT)((((Operator*)testToken)->info->precedence)), (((void *)0)), (_U_UINT)391, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((9)), (_U_SINT)((((Operator*)testToken)->info->precedence)), (((void *)0)), (_U_UINT)363, UNITY_DISPLAY_STYLE_INT);
 
- assertStringEqual((""), (string1), 392, ((void *)0));
-
- stringDump(string1);
-
-
+ assertStringEqual((""), (string), 364, ((void *)0));
 
 }

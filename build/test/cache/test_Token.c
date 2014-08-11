@@ -20,17 +20,15 @@ void test_numberNew_should_get_single_digit_value_and_type(void) {
 
 
 
- Number *number1;
-
- number1=numberNew(5);
+ Number *number=numberNew(5);
 
 
 
- if ((((number1)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)19);;};
+ if ((((number)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)18);;};
 
- UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((number1->value)), (((void *)0)), (_U_UINT)20, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((5)), (_U_SINT)((number->value)), (((void *)0)), (_U_UINT)19, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((NUMBER_TOKEN)), (_U_SINT)((number1->type)), (((void *)0)), (_U_UINT)21, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((NUMBER_TOKEN)), (_U_SINT)((number->type)), (((void *)0)), (_U_UINT)20, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -40,17 +38,15 @@ void test_numberNew_should_get_more_than_single_digit_value_and_type(void) {
 
 
 
- Number *number1;
-
- number1=numberNew(5000);
+ Number *number=numberNew(5000);
 
 
 
- if ((((number1)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)29);;};
+ if ((((number)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)27);;};
 
- UnityAssertEqualNumber((_U_SINT)((5000)), (_U_SINT)((number1->value)), (((void *)0)), (_U_UINT)30, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((5000)), (_U_SINT)((number->value)), (((void *)0)), (_U_UINT)28, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((NUMBER_TOKEN)), (_U_SINT)((number1->type)), (((void *)0)), (_U_UINT)31, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((NUMBER_TOKEN)), (_U_SINT)((number->type)), (((void *)0)), (_U_UINT)29, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -60,17 +56,15 @@ void test_numberNew_should_get_negative_value_and_type(void) {
 
 
 
- Number *number1;
-
- number1=numberNew(-5);
+ Number *number=numberNew(-5);
 
 
 
- if ((((number1)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)39);;};
+ if ((((number)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)36);;};
 
- UnityAssertEqualNumber((_U_SINT)((-5)), (_U_SINT)((number1->value)), (((void *)0)), (_U_UINT)40, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((-5)), (_U_SINT)((number->value)), (((void *)0)), (_U_UINT)37, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((NUMBER_TOKEN)), (_U_SINT)((number1->type)), (((void *)0)), (_U_UINT)41, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((NUMBER_TOKEN)), (_U_SINT)((number->type)), (((void *)0)), (_U_UINT)38, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -78,19 +72,19 @@ void test_numberNew_should_get_negative_value_and_type(void) {
 
 void test_identifierNew_should_identifier_the_content(void){
 
- Text *text1 = textNew("Jason");
+ Text *text = textNew("Jason");
 
- Identifier *identifier1 = identifierNew(text1);
+ Identifier *identifier = identifierNew(text);
 
 
 
- if ((((identifier1)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)48);;};
+ if ((((identifier)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)45);;};
 
- UnityAssertEqualNumber((_U_SINT)((text1)), (_U_SINT)((identifier1->name)), (((void *)0)), (_U_UINT)49, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((text)), (_U_SINT)((identifier->name)), (((void *)0)), (_U_UINT)46, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((IDENTIFIER_TOKEN)), (_U_SINT)((identifier1->type)), (((void *)0)), (_U_UINT)50, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((IDENTIFIER_TOKEN)), (_U_SINT)((identifier->type)), (((void *)0)), (_U_UINT)47, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((((void *)0))), (_U_SINT)((identifier1->number)), (((void *)0)), (_U_UINT)51, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((((void *)0))), (_U_SINT)((identifier->number)), (((void *)0)), (_U_UINT)48, UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -100,19 +94,19 @@ void test_identifierNew_should_identifier_the_content(void){
 
 void test_identifierNew_should_identifier_the_content2(void){
 
- Text *text1 = textNew("Chuah");
+ Text *text = textNew("Chuah");
 
- Identifier *identifier1 = identifierNew(text1);
+ Identifier *identifier = identifierNew(text);
 
 
 
- if ((((identifier1)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)59);;};
+ if ((((identifier)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)56);;};
 
- UnityAssertEqualNumber((_U_SINT)((text1)), (_U_SINT)((identifier1->name)), (((void *)0)), (_U_UINT)60, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((text)), (_U_SINT)((identifier->name)), (((void *)0)), (_U_UINT)57, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((IDENTIFIER_TOKEN)), (_U_SINT)((identifier1->type)), (((void *)0)), (_U_UINT)61, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((IDENTIFIER_TOKEN)), (_U_SINT)((identifier->type)), (((void *)0)), (_U_UINT)58, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((((void *)0))), (_U_SINT)((identifier1->number)), (((void *)0)), (_U_UINT)62, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((((void *)0))), (_U_SINT)((identifier->number)), (((void *)0)), (_U_UINT)59, UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -124,19 +118,19 @@ void test_identifierNew_should_identifier_the_content_three(void){
 
 
 
- Text *text1 = textNew("apple123");
+ Text *text = textNew("apple123");
 
- Identifier *identifier1 = identifierNew(text1);
+ Identifier *identifier = identifierNew(text);
 
 
 
- if ((((identifier1)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)71);;};
+ if ((((identifier)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)68);;};
 
- UnityAssertEqualNumber((_U_SINT)((text1)), (_U_SINT)((identifier1->name)), (((void *)0)), (_U_UINT)72, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((text)), (_U_SINT)((identifier->name)), (((void *)0)), (_U_UINT)69, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((IDENTIFIER_TOKEN)), (_U_SINT)((identifier1->type)), (((void *)0)), (_U_UINT)73, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((IDENTIFIER_TOKEN)), (_U_SINT)((identifier->type)), (((void *)0)), (_U_UINT)70, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((((void *)0))), (_U_SINT)((identifier1->number)), (((void *)0)), (_U_UINT)74, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((((void *)0))), (_U_SINT)((identifier->number)), (((void *)0)), (_U_UINT)71, UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -146,23 +140,23 @@ void test_identifierNew_should_identifier_the_content_three(void){
 
 void test_operatorNewBySymbol_should_identify_the_symbol(void){
 
- int symbol1;
 
 
 
- Operator *operator1 = operatorNewBySymbol("+");
+
+ Operator *operator = operatorNewBySymbol("+");
 
 
 
- if ((((operator1)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)83);;};
+ if ((((operator)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)80);;};
 
- UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((operator1->type)), (((void *)0)), (_U_UINT)84, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((operator->type)), (((void *)0)), (_U_UINT)81, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualString((const char*)("+"), (const char*)(operator1->info->symbol), (((void *)0)), (_U_UINT)85);
+ UnityAssertEqualString((const char*)("+"), (const char*)(operator->info->symbol), (((void *)0)), (_U_UINT)82);
 
- UnityAssertEqualNumber((_U_SINT)((ADD_OP)), (_U_SINT)((operator1->info->id)), (((void *)0)), (_U_UINT)86, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((ADD_OP)), (_U_SINT)((operator->info->id)), (((void *)0)), (_U_UINT)83, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((80)), (_U_SINT)((operator1->info->precedence)), (((void *)0)), (_U_UINT)87, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((80)), (_U_SINT)((operator->info->precedence)), (((void *)0)), (_U_UINT)84, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -170,23 +164,23 @@ void test_operatorNewBySymbol_should_identify_the_symbol(void){
 
 void test_operatorNewBySymbol_should_identify_the_different_symbol(void){
 
- int symbol1;
 
 
 
- Operator *operator1 = operatorNewBySymbol("-");
+
+ Operator *operator = operatorNewBySymbol("-");
 
 
 
- if ((((operator1)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)95);;};
+ if ((((operator)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)92);;};
 
- UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((operator1->type)), (((void *)0)), (_U_UINT)96, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((operator->type)), (((void *)0)), (_U_UINT)93, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualString((const char*)("-"), (const char*)(operator1->info->symbol), (((void *)0)), (_U_UINT)97);
+ UnityAssertEqualString((const char*)("-"), (const char*)(operator->info->symbol), (((void *)0)), (_U_UINT)94);
 
- UnityAssertEqualNumber((_U_SINT)((SUB_OP)), (_U_SINT)((operator1->info->id)), (((void *)0)), (_U_UINT)98, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((SUB_OP)), (_U_SINT)((operator->info->id)), (((void *)0)), (_U_UINT)95, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((80)), (_U_SINT)((operator1->info->precedence)), (((void *)0)), (_U_UINT)99, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((80)), (_U_SINT)((operator->info->precedence)), (((void *)0)), (_U_UINT)96, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -194,23 +188,21 @@ void test_operatorNewBySymbol_should_identify_the_different_symbol(void){
 
 void test_operatorNewBySymbol_should_identify_the_different_symbol2(void){
 
- int symbol1;
+
+
+ Operator *operator = operatorNewBySymbol("*");
 
 
 
- Operator *operator1 = operatorNewBySymbol("*");
+ if ((((operator)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)103);;};
 
+ UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((operator->type)), (((void *)0)), (_U_UINT)104, UNITY_DISPLAY_STYLE_INT);
 
+ UnityAssertEqualString((const char*)("*"), (const char*)(operator->info->symbol), (((void *)0)), (_U_UINT)105);
 
- if ((((operator1)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)107);;};
+ UnityAssertEqualNumber((_U_SINT)((MUL_OP)), (_U_SINT)((operator->info->id)), (((void *)0)), (_U_UINT)106, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((operator1->type)), (((void *)0)), (_U_UINT)108, UNITY_DISPLAY_STYLE_INT);
-
- UnityAssertEqualString((const char*)("*"), (const char*)(operator1->info->symbol), (((void *)0)), (_U_UINT)109);
-
- UnityAssertEqualNumber((_U_SINT)((MUL_OP)), (_U_SINT)((operator1->info->id)), (((void *)0)), (_U_UINT)110, UNITY_DISPLAY_STYLE_INT);
-
- UnityAssertEqualNumber((_U_SINT)((100)), (_U_SINT)((operator1->info->precedence)), (((void *)0)), (_U_UINT)111, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((100)), (_U_SINT)((operator->info->precedence)), (((void *)0)), (_U_UINT)107, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -218,23 +210,21 @@ void test_operatorNewBySymbol_should_identify_the_different_symbol2(void){
 
 void test_operatorNewBySymbol_should_identify_the_different_symbol3(void){
 
- int symbol1;
+
+
+ Operator *operator = operatorNewBySymbol("/");
 
 
 
- Operator *operator1 = operatorNewBySymbol("/");
+ if ((((operator)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)114);;};
 
+ UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((operator->type)), (((void *)0)), (_U_UINT)115, UNITY_DISPLAY_STYLE_INT);
 
+ UnityAssertEqualString((const char*)("/"), (const char*)(operator->info->symbol), (((void *)0)), (_U_UINT)116);
 
- if ((((operator1)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)119);;};
+ UnityAssertEqualNumber((_U_SINT)((DIV_OP)), (_U_SINT)((operator->info->id)), (((void *)0)), (_U_UINT)117, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((operator1->type)), (((void *)0)), (_U_UINT)120, UNITY_DISPLAY_STYLE_INT);
-
- UnityAssertEqualString((const char*)("/"), (const char*)(operator1->info->symbol), (((void *)0)), (_U_UINT)121);
-
- UnityAssertEqualNumber((_U_SINT)((DIV_OP)), (_U_SINT)((operator1->info->id)), (((void *)0)), (_U_UINT)122, UNITY_DISPLAY_STYLE_INT);
-
- UnityAssertEqualNumber((_U_SINT)((100)), (_U_SINT)((operator1->info->precedence)), (((void *)0)), (_U_UINT)123, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((100)), (_U_SINT)((operator->info->precedence)), (((void *)0)), (_U_UINT)118, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -242,15 +232,13 @@ void test_operatorNewBySymbol_should_identify_the_different_symbol3(void){
 
 void test_operatorNewBySymbol_should__retur_NULL_if_input_invalid_symbol(void){
 
- int symbol1;
+
+
+ Operator *operator = operatorNewBySymbol("@");
 
 
 
- Operator *operator1 = operatorNewBySymbol("@");
-
-
-
- UnityAssertEqualNumber((_U_SINT)((((void *)0))), (_U_SINT)((operator1)), (((void *)0)), (_U_UINT)131, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((((void *)0))), (_U_SINT)((operator)), (((void *)0)), (_U_UINT)125, UNITY_DISPLAY_STYLE_INT);
 
 }
 
@@ -258,23 +246,21 @@ void test_operatorNewBySymbol_should__retur_NULL_if_input_invalid_symbol(void){
 
 void test_operatorNewBySymbol_should_identify_the_different_symbol4(void){
 
- int symbol1;
+
+
+ Operator *operator = operatorNewBySymbol("~");
 
 
 
- Operator *operator1 = operatorNewBySymbol("~");
+ if ((((operator)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)132);;};
 
+ UnityAssertEqualString((const char*)("~"), (const char*)(operator->info->symbol), (((void *)0)), (_U_UINT)133);
 
+ UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((operator->type)), (((void *)0)), (_U_UINT)134, UNITY_DISPLAY_STYLE_INT);
 
- if ((((operator1)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)139);;};
+ UnityAssertEqualNumber((_U_SINT)((BITWISE_NOT_OP)), (_U_SINT)((operator->info->id)), (((void *)0)), (_U_UINT)135, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualString((const char*)("~"), (const char*)(operator1->info->symbol), (((void *)0)), (_U_UINT)140);
-
- UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((operator1->type)), (((void *)0)), (_U_UINT)141, UNITY_DISPLAY_STYLE_INT);
-
- UnityAssertEqualNumber((_U_SINT)((BITWISE_NOT_OP)), (_U_SINT)((operator1->info->id)), (((void *)0)), (_U_UINT)142, UNITY_DISPLAY_STYLE_INT);
-
- UnityAssertEqualNumber((_U_SINT)((150)), (_U_SINT)((operator1->info->precedence)), (((void *)0)), (_U_UINT)143, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((150)), (_U_SINT)((operator->info->precedence)), (((void *)0)), (_U_UINT)136, UNITY_DISPLAY_STYLE_INT);
 
 
 
@@ -286,35 +272,15 @@ void test_operatorNewByID_should_identify_the_different_symbol(void){
 
 
 
- Operator *operator1 =operatorNewByID(ADD_OP);
+ Operator *operator =operatorNewByID(ADD_OP);
 
- if ((((operator1)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)150);;};
+ if ((((operator)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)143);;};
 
- UnityAssertEqualNumber((_U_SINT)((ADD_OP)), (_U_SINT)((operator1->info->id)), (((void *)0)), (_U_UINT)151, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((ADD_OP)), (_U_SINT)((operator->info->id)), (((void *)0)), (_U_UINT)144, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((operator1->type)), (((void *)0)), (_U_UINT)152, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((operator->type)), (((void *)0)), (_U_UINT)145, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualString((const char*)("+"), (const char*)(operator1->info->symbol), (((void *)0)), (_U_UINT)153);
-
-
-
-}
-
-
-
-void test_operatorNewByID_should_identify_the_different_symbol2(void){
-
-
-
- Operator *operator1 =operatorNewByID(BITWISE_AND_OP);
-
- if ((((operator1)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)160);;};
-
- UnityAssertEqualNumber((_U_SINT)((BITWISE_AND_OP)), (_U_SINT)((operator1->info->id)), (((void *)0)), (_U_UINT)161, UNITY_DISPLAY_STYLE_INT);
-
- UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((operator1->type)), (((void *)0)), (_U_UINT)162, UNITY_DISPLAY_STYLE_INT);
-
- UnityAssertEqualString((const char*)("&"), (const char*)(operator1->info->symbol), (((void *)0)), (_U_UINT)163);
+ UnityAssertEqualString((const char*)("+"), (const char*)(operator->info->symbol), (((void *)0)), (_U_UINT)146);
 
 
 
@@ -322,19 +288,37 @@ void test_operatorNewByID_should_identify_the_different_symbol2(void){
 
 
 
-void test_operatorNewByID_should_identify_the_different_symbol3(void){
+void test_operatorNewByID_should_identify_the_different_symbol_two(void){
 
 
 
- Operator *operator1 =operatorNewByID(MUL_OP);
+ Operator *operator =operatorNewByID(BITWISE_AND_OP);
 
- if ((((operator1)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)170);;};
+ if ((((operator)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)153);;};
 
- UnityAssertEqualNumber((_U_SINT)((MUL_OP)), (_U_SINT)((operator1->info->id)), (((void *)0)), (_U_UINT)171, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((BITWISE_AND_OP)), (_U_SINT)((operator->info->id)), (((void *)0)), (_U_UINT)154, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((operator1->type)), (((void *)0)), (_U_UINT)172, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((operator->type)), (((void *)0)), (_U_UINT)155, UNITY_DISPLAY_STYLE_INT);
 
- UnityAssertEqualString((const char*)("*"), (const char*)(operator1->info->symbol), (((void *)0)), (_U_UINT)173);
+ UnityAssertEqualString((const char*)("&"), (const char*)(operator->info->symbol), (((void *)0)), (_U_UINT)156);
+
+}
+
+
+
+void test_operatorNewByID_should_identify_the_different_symbol_three(void){
+
+
+
+ Operator *operator =operatorNewByID(MUL_OP);
+
+ if ((((operator)) != ((void *)0))) {} else {UnityFail( (" Expected Non-NULL"), (_U_UINT)(_U_UINT)(_U_UINT)162);;};
+
+ UnityAssertEqualNumber((_U_SINT)((MUL_OP)), (_U_SINT)((operator->info->id)), (((void *)0)), (_U_UINT)163, UNITY_DISPLAY_STYLE_INT);
+
+ UnityAssertEqualNumber((_U_SINT)((OPERATOR_TOKEN)), (_U_SINT)((operator->type)), (((void *)0)), (_U_UINT)164, UNITY_DISPLAY_STYLE_INT);
+
+ UnityAssertEqualString((const char*)("*"), (const char*)(operator->info->symbol), (((void *)0)), (_U_UINT)165);
 
 }
 
@@ -344,11 +328,11 @@ void test_operatorNewByID_should_return_NULL_if_input_the_incorrect_symbol(void)
 
 
 
- Operator *operator1 =operatorNewByID(111);
+ Operator *operator =operatorNewByID(111);
 
 
 
- UnityAssertEqualNumber((_U_SINT)((((void *)0))), (_U_SINT)((operator1)), (((void *)0)), (_U_UINT)180, UNITY_DISPLAY_STYLE_INT);
+ UnityAssertEqualNumber((_U_SINT)((((void *)0))), (_U_SINT)((operator)), (((void *)0)), (_U_UINT)172, UNITY_DISPLAY_STYLE_INT);
 
 
 

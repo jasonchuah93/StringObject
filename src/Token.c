@@ -107,17 +107,18 @@ Operator *operatorNewByID(OperatorID id) {
  *
  * Input:
  *   name is the name of the identifier.
+ *	Return identifier data.
  */
 
  Identifier *identifierNew(Text *name) {
 	
-	Identifier *identifiers = malloc(sizeof(identifiers));
+	Identifier *identifier = malloc(sizeof(identifier));
 	
-	identifiers->type = IDENTIFIER_TOKEN;
-	identifiers->name = name;
-	identifiers->number = NULL;
+	identifier->name = name;
+	identifier->type = IDENTIFIER_TOKEN;
+	identifier->number = NULL;
 	
-	return identifiers;
+	return identifier;
 	
 }
 
@@ -235,30 +236,58 @@ Token *getToken(String *str) {
 	
 }
 
+/**
+ * Delete a token
+ *
+ * Input:
+ *   token	the token to delete
+ *
+ */
+ 
 void tokenDel(Token *token)
 {
 	
 	if(token->type == NUMBER_TOKEN)
 	{	
-		if(((Number*)token)->value)
-		{
-			((Number *)token)->value=0;
-		}
-	}
-	
-	else if(token->type == IDENTIFIER_TOKEN)
+		((Number *)token)->value=0;
+		free(token);
+	}else if(token->type == IDENTIFIER_TOKEN)
 	{	
 		textDel(((Identifier*)token)->name);
 		if(((Identifier*)token)->number)
 		{
-			free(((Identifier*)token)->number);
+			tokenDel((Token*)(((Identifier*)token)->number));
+			
+		}
+		free(token);
+	}else if(token->type == OPERATOR_TOKEN)
+	{
+		if(((Operator *)token)->info != NULL){
+		((Operator *)token)->info->id = EMPTY_OP;
 		}
 	}
-	
-	else if(token->type == OPERATOR_TOKEN)
-	{
-		free(((Operator*)token)->info->symbol);
-	}
 
-	free(token);
+	//free(token);
+}
+
+void tokenDump(Token *token){
+	
+	if(token==NULL)
+	{
+		printf("NULL token\n");
+		return;
+	}
+	
+	if(token->type == NUMBER_TOKEN){
+		printf("Number Token=%d\n",((Number*)token)->value);
+	}else if(token->type == OPERATOR_TOKEN){		
+		printf("Operator Token=%s, precedence=%d, affix=%d\n",
+					((Operator*)token)->info->symbol,
+					((Operator*)token)->info->precedence,
+					((Operator*)token)->info->affix);
+	}else if(token->type == IDENTIFIER_TOKEN){
+		printf("Identifier Token=%s\n",((Identifier*)token)->name);
+	}else{
+		printf("Unknown Token\n");
+	}
 }

@@ -7,49 +7,49 @@
   :line: 14
   :message: ''
 - :test: test_numberNew_should_get_more_than_single_digit_value_and_type
-  :line: 24
+  :line: 23
   :message: ''
 - :test: test_numberNew_should_get_negative_value_and_type
-  :line: 34
+  :line: 32
   :message: ''
 - :test: test_identifierNew_should_identifier_the_content
-  :line: 44
+  :line: 41
   :message: ''
 - :test: test_identifierNew_should_identifier_the_content2
-  :line: 55
+  :line: 52
   :message: ''
 - :test: test_identifierNew_should_identifier_the_content_three
-  :line: 66
+  :line: 63
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_symbol
-  :line: 78
+  :line: 75
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_different_symbol
-  :line: 90
+  :line: 87
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_different_symbol2
-  :line: 102
+  :line: 99
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_different_symbol3
-  :line: 114
+  :line: 110
   :message: ''
 - :test: test_operatorNewBySymbol_should__retur_NULL_if_input_invalid_symbol
-  :line: 126
+  :line: 121
   :message: ''
 - :test: test_operatorNewBySymbol_should_identify_the_different_symbol4
-  :line: 134
+  :line: 128
   :message: ''
 - :test: test_operatorNewByID_should_identify_the_different_symbol
-  :line: 147
+  :line: 140
   :message: ''
-- :test: test_operatorNewByID_should_identify_the_different_symbol2
-  :line: 157
+- :test: test_operatorNewByID_should_identify_the_different_symbol_two
+  :line: 150
   :message: ''
-- :test: test_operatorNewByID_should_identify_the_different_symbol3
-  :line: 167
+- :test: test_operatorNewByID_should_identify_the_different_symbol_three
+  :line: 159
   :message: ''
 - :test: test_operatorNewByID_should_return_NULL_if_input_the_incorrect_symbol
-  :line: 176
+  :line: 168
   :message: ''
 :failures: []
 :ignores: []
